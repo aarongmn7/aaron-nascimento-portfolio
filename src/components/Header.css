@@ -1,0 +1,157 @@
+/* Container base do Header com Glassmorphism e posição Fixed */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: 100%;
+  
+  /* Fundo transparente premium com blur */
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Suporte para Dark Mode automático */
+@media (prefers-color-scheme: dark) {
+  .header {
+    background-color: rgba(18, 18, 18, 0.05);
+  }
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1126px; /* Alinha perfeitamente com o width exato do #root */
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  flex: 1; /* Força o nav a ficar no centro exato */
+}
+
+.logo-container a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-container img {
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center; /* Alinha links verticalmente */
+  gap: 3rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-list a:hover {
+  opacity: 1;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.5rem;
+  flex: 1; /* Força o nav a ficar no centro exato */
+}
+
+.btn-contato-header {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-bg, rgba(139, 92, 246, 0.15));
+  color: var(--accent, #8b5cf6);
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid var(--accent-border, rgba(139, 92, 246, 0.3));
+}
+
+.btn-contato-header:hover {
+  background-color: var(--accent, #8b5cf6);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: clip-path 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .nav-menu {
+      background-color: rgba(18, 18, 18, 0.95);
+    }
+  }
+
+  .nav-menu.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+    gap: 2rem;
+  }
+}

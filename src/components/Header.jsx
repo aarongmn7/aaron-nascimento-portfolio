@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { C } from '../config';
+import './Header.css';
+import logoSvg from '../assets/logo.svg';
 
-export default function Header() {
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
-  const [navOpen, setNavOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -28,41 +28,53 @@ export default function Header() {
     setTheme(e.target.checked ? 'dark' : 'light');
   };
 
-  const toggleNav = () => setNavOpen(!navOpen);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY + 90;
-      const sections = ['hero', 'sobre', 'habilidades', 'projetos', 'trajetoria', 'contato'];
-      
-      sections.forEach(id => {
-        const el = document.getElementById(id);
-        if (el && el.offsetTop <= y && el.offsetTop + el.offsetHeight > y) {
-          setActiveSection(id);
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <nav>
-      <a href="#" className="logo" id="navLogo">{C.primeiroNome}.</a>
-      <button className="nav-toggle" onClick={toggleNav}><i className="fas fa-bars"></i></button>
-      <div className={`nav-links ${navOpen ? 'open' : ''}`} id="navLinks">
-        <a href="#hero" className={activeSection === 'hero' ? 'active' : ''}>Início</a>
-        <a href="#sobre" className={activeSection === 'sobre' ? 'active' : ''}>Sobre</a>
-        <a href="#habilidades" className={activeSection === 'habilidades' ? 'active' : ''}>Habilidades</a>
-        <a href="#projetos" className={activeSection === 'projetos' ? 'active' : ''}>Projetos</a>
-        <a href="#trajetoria" className={activeSection === 'trajetoria' ? 'active' : ''}>Trajetória</a>
-        <a href="#contato" className={activeSection === 'contato' ? 'active' : ''}>Contato</a>
+    <header className="header">
+      <div className="header-container">
+        
+        {/* 1. Logo */}
+        <div className="logo-container">
+          <a href="#hero">
+            <img 
+              src={logoSvg} 
+              alt="Logo do Portfólio" 
+              className="logo-img" 
+            />
+          </a>
+        </div>
+
+        {/* 2. Navegação */}
+        <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          <ul className="nav-list">
+            <li><a href="#hero" onClick={() => setIsMenuOpen(false)}>Início</a></li>
+            <li><a href="#sobre" onClick={() => setIsMenuOpen(false)}>Sobre</a></li>
+            <li><a href="#habilidades" onClick={() => setIsMenuOpen(false)}>Habilidades</a></li>
+            <li><a href="#projetos" onClick={() => setIsMenuOpen(false)}>Projetos</a></li>
+            <li><a href="#trajetoria" onClick={() => setIsMenuOpen(false)}>Trajetória</a></li>
+          </ul>
+        </nav>
+        
+        {/* 3. Ações (Theme Toggle + Contato + Menu Mobile) */}
+        <div className="header-actions">
+          <label className="switch theme-toggle-btn">
+            <input type="checkbox" id="themeToggle" checked={theme === 'dark'} onChange={toggleTheme} />
+            <span className="slider"></span>
+          </label>
+          
+          <a href="#contato" className="btn-contato-header">Contato</a>
+          
+          <button 
+            className="mobile-menu-btn" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Abrir menu"
+          >
+            ☰
+          </button>
+        </div>
+        
       </div>
-      <label className="switch">
-        <input type="checkbox" id="themeToggle" checked={theme === 'dark'} onChange={toggleTheme} />
-        <span className="slider"></span>
-      </label>
-    </nav>
+    </header>
   );
-}
+};
+
+export default Header;

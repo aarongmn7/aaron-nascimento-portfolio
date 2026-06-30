@@ -28,9 +28,9 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="App">
       <Header />
-      <main className="feed-container">
+      <main className="feed-container" style={{ paddingTop: '80px' }}>
         <Hero />
         <Sobre />
         <Habilidades />
@@ -39,7 +39,7 @@ function App() {
         <Contato />
         <Footer />
       </main>
-    </>
+    </div>
   );
 }
 
