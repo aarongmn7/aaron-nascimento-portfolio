@@ -170,16 +170,59 @@ body {
       color: var(--accent)
     }
 
-    /* HERO SECTION - CorreÃ§Ã£o de Altura CrÃ­tica */
+    /* HERO SECTION - CorreÃ§Ã£o de Altura CrÃ­tica e Estilo LinkedIn Banner */
     #hero {
-      min-height: auto;
-      /* REMOVE o 100vh antigo que esticava o card para o infinito */
-      padding: 4rem 0;
-      /* Ajusta o conteÃºdo internamente com elegÃ¢ncia */
+      background-color: var(--bg-surface); /* Fundo limpo, muda do branco pro escuro automaticamente */
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 4rem 2rem; /* Mantive o padding que existia */
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-bottom: none;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tech-stack {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem; /* Espaço antes das redes sociais */
+    }
+
+    /* O filtro invertido apenas quando o tema for escuro, senão usa a cor do tema */
+    .hero-tech-stack .tech-item img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      /* Tira a cor original e deixa preto */
+      filter: grayscale(100%) brightness(0); 
+      opacity: 0.8;
+    }
+
+    /* O truque do modo escuro */
+    [data-theme="dark"] .hero-tech-stack .tech-item img {
+      filter: grayscale(100%) brightness(0) invert(1);
+    }
+
+    .hero-tech-stack .separator {
+      color: var(--border-color);
+      font-size: 1.2rem;
+    }
+
+    .hero-tech-stack .ts-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.8rem;
+      width: 28px;
+      height: 28px;
+      background-color: var(--text-primary);
+      color: var(--bg-surface);
+      border-radius: 4px;
     }
 
     .hero-tag {

@@ -15,6 +15,29 @@ export default function Hero() {
       <p className="hero-desc">
         Desenvolvedor Back-End / Full Stack em transição acelerada, especialista em ecossistemas JavaScript (Node.js, React) e modelagem de banco de dados SQL. Focado em otimização de regras de negócio complexas e desenvolvimento produtivo assistido por IA.
       </p>
+
+      <div className="hero-tech-stack">
+        <div className="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+        </div>
+        <span className="separator">|</span>
+        <div className="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+        </div>
+        <span className="separator">|</span>
+        <div className="tech-item ts-logo">
+          TS
+        </div>
+        <span className="separator">|</span>
+        <div className="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
+        </div>
+        <span className="separator">|</span>
+        <div className="tech-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
+        </div>
+      </div>
+
       <div className="hero-social">
         <a href={linkGh} className="icon-btn" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
         <a href={linkIn} className="icon-btn" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
