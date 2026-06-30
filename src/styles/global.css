@@ -1,47 +1,73 @@
-﻿:root {
-      --bg-global: #e5e7eb;
-      --bg-feed: #ffffff;
-      --bg-cards: #f9fafb;
-      --text-main: #111827;
-      --text-muted: #6b7280;
-      --border-color: #d1d5db;
-      --accent: #2563eb;
-      --mono: 'Courier New', monospace;
-      --sans: system-ui, -apple-system, sans-serif;
-      --r: 10px;
-    }
+:root {
+  /* Tema Claro Padrão */
+  --bg-base: #f8fafc; /* Fundo do site inteiro */
+  --bg-surface: #ffffff; /* Fundo do cartão central/Header */
+  --bg-surface-hover: #f1f5f9;
+  
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  
+  --border-color: #e2e8f0;
+  
+  /* Escudo escuro para o PNG da logo não sumir no fundo branco */
+  --logo-bg: #0f172a;
 
-    [data-theme="dark"] {
-      --bg-global: #000000;
-      --bg-feed: #0a0f1c;
-      --bg-cards: #111827;
-      --text-main: #f3f4f6;
-      --text-muted: #9ca3af;
-      --border-color: #1e293b;
-      --accent: #2563eb;
-    }
+  /* Aliases para compatibilidade do CSS existente */
+  --bg-global: var(--bg-base);
+  --bg-feed: var(--bg-surface);
+  --bg-cards: var(--bg-surface-hover);
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --accent: var(--accent-primary);
+  
+  --mono: 'Courier New', monospace;
+  --sans: 'Geist', sans-serif;
+  --r: 10px;
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
-    }
+[data-theme="dark"] {
+  /* Tema Escuro (Midnight Studio) */
+  --bg-base: #0b1326;
+  --bg-surface: #171f33;
+  --bg-surface-hover: #222a3d;
+  
+  --text-primary: #dae2fd;
+  --text-secondary: #c2c6d6;
+  
+  --accent-primary: #2563eb;
+  --accent-hover: #3b82f6;
+  
+  --border-color: #283044;
+  
+  /* Tira o escudo da logo no tema escuro */
+  --logo-bg: transparent;
+}
 
-    html {
-      scroll-behavior: smooth
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background: var(--bg-global);
-      color: var(--text-main);
-      font-family: var(--sans);
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1rem 5rem 1rem;
-      /* Garante o respiro absoluto no teto e no chÃ£o do ecrÃ£ */
-    }
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Geist', sans-serif;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
     ::-webkit-scrollbar {
       width: 4px
