@@ -55,13 +55,13 @@ const Header = () => {
         </nav>
         
         {/* 3. Ações (Theme Toggle + Contato + Menu Mobile) */}
-        <div className="header-actions">
+        <div className="header-right">
           <label className="switch theme-toggle-btn">
             <input type="checkbox" id="themeToggle" checked={theme === 'dark'} onChange={toggleTheme} />
             <span className="slider"></span>
           </label>
           
-          <a href="#contato" className="btn-contato-header">Contato</a>
+          <a href="#contato" className="contact-btn">Contato</a>
           
           <button 
             className="mobile-menu-btn" 
