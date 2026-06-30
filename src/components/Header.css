@@ -1,9 +1,9 @@
 /* Container base do Header com Glassmorphism e posição Fixed */
 .header {
-  position: fixed;
+  position: fixed !important;
   top: 0;
   left: 0;
-  z-index: 50;
+  z-index: 9999 !important;
   width: 100%;
   height: 70px;
   box-sizing: border-box;

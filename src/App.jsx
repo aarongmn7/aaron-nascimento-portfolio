@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main className="feed-container" style={{ paddingTop: '80px' }}>
+      <main className="feed-container" style={{ paddingTop: '90px' }}>
         <Hero />
         <Sobre />
         <Habilidades />
