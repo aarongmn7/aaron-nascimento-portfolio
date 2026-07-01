@@ -874,6 +874,13 @@ main.feed-container {
     .contact-calendar-wrapper {
       padding: 0 !important; /* Remove o padding para o iframe encostar nas bordas */
       overflow: hidden; /* Esconde qualquer rolagem indesejada */
-      background-color: var(--bg-surface);
+      /* Força o fundo branco independente do tema */
+      background-color: #ffffff !important; 
       min-height: 500px;
+    }
+
+    .contact-calendar-wrapper iframe {
+      /* Garante que o iframe pinte o fundo de branco e avisa o navegador para usar scrollbars claras */
+      background-color: #ffffff !important;
+      color-scheme: light; 
     }
