@@ -1,19 +1,20 @@
 :root {
-  /* Tema Claro Padrão */
-  --bg-base: #f8fafc; /* Fundo do site inteiro */
-  --bg-surface: #ffffff; /* Fundo do cartão central/Header */
-  --bg-surface-hover: #f1f5f9;
+  /* TEMA CLARO: Minimalista e Limpo */
+  --bg-base: #ffffff; 
+  --bg-surface: #f4f4f5; /* Cinza super claro para diferenciar os cartões */
+  --bg-surface-hover: #e4e4e7;
   
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --text-primary: #09090b; /* Quase preto */
+  --text-secondary: #52525b; /* Cinza médio para textos secundários */
   
-  --accent-primary: #2563eb;
-  --accent-hover: #1d4ed8;
+  /* Acentos agora são neutros (Preto no claro) */
+  --accent-primary: #000000;
+  --accent-hover: #27272a;
   
-  --border-color: #e2e8f0;
+  --border-color: #e4e4e7;
   
   /* Escudo escuro para o PNG da logo não sumir no fundo branco */
-  --logo-bg: #0f172a;
+  --logo-bg: #000000;
 
   /* Aliases para compatibilidade do CSS existente */
   --bg-global: var(--bg-base);
@@ -29,18 +30,19 @@
 }
 
 [data-theme="dark"] {
-  /* Tema Escuro (Midnight Studio) */
-  --bg-base: #0b1326;
-  --bg-surface: #171f33;
-  --bg-surface-hover: #222a3d;
+  /* TEMA ESCURO: Fundo Preto Absoluto e tons de cinza */
+  --bg-base: #000000; /* Preto puro */
+  --bg-surface: #0a0a0a; /* Quase preto para destacar os cartões do fundo */
+  --bg-surface-hover: #18181b;
   
-  --text-primary: #dae2fd;
-  --text-secondary: #c2c6d6;
+  --text-primary: #fafafa; /* Branco suave para não cansar a vista */
+  --text-secondary: #a1a1aa; /* Cinza para textos secundários */
   
-  --accent-primary: #2563eb;
-  --accent-hover: #3b82f6;
+  /* Acentos agora são neutros (Branco no escuro) */
+  --accent-primary: #ffffff;
+  --accent-hover: #d4d4d8;
   
-  --border-color: #283044;
+  --border-color: #27272a;
   
   /* Tira o escudo da logo no tema escuro */
   --logo-bg: transparent;
@@ -58,15 +60,25 @@ html {
 
 body {
   background-color: var(--bg-base);
-  color: var(--text-primary);
-  font-family: 'Geist', sans-serif;
+  color: var(--text-main);
+  font-family: var(--sans);
+  line-height: 1.6;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+/* Layout App Flexbox - Força o footer para baixo */
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+}
+
+main.feed-container {
+  flex: 1;
 }
 
     ::-webkit-scrollbar {
@@ -83,16 +95,15 @@ body {
     }
 
 
-    /* CONTAINER DO FEED - O Card Flutuante */
-    .feed-container {
+    /* CONTAINER DO FEED - Derretido (Bento Box Layer 0) */
+    .feed-container, main {
       width: 95%;
       max-width: 1400px;
       margin: 2rem auto 4rem auto;
-      padding: 4rem 3rem 12rem 3rem;
-      background: var(--bg-feed);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      padding: 4rem 3rem 4rem 3rem; /* Apenas espaçamento estrutural */
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
     }
 
     /* NAV - Formato PÃ­lula Perfeito */
@@ -170,12 +181,8 @@ body {
       color: var(--accent)
     }
 
-    /* HERO SECTION - CorreÃ§Ã£o de Altura CrÃ­tica e Estilo LinkedIn Banner */
+    /* HERO SECTION - Estrutura do Bento Box */
     #hero {
-      background-color: var(--bg-surface); /* Fundo limpo, muda do branco pro escuro automaticamente */
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      padding: 4rem 2rem; /* Mantive o padding que existia */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -200,11 +207,14 @@ body {
       /* Tira a cor original e deixa preto */
       filter: grayscale(100%) brightness(0); 
       opacity: 0.8;
+      transition: filter 0.3s ease, opacity 0.3s ease; /* Transição suave na troca de tema */
     }
 
     /* O truque do modo escuro */
     [data-theme="dark"] .hero-tech-stack .tech-item img {
+      /* Mantém preto, mas inverte a cor 100%, transformando em branco puro */
       filter: grayscale(100%) brightness(0) invert(1);
+      opacity: 1; /* Opcional: aumenta a opacidade no escuro para dar mais brilho */
     }
 
     .hero-tech-stack .separator {
@@ -223,17 +233,18 @@ body {
       background-color: var(--text-primary);
       color: var(--bg-surface);
       border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .hero-tag {
       display: inline-block;
       padding: .2rem .6rem;
-      background: rgba(37, 99, 235, 0.15);
-      color: var(--accent);
+      background: var(--bg-surface-hover);
+      color: var(--text-primary);
       font-family: var(--mono);
       font-size: .8rem;
       border-radius: 4px;
-      margin-bottom: 1rem
+      margin-bottom: 1rem;
     }
 
     .hero-title {
@@ -691,10 +702,49 @@ body {
       transform: translateY(0)
     }
 
+    /* BENTO BOX LAYOUT UTILITIES */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .bento-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .bento-card:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--text-secondary);
+    }
+
+    .bento-card-header {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
     @media(max-width:768px) {
       .feed-container {
         width: 98%;
-        padding: 2rem 1rem 8rem 1rem;
+        padding: 2rem 1rem 4rem 1rem; /* Removido o padding bottom excessivo */
         margin: 1rem auto;
         border-radius: 12px;
       }
@@ -727,4 +777,103 @@ body {
         max-width: 300px;
         margin: 0 auto
       }
+    }
+
+    /* CONTATO - Split Grid Layout (Bento Box) */
+    .contact-section {
+      width: 100%;
+      padding: 4rem 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: stretch;
+    }
+
+    /* Responsividade para mobile: empilha as colunas */
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info h2 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .contact-info p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 90%;
+    }
+
+    /* Botões Utilitários */
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-solid {
+      background-color: var(--text-primary);
+      color: var(--bg-base);
+      border: 1px solid var(--text-primary);
+    }
+
+    .btn-solid:hover {
+      opacity: 0.8;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg-surface-hover);
+    }
+
+    /* Container do Calendário */
+    .contact-calendar-wrapper {
+      padding: 0 !important; /* Remove o padding para o iframe encostar nas bordas */
+      overflow: hidden; /* Esconde qualquer rolagem indesejada */
+      background-color: var(--bg-surface);
+      min-height: 500px;
     }

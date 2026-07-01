@@ -7,7 +7,7 @@ export default function Hero() {
   const linkWa = `https://wa.me/${C.whatsapp}?text=Olá%20Aaron!%20Vi%20seu%20portfólio%20e%20achei%20seu%20perfil%20Dev%20muito%20interessante.%20Vamos%20conversar?`;
 
   return (
-    <section id="hero" className="fi">
+    <section id="hero" className="fi bento-card">
       <h1 className="hero-title">
         Olá, eu sou<br/>
         <span style={{ color: 'var(--accent)' }}>{C.primeiroNome}</span>

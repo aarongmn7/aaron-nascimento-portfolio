@@ -37,8 +37,8 @@ function App() {
         <Projetos />
         <Trajetoria />
         <Contato />
-        <Footer />
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,11 @@
 .footer-container {
+  margin-top: auto; /* O segredo para colar no fundo em layouts Flexbox */
+  padding-top: 4rem; /* Dá mais espaço interno antes de começar os links */
+  padding-bottom: 2rem;
+  width: 100%;
+  background-color: var(--bg-surface); /* Garante que o fundo do rodapé acompanhe o tema */
   border-top: 1px solid var(--border-color, var(--border));
   color: var(--text-secondary, var(--text-muted, var(--text)));
-  padding: 3rem 0 1rem;
 }
 
 .footer-content {
@@ -28,6 +32,27 @@
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1rem;
+}
+
+/* Filtro preto para a logo no tema claro */
+.footer-brand img,
+.footer-logo {
+  filter: grayscale(100%) brightness(0);
+  transition: filter 0.3s ease;
+}
+
+/* Filtro branco para a logo no tema escuro */
+[data-theme="dark"] .footer-brand img,
+[data-theme="dark"] .footer-logo {
+  filter: grayscale(100%) brightness(0) invert(1);
+}
+
+/* Garante que o nome 'Aaron Nascimento' acompanhe a cor primária do texto, sem azul */
+.footer-brand h3,
+.footer-brand span,
+.footer-logo-text,
+.footer-name {
+  color: var(--text-primary) !important;
 }
 
 .footer-col-1 .footer-logo {
