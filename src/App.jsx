@@ -28,16 +28,14 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app-container">
       <Header />
-      <main className="feed-container" style={{ paddingTop: '90px' }}>
-        <Hero />
-        <Sobre />
-        <Habilidades />
-        <Projetos />
-        <Trajetoria />
-        <Contato />
-      </main>
+      <Hero />
+      <Sobre />
+      <Habilidades />
+      <Projetos />
+      <Trajetoria />
+      <Contato />
       <Footer />
     </div>
   );

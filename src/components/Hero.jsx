@@ -1,47 +1,60 @@
 import React from 'react';
-import { C } from '../config';
+import '../styles/index.css';
 
 export default function Hero() {
-  const linkGh = `https://github.com/${C.githubUser}`;
-  const linkIn = `https://linkedin.com/in/${C.linkedinUser}`;
-  const linkWa = `https://wa.me/${C.whatsapp}?text=Olá%20Aaron!%20Vi%20seu%20portfólio%20e%20achei%20seu%20perfil%20Dev%20muito%20interessante.%20Vamos%20conversar?`;
-
   return (
-    <section id="hero" className="fi bento-card">
-      <h1 className="hero-title">
-        Olá, eu sou<br/>
-        <span style={{ color: 'var(--accent)' }}>{C.primeiroNome}</span>
-      </h1>
-      <p className="hero-desc">
-        Desenvolvedor Back-End / Full Stack em transição acelerada, especialista em ecossistemas JavaScript (Node.js, React) e modelagem de banco de dados SQL. Focado em otimização de regras de negócio complexas e desenvolvimento produtivo assistido por IA.
-      </p>
-
-      <div className="hero-tech-stack">
-        <div className="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+    <section className="hero-section">
+      <div className="hero-wrapper">
+        <div className="hero-content">
+          <div className="badge-status">
+            <span className="dot-green"></span> Disponível para novos projetos
+          </div>
+          <h1>Desenvolvo soluções e inovações através de sistemas sob medida para o seu negócio.</h1>
+          <p>
+            Sou o Aaron Nascimento. Crio softwares, aplicativos e ferramentas personalizadas que 
+            resolvem os gargalos da sua empresa ou colocam a sua nova ideia direto no mercado. 
+            Eu cuido de toda a construção tecnológica, do início ao fim, para você receber uma 
+            solução pronta, intuitiva e que gera resultados reais. <strong>Se quiser conhecer mais 
+            sobre o meu trabalho ou entrar em contato para fecharmos uma parceria, basta rolar a 
+            página para baixo.</strong>
+          </p>
+          <div className="hero-actions">
+            <a href="#projetos" className="btn-primary">Ver Soluções</a>
+            <a href="#contato" className="btn-secondary">Fale Comigo</a>
+          </div>
+          <div className="hero-metrics">
+            <div className="stat-item">
+              <h3>Python & IA</h3>
+              <p>Core Stack</p>
+            </div>
+            <div className="stat-item">
+              <h3>Eficiência</h3>
+              <p>Foco em Performance</p>
+            </div>
+            <div className="stat-item">
+              <h3>100%</h3>
+              <p>Soluções Reais</p>
+            </div>
+          </div>
         </div>
-        <span className="separator">|</span>
-        <div className="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React" />
+        <div className="hero-visual">
+          <div className="terminal-window">
+            <div className="terminal-header">
+              <span className="dot red"></span>
+              <span className="dot yellow"></span>
+              <span className="dot green"></span>
+              <span className="terminal-title">automation_pipeline.py</span>
+            </div>
+            <div className="terminal-body">
+              <p className="log-info">[INFO] Inicializando sistema de monitoramento...</p>
+              <p className="log-info">[INFO] Conectando ao banco de dados relacional... OK</p>
+              <p className="log-warning">[DATA] Capturando 14.820 registros pendentes...</p>
+              <p className="log-ai">[IA] Processando triagem e análise de dados com LLM... OK</p>
+              <p className="log-success">[SUCESSO] Relatório exportado. 4 hours de trabalho manual economizadas.</p>
+              <span className="terminal-cursor">_</span>
+            </div>
+          </div>
         </div>
-        <span className="separator">|</span>
-        <div className="tech-item ts-logo">
-          TS
-        </div>
-        <span className="separator">|</span>
-        <div className="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" />
-        </div>
-        <span className="separator">|</span>
-        <div className="tech-item">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker" />
-        </div>
-      </div>
-
-      <div className="hero-social">
-        <a href={linkGh} className="icon-btn" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a>
-        <a href={linkIn} className="icon-btn" target="_blank" rel="noreferrer"><i className="fab fa-linkedin-in"></i></a>
-        <a href={linkWa} className="icon-btn" target="_blank" rel="noreferrer"><i className="fab fa-whatsapp"></i></a>
       </div>
     </section>
   );
