@@ -1,47 +1,50 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/index.css';
 
-// Lista expandida de logs para dar volume e densidade visual
 const LOGS_STREAM = [
-  { text: "[INFO] Inicializando sistema de automação...", type: "log-info" },
-  { text: "[INFO] Conectando ao banco de dados relacional... OK", type: "log-info" },
-  { text: "[DATA] Varrendo tabelas em busca de gargalos operacionais...", type: "log-warning" },
-  { text: "[DATA] Capturando registros pendentes: 14.820 encontrados.", type: "log-warning" },
-  { text: "[IA] Processando triagem e análise de dados com LLM...", type: "log-ai" },
-  { text: "[IA] Otimizando fluxos de requisições de ponta a ponta... OK", type: "log-ai" },
-  { text: "[SUCCESS] Relatório exportado. 4 horas de trabalho economizadas.", type: "log-success" },
-  { text: "[SEC] Executando varredura preventiva de segurança nos endpoints...", type: "log-info" },
-  { text: "[CACHE] Atualizando instâncias e limpando indexações... OK", type: "log-success" },
-  { text: "[INFO] Sincronizando logs com o painel de controle externo...", type: "log-info" },
-  { text: "[STATUS] Ciclo concluído. Reiniciando rotina de monitoramento...", type: "log-ai" }
+  { text: "[INFO] Inicializando servidor backend...", type: "log-info" },
+  { text: "[INFO] Conectando ao banco de dados SQL... OK", type: "log-info" },
+  { text: "[INFO] Sincronizando cluster Redis...", type: "log-info" },
+  { text: "[DATA] Executando captura automatizada...", type: "log-warning" },
+  { text: "[DATA] Varrendo endpoints da API externa...", type: "log-warning" },
+  { text: "[DATA] 14.820 registros encontrados na fila.", type: "log-warning" },
+  { text: "[SUCCESS] Bulk insert concluído com sucesso.", type: "log-success" },
+  { text: "[IA] Orquestrando pipeline com LLM...", type: "log-ai" },
+  { text: "[IA] Processando análise de sentimento...", type: "log-ai" },
+  { text: "[SUCCESS] Triagem de dados finalizada.", type: "log-success" },
+  { text: "[SEC] Checando tokens de autenticação...", type: "log-info" },
+  { text: "[INFO] Disparando webhooks de integração...", type: "log-info" },
+  { text: "[SUCCESS] Resposta 200 OK dos gateways.", type: "log-success" },
+  { text: "[INFO] Otimizando container Docker...", type: "log-info" },
+  { text: "[SUCCESS] Operação concluída sem gargalos.", type: "log-success" },
+  { text: "[STATUS] Pipeline em execução. Aguardando...", type: "log-ai" }
 ];
 
 export default function Hero() {
-  const [visibleLogs, setVisibleLogs] = useState([]);
+  // Evita o cold start: o terminal já inicia populado com os primeiros 8 logs
+  const [visibleLogs, setVisibleLogs] = useState(LOGS_STREAM.slice(0, 8));
   const terminalBodyRef = useRef(null);
 
-  // Efeito para alimentar os logs continuamente
   useEffect(() => {
-    let currentIndex = 0;
+    // O próximo log a ser inserido será o de índice 8
+    let currentIndex = 8;
 
     const interval = setInterval(() => {
       setVisibleLogs((prev) => {
         const nextLog = LOGS_STREAM[currentIndex];
         currentIndex = (currentIndex + 1) % LOGS_STREAM.length;
 
-        // Limita o máximo de linhas na tela para proteger a memória do navegador
-        // 16 linhas preenchem perfeitamente uma caixa de 550px sem sobrar buraco
-        if (prev.length >= 16) {
-          return [...prev.slice(1), nextLog]; // Remove a primeira do topo e põe a nova embaixo
+        // Limite aumentado para 18 para ocupar a altura vertical de 550px sem deixar buracos
+        if (prev.length >= 18) {
+          return [...prev.slice(1), nextLog];
         }
         return [...prev, nextLog];
       });
-    }, 1000); // Velocidade ideal de 1 segundo por linha para parecer que está processando
+    }, 1100);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Efeito mágico para rolar o terminal para baixo automaticamente a cada nova linha
   useEffect(() => {
     if (terminalBodyRef.current) {
       terminalBodyRef.current.scrollTop = terminalBodyRef.current.scrollHeight;
@@ -58,15 +61,15 @@ export default function Hero() {
 
           <h1>
             Prazer, sou <br />
-            <span className="text-gradient">AARON</span>
+            <span className="text-display">o Aaron</span>
           </h1>
 
           <p>
-            Sou o Aaron Nascimento. Construo sistemas, aplicativos e automações sob medida
-            para o seu negócio como desenvolvedor Full Stack. Crio soluções digitais completas
-            e prontas para o mercado, cuidando de tudo — do banco de dados à tela do usuário.
+            Construo sistemas, aplicativos e automações sob medida para o seu negócio
+            como desenvolvedor Full Stack. Crio soluções digitais completas e prontas
+            para o mercado, cuidando de tudo — do banco de dados à tela do usuário.
             <br /><br />
-            <strong>Role a página para baixo para conhecer meus projetos ou entrar em contato.</strong>
+            <strong>Role a página para baixo para conhecer meus projetos, minha trajetória ou entrar em contato.</strong>
           </p>
 
           <div className="hero-actions">
@@ -96,7 +99,7 @@ export default function Hero() {
               <span className="dot red"></span>
               <span className="dot yellow"></span>
               <span className="dot green"></span>
-              <span className="terminal-title">automation_pipeline.py</span>
+              <span className="terminal-title">automacao_de_processos</span>
             </div>
             <div className="terminal-body" ref={terminalBodyRef}>
               {visibleLogs.map((log, index) => (

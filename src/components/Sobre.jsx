@@ -1,29 +1,56 @@
 import React from 'react';
-import { C } from '../config';
+import '../styles/index.css';
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="fi">
-      <h2 className="sec-title">Sobre Mim</h2>
-      <div className="sobre-grid">
-        <div className="photo-ph">
-          <i className="fas fa-user-astronaut" style={{ fontSize: '3rem', color: 'var(--border-color)' }}></i>
-        </div>
-        <div className="bio">
-          <p>
-            Olá! Sou <strong>{C.nome}</strong>, desenvolvedor focado em engenharia de software backend e aplicações web completas. Tenho sólido domínio na stack <strong>Node.js, React, JavaScript e bancos de dados SQL</strong>, aplicando boas práticas de Programação Orientada a Objetos (POO) para traduzir fluxos operacionais em sistemas limpos.
-          </p>
-          <p>
-            Atualmente curso <strong>Ciência da Computação na UNEMAT</strong>, ambiente onde desenvolvo projetos robustos e atuo ativamente na liderança e facilitação de eventos de tecnologia e inovação.
-          </p>
-          <p>
-            Meu grande diferencial de produtividade é o <strong>desenvolvimento assistido por IA (Vibe Coding)</strong>. Utilizo ativamente Engenharia de Prompts com LLMs avançadas para refatoração de código, testes de estresse, otimização de queries e escrita ágil de documentação técnica.
-          </p>
-          <div className="badges">
-            <div className="badge"><i className="fas fa-map-marker-alt"></i> <span>{C.cidade}</span></div>
-            <div className="badge"><i className="fas fa-laptop-code"></i> Back-End / Full Stack</div>
+    <section id="sobre" className="sobre-section">
+      <div className="sobre-wrapper">
+
+        {/* CARD DE PERFIL (Esquerda) - Estilo Premium & Mídia do GitHub */}
+        <div className="profile-card">
+          <div className="avatar-wrapper">
+            <img
+              src="https://github.com/aarongmn7.png"
+              alt="Aaron Nascimento"
+              className="profile-avatar"
+            />
+          </div>
+          <div className="profile-info">
+            <h2>Aaron Nascimento</h2>
+            <p className="profile-subtitle">Dev Full Stack & Automações</p>
+          </div>
+          <div className="profile-status">
+            <span className="status-dot"></span> Disponível para projetos
           </div>
         </div>
+
+        {/* CONTEÚDO COM FOCO COMERCIAL (Direita) */}
+        <div className="sobre-content">
+          <div className="section-title">
+            <span>&gt;_</span> Quem sou eu?
+          </div>
+
+          <div className="sobre-text">
+            <p>
+              Desenvolvo sistemas sob medida e automações de processos projetados para transformar
+              tarefas manuais, lentas e repetitivas em rotinas digitais automáticas de alta performance.
+              Meu foco é entregar soluções prontas para o mercado, cuidando de toda a infraestrutura técnica
+              para que você foque apenas no crescimento do seu negócio.
+            </p>
+            <p>
+              Unindo a base analítica da <strong>Ciência da Computação na UNEMAT</strong> com o que há de mais
+              moderno em desenvolvimento de software, construo plataformas seguras, escaláveis e focadas
+              em usabilidade real.
+            </p>
+            <p>
+              O meu grande diferencial de mercado é o <strong>desenvolvimento inteligente assistido por IA</strong>.
+              Utilizo engenharia de prompts avançada para acelerar drasticamente o tempo de entrega dos projetos,
+              executar testes de estresse rigorosos antes da publicação e otimizar a performance de sistemas complexos,
+              garantindo o melhor custo-benefício para a sua empresa.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );

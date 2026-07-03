@@ -39,9 +39,12 @@ body {
 /* 1. Container Principal integrado ao tema claro */
 .hero-section {
   width: 100%;
-  padding: 80px 0 40px 0;
-  background-color: transparent;
-  /* Mantém o fundo original do site */
+  min-height: 90vh;
+  /* Permite que a seção se estique dinamicamente */
+  position: relative;
+  padding: 80px 0 120px 0;
+  /* Aumenta o espaçamento inferior para a linha não ser atropelada */
+  box-sizing: border-box;
 }
 
 .hero-wrapper {
@@ -101,18 +104,23 @@ body {
 }
 
 .btn-primary {
-  background-color: #111827;
+  background-color: #000000 !important;
+  /* Preto puro igual ao botão do cabeçalho */
   color: #ffffff !important;
-  /* Sempre texto branco */
   padding: 12px 24px;
   border-radius: 6px;
+  /* Ajuste o valor se o do cabeçalho for mais ou menos arredondado */
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 0.2s;
+  display: inline-block;
+  transition: background-color 0.2s ease;
+  border: 1px solid #000000;
 }
 
 .btn-primary:hover {
-  opacity: 0.9;
+  background-color: #1f2937 !important;
+  /* Um cinza bem escuro para o efeito de passar o mouse */
+  border-color: #1f2937;
 }
 
 .btn-secondary {
@@ -198,10 +206,11 @@ body {
 }
 
 .terminal-title {
-  color: #a1a1aa !important;
-  /* Força o título a ser sempre cinza claro */
-  font-size: 0.8rem;
-  margin-left: 4px;
+  color: #d4d4d8 !important;
+  /* Um cinza claro nítido (Zinco 300) */
+  font-size: 0.8rem !important;
+  font-family: sans-serif !important;
+  opacity: 1 !important;
 }
 
 /* Forçar as cores das bolinhas do terminal */
@@ -228,18 +237,13 @@ body {
 
 /* Terminal Body & Execution Logs */
 .terminal-body {
-  padding: 24px !important;
+  padding: 24px 20px 20px 20px !important;
+  /* Aumentado o recuo do topo */
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-
-  overflow-y: scroll;
-  /* Ativa a capacidade de rolar */
-  scrollbar-width: none;
-  /* Esconde a barra no Firefox */
-  scroll-behavior: smooth;
-  /* Deixa a subida das linhas suave */
+  overflow-y: hidden;
 }
 
 /* Esconde a barra de rolagem no Chrome, Safari e Edge */
@@ -348,19 +352,366 @@ body {
   }
 }
 
-.text-gradient {
-  font-size: 4rem;
+.text-display {
+  font-size: 4.5rem;
+  /* Aumentado levemente para dar mais imponência já que não tem cor */
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
+  color: var(--text-primary) !important;
+  /* Força o uso da cor nativa do tema atual */
   display: inline-block;
+  line-height: 1.1;
+}
 
-  /* Fallback seguro caso o navegador não suporte gradiente no texto */
-  color: var(--text-primary, #111827);
+/* ==========================================================================
+   SEÇÃO SOBRE (SOBRE MIM) - CARD LAYOUT PREMIUM
+   ========================================================================== */
 
-  /* O truque mágico: o gradiente agora usa as variáveis que mudam com o tema */
-  background: linear-gradient(135deg,
-      var(--text-primary, #111827) 0%,
-      var(--text-secondary, #4b5563) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.sobre-section {
+  width: 100%;
+  padding: 120px 0;
+  background-color: transparent;
+  /* Permite se adaptar dinamicamente ao Light/Dark mode */
+}
+
+.sobre-wrapper {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  /* Card na esquerda, bloco de texto na direita */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 60px;
+  padding: 0 40px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* CARD DE PERFIL (ESQUERDA) */
+.profile-card {
+  background-color: #09090b !important;
+  /* Fundo escuro fixo para autoridade visual */
+  border: 1px solid #27272a !important;
+  border-radius: 16px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.avatar-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #27272a;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  color: #ffffff !important;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.profile-subtitle {
+  color: #a1a1aa !important;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #4ade80 !important;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  animation: pulseAvatar 2s infinite;
+}
+
+/* CONTEÚDO DO TEXTO (DIREITA) */
+.sobre-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  font-family: monospace;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: inherit;
+  /* Herda a cor do texto do tema ativo globalmente */
+  margin-bottom: 28px;
+}
+
+.section-title span {
+  color: #a1a1aa;
+}
+
+.sobre-text p {
+  color: inherit;
+  opacity: 0.85;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.sobre-text strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* Animação Pulsante do Status do Card */
+@keyframes pulseAvatar {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+/* Responsividade Celular */
+@media (max-width: 768px) {
+  .sobre-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .profile-card {
+    padding: 32px 20px;
+  }
+}
+
+/* Ajuste fino para o tema escuro (supondo que seu app use a classe .dark ou .dark-mode no body/root) */
+.dark .sobre-text p,
+[data-theme='dark'] .sobre-text p {
+  color: #d4d4d8 !important;
+  /* Texto comum vira um cinza claro suave para não cansar os olhos */
+}
+
+.dark .sobre-text strong,
+[data-theme='dark'] .sobre-text strong {
+  color: #ffffff !important;
+  /* O negrito ganha o destaque máximo em branco puro */
+  font-weight: 800;
+}
+
+.dark .section-title,
+[data-theme='dark'] .section-title {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   SEÇÃO HABILIDADES - ESTILO PREMIUM COLUNAR (MINIMALISTA)
+   ========================================================================== */
+
+.skills-section {
+  width: 100%;
+  padding: 120px 0;
+  background-color: var(--bg-primary);
+  border-top: 1px solid rgba(113, 113, 122, 0.15);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* CABEÇALHO */
+.skills-header {
+  margin-bottom: 70px;
+}
+
+.skills-badge {
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  color: #a855f7;
+  /* Roxo moderno para a micro-tag */
+  font-weight: 700;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary, #000000);
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.skills-header p {
+  color: var(--text-secondary, #71717a);
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* GRID DE COLUNAS INDUSTRIAL */
+.skills-grid-premium {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 colunas perfeitas alinhadas */
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(113, 113, 122, 0.2);
+  /* Linha sutil separadora acima */
+  padding-top: 24px;
+}
+
+.column-num {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #71717a;
+  margin-bottom: 12px;
+}
+
+.skills-column h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary, #000000);
+  margin-bottom: 24px;
+}
+
+.skills-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.skills-column ul li {
+  font-size: 1rem;
+  color: var(--text-secondary, #3f3f46);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+}
+
+/* Ícones das ferramentas sutilmente destacados */
+.text-accent {
+  color: #71717a !important;
+  /* Tom neutro industrial */
+  font-size: 0.95rem;
+  width: 18px;
+  text-align: center;
+}
+
+/* NOTA DE RODAPÉ */
+.skills-footer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.footer-line {
+  width: 40px;
+  height: 1px;
+  background-color: var(--text-secondary, #71717a);
+}
+
+.skills-footer p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #71717a);
+  margin: 0;
+}
+
+/* Suporte de Contraste para o Modo Escuro */
+.dark .skills-column ul li,
+[data-theme='dark'] .skills-column ul li {
+  color: #d4d4d8 !important;
+  /* Cinza claro suave no dark mode */
+}
+
+.dark .text-accent,
+[data-theme='dark'] .text-accent {
+  color: #a1a1aa !important;
+}
+
+/* Responsividade de Alta Performance */
+@media (max-width: 1024px) {
+  .skills-grid-premium {
+    grid-template-columns: repeat(2, 1fr);
+    /* Quebra para 2 colunas em tablets */
+    gap: 40px 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .skills-grid-premium {
+    grid-template-columns: 1fr;
+    /* 1 coluna no celular */
+    gap: 36px;
+  }
+
+  .skills-header h2 {
+    font-size: 2rem;
+  }
+}
+
+/* Correção forçada para ícones e imagens de tecnologia */
+.skills-column ul li {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.tech-icon {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  object-fit: contain !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+}
+
+/* Inversão inteligente de logos escuros no modo dark */
+.dark .dark-invert,
+[data-theme='dark'] .dark-invert {
+  filter: invert(1) brightness(1.8) !important;
 }
