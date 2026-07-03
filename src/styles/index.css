@@ -706,6 +706,7 @@ body {
   min-width: 20px !important;
   min-height: 20px !important;
   object-fit: contain !important;
+  /* Impede que a imagem mude de proporção ou fique esticada */
   flex-shrink: 0 !important;
   display: inline-block !important;
 }
