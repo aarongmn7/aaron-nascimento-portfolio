@@ -59,27 +59,30 @@ export default function Habilidades() {
             <div className="column-num">03</div>
             <h3>DEPLOY & INFRA</h3>
             <ul>
-              <li><img src="/Vercel.png" alt="Vercel" className="tech-icon" /> Vercel</li>
-              <li><img src="/docker.png" alt="Docker" className="tech-icon" /> Docker & Kubernetes</li>
+              <li><img src="/vercel.png" alt="Vercel" className="tech-icon" /> Vercel</li>
+              <li><img src="/docker.png" alt="Docker" className="tech-icon" /> Docker, Swarm & K8s</li>
               <li><img src="/aws.png" alt="AWS" className="tech-icon" /> Multi-Cloud (AWS/Azure)</li>
               <li><img src="/git.png" alt="Git" className="tech-icon" /> Git / GitHub</li>
-              <li><img src="/api.png" alt="APIs" className="tech-icon" /> APIs RESTful</li>
             </ul>
           </div>
 
-          {/* COLUNA 04 */}
+          {/* COLUNA 04 - IA & ENGENHARIA */}
           <div className="skills-column">
             <div className="column-num">04</div>
-            <h3>IA & Ferramentas</h3>
+            <h3>IA & ENGENHARIA</h3>
             <ul>
               <li><img src="/claude.png" alt="Claude Code" className="tech-icon" /> Claude Code / Agentic</li>
-              <li><img src="/cursor.png" alt="Cursor" className="tech-icon" /> Cursor IDE</li>
+              <li>
+                <img src="/cursor.png" alt="Cursor" className="tech-icon" />
+                <img src="/antigravity.png" alt="Antigravity" className="tech-icon" style={{ marginLeft: '-8px', position: 'relative', zIndex: 2 }} />
+                <span style={{ marginLeft: '4px' }}>Cursor & Antigravity IDE</span>
+              </li>
               <li><img src="/python.png" alt="Python" className="tech-icon" /> Python Automation</li>
               <li><img src="/langchain.png" alt="LangChain" className="tech-icon" /> LangChain & Agentes</li>
             </ul>
           </div>
 
-          {/* COLUNA 05 */}
+          {/* COLUNA 05 - DESIGN */}
           <div className="skills-column">
             <div className="column-num">05</div>
             <h3>DESIGN</h3>
@@ -87,6 +90,7 @@ export default function Habilidades() {
               <li><img src="/figma.png" alt="Figma" className="tech-icon" /> Figma</li>
               <li><img src="/claude.png" alt="Claude Design" className="tech-icon" /> Claude Design</li>
               <li><img src="/stitch.png" alt="Stitch IA" className="tech-icon" /> Stitch IA</li>
+              <li><span className="text-accent" style={{ display: 'inline-block', width: '20px', textAlign: 'center' }}>✦</span> UI/UX Prototyping</li>
             </ul>
           </div>
 
