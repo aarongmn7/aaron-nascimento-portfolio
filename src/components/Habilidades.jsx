@@ -6,7 +6,7 @@ export default function Habilidades() {
     <section id="habilidades" className="skills-section">
       <div className="skills-container">
 
-        {/* CABEÇALHO DA SEÇÃO */}
+        {/* CABEÇALHO DA SEÇÃO (BADGE NEUTRALIZADO) */}
         <div className="skills-header">
           <span className="skills-badge">STACK & FERRAMENTAS</span>
           <h2>O que eu uso para construir.</h2>
@@ -16,7 +16,7 @@ export default function Habilidades() {
         {/* GRADE DE COLUNAS */}
         <div className="skills-grid-premium">
 
-          {/* COLUNA 01 - FRONT-END (UNIFICADA COM EFEITO STACK) */}
+          {/* COLUNA 01 */}
           <div className="skills-column">
             <div className="column-num">01</div>
             <h3>FRONT-END</h3>
@@ -31,21 +31,15 @@ export default function Habilidades() {
                 <img src="/nextjs.png" alt="Next.js" className="tech-icon" style={{ marginLeft: '-8px', position: 'relative', zIndex: 2 }} />
                 <span style={{ marginLeft: '4px' }}>React.js & Next.js</span>
               </li>
-              <li>
-                <img src="/tailwind.png" alt="Tailwind CSS" className="tech-icon" />
-                <span>Tailwind CSS</span>
-              </li>
-              <li>
-                <img src="/vite.png" alt="Vite" className="tech-icon" />
-                <span>Vite</span>
-              </li>
+              <li><img src="/tailwind.png" alt="Tailwind CSS" className="tech-icon" /> <span>Tailwind CSS</span></li>
+              <li><img src="/vite.png" alt="Vite" className="tech-icon" /> <span>Vite</span></li>
             </ul>
           </div>
 
           {/* COLUNA 02 */}
           <div className="skills-column">
             <div className="column-num">02</div>
-            <h3>BACK-END & BANCO</h3>
+            <h3>BACK-END</h3> {/* <--- Deixe assim para matar a quebra de linha */}
             <ul>
               <li><img src="/nodejs.png" alt="Node.js" className="tech-icon" /> Node.js</li>
               <li><img src="/express.png" alt="Express" className="tech-icon" /> Express</li>
@@ -82,7 +76,7 @@ export default function Habilidades() {
             </ul>
           </div>
 
-          {/* COLUNA 05 - DESIGN */}
+          {/* COLUNA 05 - DESIGN (100% SIMÉTRICA E SEM GAMBIARRA) */}
           <div className="skills-column">
             <div className="column-num">05</div>
             <h3>DESIGN</h3>
@@ -90,7 +84,7 @@ export default function Habilidades() {
               <li><img src="/figma.png" alt="Figma" className="tech-icon" /> Figma</li>
               <li><img src="/claude.png" alt="Claude Design" className="tech-icon" /> Claude Design</li>
               <li><img src="/stitch.png" alt="Stitch IA" className="tech-icon" /> Stitch IA</li>
-              <li><span className="text-accent" style={{ display: 'inline-block', width: '20px', textAlign: 'center' }}>✦</span> UI/UX Prototyping</li>
+              <li><img src="/uiux.png" alt="UI/UX Prototyping" className="tech-icon" /> UI/UX Prototyping</li>
             </ul>
           </div>
 

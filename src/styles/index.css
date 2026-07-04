@@ -553,10 +553,10 @@ body {
 
 .skills-badge {
   font-family: monospace;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   letter-spacing: 0.15em;
-  color: #a855f7;
-  /* Roxo moderno para a micro-tag */
+  color: #71717a;
+  /* Cinza zinco neutro e sofisticado */
   font-weight: 700;
   display: block;
   margin-bottom: 16px;
