@@ -724,3 +724,294 @@ body {
     font-size: 2rem;
   }
 }
+
+/* ==========================================================================
+   VITRINE DE PROJETOS - PREMIUM REFACTOR (ESTILO WESDLEY/EDUARDO)
+   ========================================================================== */
+
+.projects-section {
+  width: 100%;
+  padding: 120px 0;
+  /* Alinhado com o espaçamento das outras seções */
+}
+
+.projects-badge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: #71717a;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.sec-subtitle {
+  color: var(--text-muted, #a1a1aa);
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-top: 8px;
+  margin-bottom: 48px;
+}
+
+/* BROWSER MOCKUP ENGINE */
+.browser-mockup {
+  background: #18181b;
+  border: 1px solid var(--border-color, #27272a);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  /* Sombra premium de elevação */
+}
+
+.browser-header {
+  background: #121214;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color, #27272a);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #3f3f46;
+}
+
+.browser-address {
+  background: #18181b;
+  border: 1px solid var(--border-color, #27272a);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  color: #71717a;
+  padding: 4px 12px;
+  width: 200px;
+  font-family: monospace;
+}
+
+/* HERO GRID STRUCTURE */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+@media (max-width: 968px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero-preview {
+  background: #0f0f11;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--border-color, #27272a);
+}
+
+@media (max-width: 968px) {
+  .hero-preview {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color, #27272a);
+    min-height: 240px;
+  }
+}
+
+.preview-placeholder {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #3f3f46;
+}
+
+.hero-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DETAILS & TYPOGRAPHY */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #34d399;
+  font-family: monospace;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.status-indicator {
+  width: 6px;
+  height: 6px;
+  background: #34d399;
+  border-radius: 50%;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  text-transform: none;
+  color: inherit;
+}
+
+.project-desc {
+  color: var(--text-muted, #a1a1aa);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.benefit-list {
+  list-style: none;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #e4e4e7;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.benefit-list li::before {
+  content: "✓";
+  color: #34d399;
+  font-weight: bold;
+}
+
+/* CONTROLE RESTRITO DAS IMAGENS (Abaixa o escudo contra imagens gigantes) */
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color, #27272a);
+  padding-top: 24px;
+  margin-top: auto;
+}
+
+.tech-stack-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tech-icon-mini {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  object-fit: contain !important;
+  display: inline-block !important;
+}
+
+.btn-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.btn-link:hover {
+  color: var(--accent, #ffffff);
+  border-bottom: 1px solid var(--accent, #ffffff);
+}
+
+/* SECONDARY GRID (Os dois cards de engenharia) */
+.secondary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 768px) {
+  .secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sub-project {
+  background: #18181b;
+  border: 1px solid var(--border-color, #27272a);
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+}
+
+.sub-project h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  color: inherit;
+}
+
+.sub-status {
+  color: #94a3b8;
+}
+
+.sub-indicator {
+  background: #94a3b8;
+}
+
+/* Suporte para inversão de cor nos ícones em light/dark mode (se aplicável) */
+.dark .dark-invert,
+[data-theme='dark'] .dark-invert {
+  filter: invert(1) brightness(1.8) !important;
+}
+
+/* CORREÇÃO DE CONTRASTE: Forçando texto claro dentro dos cards escuros */
+.project-title,
+.sub-project h4 {
+  color: #ffffff !important;
+}
+
+.project-desc,
+.benefit-list li {
+  color: #a1a1aa !important;
+}
+
+.benefit-list li::before {
+  color: #34d399 !important;
+  /* Garante que o check fique verde neon */
+}
+
+.project-status {
+  color: #34d399 !important;
+}
+
+.sub-status {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   UNIFICANDO O DESIGN SYSTEM (Bordas arredondadas)
+   ========================================================================== */
+.browser-mockup,
+.sub-project {
+  border-radius: 16px !important;
+}
