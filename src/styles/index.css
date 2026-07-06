@@ -811,11 +811,21 @@ body {
 
 .hero-preview {
   background: #0f0f11;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border-right: 1px solid var(--border-color, #27272a);
+  min-width: 0;
+  overflow: hidden;
+  display: block;
+  /* Removemos o flexbox que estava distorcendo a imagem */
+}
+
+.hero-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+  /* Ancora no topo esquerdo para não cortar o menu */
+  display: block;
+  border-bottom-left-radius: 16px;
 }
 
 @media (max-width: 968px) {

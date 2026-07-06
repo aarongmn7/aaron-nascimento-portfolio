@@ -27,7 +27,11 @@ export default function Projetos() {
         <div className="hero-grid">
           {/* LADO ESQUERDO: PREVIEW DA INTERFACE */}
           <div className="hero-preview">
-            <span className="preview-placeholder">[ Interface Real do Mini-ERP ]</span>
+            <img
+              src="/mini-erp.png"
+              alt="Dashboard do Mini-ERP Gestão de Ativos"
+              className="hero-preview-img"
+            />
           </div>
 
           {/* LADO DIREITO: ENGENHARIA DO PRODUTO */}
@@ -66,24 +70,26 @@ export default function Projetos() {
       {/* QUADRADINHOS DE BAIXO: ENGENHARIA PURA */}
       <div className="secondary-grid">
 
-        {/* CARD 01: API SECUNDÁRIA */}
+        {/* CARD 01: FRONT-END (PORTFÓLIO) */}
         <div className="sub-project">
           <div>
             <div className="project-status sub-status">
               <span className="status-indicator sub-indicator"></span>
-              API RESTFUL
+              FRONT-END ARCHITECTURE
             </div>
-            <h4>Clean Architecture Boilerplate</h4>
+            <h4>Componentização & UI/UX (Este site)</h4>
             <p className="project-desc">
-              Desenvolvimento de uma API de alta maturidade focada em completa inversão de dependências, desacoplamento de banco de dados e cobertura robusta de testes automatizados.
+              Interface de alta performance desenvolvida com React e Vite. Foco em componentização modular, design responsivo fluido e implementação nativa de variáveis para transição de temas (Light/Dark Mode).
             </p>
           </div>
           <div className="project-footer">
             <div className="tech-stack-row">
-              <img src="/typescript.png" alt="TypeScript" className="tech-icon-mini" title="TypeScript" />
-              <img src="/express.png" alt="Express" className="tech-icon-mini" title="Express" />
+              <img src="/react.png" alt="React" className="tech-icon-mini" title="React" />
+              <img src="/javascript.png" alt="JavaScript" className="tech-icon-mini" title="JavaScript" />
+              <img src="/css.png" alt="CSS3" className="tech-icon-mini" title="CSS3" />
             </div>
-            <a href="#" className="btn-link" target="_blank" rel="noreferrer">
+            {/* COLOQUE O LINK DO SEU GITHUB AQUI */}
+            <a href="https://github.com/SEU-USUARIO/SEU-PORTFOLIO" className="btn-link" target="_blank" rel="noreferrer">
               <i className="fab fa-github"></i> Ver Código ↗
             </a>
           </div>
