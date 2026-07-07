@@ -8,22 +8,22 @@ export default function Trajetoria() {
         <div className="timeline-item fi">
           <div className="time-date">Maio de 2026 – Atual</div>
           <h4>Estagiário de TI (QA & Testes) — Ephex Tecnologia</h4>
-          <p>Atuação focada em Qualidade de Software (QA), executando testes funcionais e validação de regras de negócio em módulos de sistema ERP. Mapeamento, identificação e documentação detalhada de bugs para o time de engenharia, além de auxílio em rotinas de infraestrutura de TI da operação.</p>
+          <p>Atuação direta na garantia de qualidade (QA) de módulos de ERP. Execução de testes funcionais, estresse de regras de negócio e rastreamento rigoroso de bugs para o time de engenharia. Interface técnica contínua focada em reduzir falhas em produção e otimizar rotinas de infraestrutura de TI.</p>
         </div>
         <div className="timeline-item fi">
           <div className="time-date">Março de 2026 – Maio de 2026</div>
           <h4>Suporte Técnico Interno — Interfibras Telecomunicações</h4>
-          <p>Diagnóstico lógico e resolução de incidentes de conectividade, protocolos de rede e configuração de roteadores. Triagem de chamados e atendimento técnico focado em troubleshooting de infraestrutura.</p>
+          <p>Diagnóstico e resolução de incidentes em redes de telecomunicações. Responsável pela configuração de roteadores, triagem avançada de chamados e troubleshooting de infraestrutura, garantindo a estabilidade da conectividade e a redução do tempo de inatividade (SLA).</p>
         </div>
         <div className="timeline-item fi">
           <div className="time-date">Abril de 2025 – Dezembro de 2025</div>
           <h4>Estagiário Administrativo — Prefeitura Municipal de Rondonópolis</h4>
-          <p>Captação, modelagem e organização de dados administrativos em planilhas operacionais. Análise e confecção de documentos internos para melhoria e agilidade dos processos do setor.</p>
+          <p>Otimização de processos do setor através da captação e modelagem de dados operacionais. Desenvolvimento de planilhas complexas para automação de análises e padronização de documentos, aumentando a agilidade e a precisão da gestão de informações internas.</p>
         </div>
         <div className="timeline-item fi">
           <div className="time-date">Cursando (Julho de 2025 – Julho de 2029)</div>
           <h4>Bacharelado em Ciência da Computação — UNEMAT</h4>
-          <p>Foco acadêmico em Engenharia de Software, Estruturas de Dados, Programação Orientada a Objetos (POO) e Modelagem Relacional de Bancos de Dados.</p>
+          <p>Formação baseada em fundamentos sólidos de Engenharia de Software, Estruturas de Dados Avançadas, Programação Orientada a Objetos e Modelagem de Bancos de Dados Relacionais. Foco na criação de arquiteturas escaláveis.</p>
         </div>
       </div>
     </section>

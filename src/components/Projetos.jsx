@@ -95,23 +95,24 @@ export default function Projetos() {
           </div>
         </div>
 
-        {/* CARD 02: AUTOMAÇÃO */}
+        {/* CARD 03: AUTOMAÇÃO (TICKETS DE LICITAÇÃO) */}
         <div className="sub-project">
           <div>
             <div className="project-status sub-status">
-              <span className="status-indicator sub-indicator"></span>
-              AUTOMATION
+              <span className="status-indicator sub-indicator" style={{ backgroundColor: '#eab308', boxShadow: '0 0 8px #eab308' }}></span>
+              DATA & AUTOMATION
             </div>
-            <h4>Enterprise Automation Systems</h4>
+            <h4>B2B SLA Analytics Pipeline</h4>
             <p className="project-desc">
-              Scripts inteligentes desenvolvidos para otimização de fluxos operacionais e sincronização de dados automatizada, eliminando trabalhos manuais repetitivos com manipulação avançada.
+              Script de automação desenvolvido para extração, consolidação e auditoria de tickets de suporte técnico. O sistema processa grandes volumes de incidentes para garantir o cumprimento rigoroso de SLAs (Acordos de Nível de Serviço) com empresas do setor de licitações.
             </p>
           </div>
           <div className="project-footer">
             <div className="tech-stack-row">
               <img src="/python.png" alt="Python" className="tech-icon-mini" title="Python" />
             </div>
-            <a href="#" className="btn-link" target="_blank" rel="noreferrer">
+            {/* NÃO ESQUEÇA DE COLOCAR O LINK DO SEU REPOSITÓRIO AQUI */}
+            <a href="LINK_DO_SEU_GITHUB_AQUI" className="btn-link" target="_blank" rel="noreferrer">
               <i className="fab fa-github"></i> Ver Código ↗
             </a>
           </div>
