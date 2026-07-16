@@ -55,21 +55,22 @@ export default function Hero() {
     <section className="hero-section">
       <div className="hero-wrapper">
         <div className="hero-content">
-          <div className="badge-status">
-            <span className="dot-green"></span> Disponível para novos projetos
+          <div
+            style={{ color: 'var(--accent)', fontFamily: 'var(--mono)', fontSize: '1.2rem', marginBottom: '1rem', fontWeight: 'bold' }}
+            id="heroName"
+          >
+            Aaron Nascimento
           </div>
 
-          <h1>
-            Prazer, sou <br />
-            <span className="text-display">o Aaron</span>
+          <h1
+            className="hero-title"
+            style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', lineHeight: '1.1', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}
+          >
+            Construtor de Produtos <br />& Engenheiro de Software.
           </h1>
 
-          <p>
-            Construo sistemas, aplicativos e automações sob medida para o seu negócio
-            como desenvolvedor Full Stack. Crio soluções digitais completas e prontas
-            para o mercado, cuidando de tudo — do banco de dados à tela do usuário.
-            <br /><br />
-            <strong>Role a página para baixo para conhecer meus projetos, minha trajetória ou entrar em contato.</strong>
+          <p className="hero-desc">
+            Especialista no desenvolvimento de ecossistemas com Node.js, React e modelagem de bases de dados SQL. Traduzo regras de negócio complexas em sistemas escaláveis, combinando o rigor técnico exigido por Tech Leads à autonomia e visão comercial necessárias para estruturar e entregar aplicações completas de ponta a ponta.
           </p>
 
           <div className="hero-actions">

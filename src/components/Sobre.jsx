@@ -32,21 +32,13 @@ export default function Sobre() {
 
           <div className="sobre-text">
             <p>
-              Desenvolvo sistemas sob medida e automações de processos projetados para transformar
-              tarefas manuais, lentas e repetitivas em rotinas digitais automáticas de alta performance.
-              Meu foco é entregar soluções prontas para o mercado, cuidando de toda a infraestrutura técnica
-              para que você foque apenas no crescimento do seu negócio.
+              Sou um desenvolvedor focado em unir engenharia de software com visão de negócios. Tenho sólido domínio na stack Node.js, React e SQL, aplicando Clean Architecture e testes para garantir que o código seja legível, manutenível e pronto para escalar dentro de qualquer equipe.
             </p>
             <p>
-              Unindo a base analítica da <strong>Ciência da Computação na UNEMAT</strong> com o que há de mais
-              moderno em desenvolvimento de software, construo plataformas seguras, escaláveis e focadas
-              em usabilidade real.
+              Atualmente cursando Ciência da Computação na UNEMAT, combino a base rigorosa da faculdade com um perfil de alta autonomia no mercado. Não sou apenas um executor de tarefas; atuo como um parceiro estratégico que entende as dores do produto.
             </p>
             <p>
-              O meu grande diferencial de mercado é o <strong>desenvolvimento inteligente assistido por IA</strong>.
-              Utilizo engenharia de prompts avançada para acelerar drasticamente o tempo de entrega dos projetos,
-              executar testes de estresse rigorosos antes da publicação e otimizar a performance de sistemas complexos,
-              garantindo o melhor custo-benefício para a sua empresa.
+              Meu principal diferencial de produtividade é o desenvolvimento assistido por IA. Orquestro Modelos de Linguagem (LLMs) para acelerar a refatoração de código, otimizar queries e desenhar arquiteturas, entregando valor real e em tempo recorde.
             </p>
           </div>
         </div>

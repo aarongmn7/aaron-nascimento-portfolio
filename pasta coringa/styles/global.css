@@ -1,0 +1,886 @@
+:root {
+  /* TEMA CLARO: Minimalista e Limpo */
+  --bg-base: #ffffff; 
+  --bg-surface: #f4f4f5; /* Cinza super claro para diferenciar os cartões */
+  --bg-surface-hover: #e4e4e7;
+  
+  --text-primary: #09090b; /* Quase preto */
+  --text-secondary: #52525b; /* Cinza médio para textos secundários */
+  
+  /* Acentos agora são neutros (Preto no claro) */
+  --accent-primary: #000000;
+  --accent-hover: #27272a;
+  
+  --border-color: #e4e4e7;
+  
+  /* Escudo escuro para o PNG da logo não sumir no fundo branco */
+  --logo-bg: #000000;
+
+  /* Aliases para compatibilidade do CSS existente */
+  --bg-global: var(--bg-base);
+  --bg-feed: var(--bg-surface);
+  --bg-cards: var(--bg-surface-hover);
+  --text-main: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --accent: var(--accent-primary);
+  
+  --mono: 'Courier New', monospace;
+  --sans: 'Geist', sans-serif;
+  --r: 10px;
+}
+
+[data-theme="dark"] {
+  /* TEMA ESCURO: Fundo Preto Absoluto e tons de cinza */
+  --bg-base: #000000; /* Preto puro */
+  --bg-surface: #0a0a0a; /* Quase preto para destacar os cartões do fundo */
+  --bg-surface-hover: #18181b;
+  
+  --text-primary: #fafafa; /* Branco suave para não cansar a vista */
+  --text-secondary: #a1a1aa; /* Cinza para textos secundários */
+  
+  /* Acentos agora são neutros (Branco no escuro) */
+  --accent-primary: #ffffff;
+  --accent-hover: #d4d4d8;
+  
+  --border-color: #27272a;
+  
+  /* Tira o escudo da logo no tema escuro */
+  --logo-bg: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-main);
+  font-family: var(--sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Layout App Flexbox - Força o footer para baixo */
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main.feed-container {
+  flex: 1;
+}
+
+    ::-webkit-scrollbar {
+      width: 4px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-global)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 2px
+    }
+
+
+    /* CONTAINER DO FEED - Derretido (Bento Box Layer 0) */
+    .feed-container, main {
+      width: 95%;
+      max-width: 1400px;
+      margin: 2rem auto 4rem auto;
+      padding: 4rem 3rem 4rem 3rem; /* Apenas espaçamento estrutural */
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* NAV - Formato PÃ­lula Perfeito */
+    nav {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--bg-feed);
+      border: 1px solid var(--border-color);
+      border-radius: 50px;
+      margin: 0 0 4rem 0;
+      /* Margem inferior de 4rem para criar o VÃƒO VAZIO exato do desenho */
+      z-index: 999;
+    }
+
+
+
+    .logo {
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      color: var(--accent);
+      font-weight: bold;
+      text-decoration: none
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem
+    }
+
+    .nav-links a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: .9rem;
+      transition: .3s
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent)
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-main);
+      font-size: 1.2rem;
+      cursor: pointer
+    }
+
+    /* LAYOUT */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border-color)
+    }
+
+    h2.sec-title {
+      font-family: var(--mono);
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: var(--text-main);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    h2.sec-title::before {
+      content: '>_ ';
+      color: var(--accent)
+    }
+
+    /* HERO SECTION - Estrutura do Bento Box */
+    #hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+
+    .hero-tech-stack {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      margin-bottom: 2rem; /* Espaço antes das redes sociais */
+    }
+
+    /* O filtro invertido apenas quando o tema for escuro, senão usa a cor do tema */
+    .hero-tech-stack .tech-item img {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
+      /* Tira a cor original e deixa preto */
+      filter: grayscale(100%) brightness(0); 
+      opacity: 0.8;
+      transition: filter 0.3s ease, opacity 0.3s ease; /* Transição suave na troca de tema */
+    }
+
+    /* O truque do modo escuro */
+    [data-theme="dark"] .hero-tech-stack .tech-item img {
+      /* Mantém preto, mas inverte a cor 100%, transformando em branco puro */
+      filter: grayscale(100%) brightness(0) invert(1);
+      opacity: 1; /* Opcional: aumenta a opacidade no escuro para dar mais brilho */
+    }
+
+    .hero-tech-stack .separator {
+      color: var(--border-color);
+      font-size: 1.2rem;
+    }
+
+    .hero-tech-stack .ts-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.8rem;
+      width: 28px;
+      height: 28px;
+      background-color: var(--text-primary);
+      color: var(--bg-surface);
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      padding: .2rem .6rem;
+      background: var(--bg-surface-hover);
+      color: var(--text-primary);
+      font-family: var(--mono);
+      font-size: .8rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem
+    }
+
+    .hero-social {
+      display: flex;
+      gap: 1rem
+    }
+
+    .icon-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      color: var(--text-main);
+      text-decoration: none;
+      transition: .3s;
+      font-size: 1.1rem
+    }
+
+    .icon-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px)
+    }
+
+    /* SOBRE */
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: center
+    }
+
+    .photo-ph {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--bg-cards);
+      border: 1px solid var(--border-color);
+      border-radius: var(--r);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-ph img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .bio p {
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+      line-height: 1.6
+    }
+
+    .badges {
+      display: flex;
+      gap: .5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap
+    }
+
+    .badge {
+      padding: .3rem .8rem;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      font-size: .8rem;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: .4rem
+    }
+
+    .badge i {
+      color: var(--accent)
+    }
+
+    /* HABILIDADES */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem
+    }
+
+    .skill-card {
+      background: var(--bg-cards);
+      padding: 1.5rem;
+      border-radius: var(--r);
+      border: 1px solid var(--border-color)
+    }
+
+    .skill-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .skill-card h3 i {
+      color: var(--accent)
+    }
+
+    .stags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem
+    }
+
+    .stag {
+      background: var(--bg-cards);
+      padding: .3rem .6rem;
+      border-radius: 4px;
+      font-size: .8rem;
+      font-family: var(--mono);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      transition: .3s
+    }
+
+    .stag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      cursor: default
+    }
+
+    /* PROJETOS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem
+    }
+
+    .project-card {
+      background: var(--bg-cards);
+      border: 1px solid var(--border-color);
+      border-radius: var(--r);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      transition: .3s
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px)
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: .5rem
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+      flex-grow: 1
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: 1.5rem
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem
+    }
+
+    .btn-outline {
+      padding: .5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: .8rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      transition: .3s
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent)
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left: 2px solid var(--border-color);
+      padding-left: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem
+    }
+
+    .timeline-item {
+      position: relative
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.85rem;
+      top: 5px;
+      width: 12px;
+      height: 12px;
+      background: var(--bg-global);
+      border: 2px solid var(--accent);
+      border-radius: 50%
+    }
+
+    .time-date {
+      font-family: var(--mono);
+      font-size: .8rem;
+      color: var(--accent);
+      margin-bottom: .3rem
+    }
+
+    .timeline-item h4 {
+      margin-bottom: .3rem
+    }
+
+    .timeline-item p {
+      color: var(--text-muted);
+      font-size: .9rem;
+      line-height: 1.5
+    }
+
+    /* GALERIA ACADÃŠMICA */
+    .academic-showcase {
+      margin-top: 1.5rem;
+      background: var(--bg-cards);
+      padding: 1.2rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+
+    .academic-showcase h5 {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .academic-showcase h5 i {
+      color: var(--accent);
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .academic-pic-card {
+      background: var(--bg-cards);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .academic-pic-card img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border-color);
+      filter: grayscale(30%) contrast(110%);
+      transition: 0.3s;
+    }
+
+    .academic-pic-card img:hover {
+      filter: grayscale(0%);
+    }
+
+    .academic-pic-desc {
+      padding: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* FOOTER / CONTATO */
+    #contato {
+      text-align: center;
+      padding: 5rem 2rem
+    }
+
+    .contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--accent);
+      color: var(--bg-global);
+      padding: .8rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 2rem;
+      transition: .3s
+    }
+
+    .contact-btn:hover {
+      background: var(--accent);
+      transform: scale(1.05)
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: .9rem
+    }
+
+    /* REPOS GITHUB */
+    #gh-repos {
+      margin-top: 2rem
+    }
+
+    .gh-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem
+    }
+
+    .gh-card {
+      background: var(--bg-cards);
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      transition: .3s
+    }
+
+    .gh-card:hover {
+      border-color: var(--accent)
+    }
+
+    .gh-title {
+      color: var(--text-main);
+      font-weight: bold;
+      margin-bottom: .5rem;
+      display: flex;
+      align-items: center;
+      gap: .4rem
+    }
+
+    .gh-desc {
+      color: var(--text-muted);
+      font-size: .8rem;
+      margin-bottom: 1rem;
+      flex-grow: 1
+    }
+
+    .gh-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: .8rem;
+      color: var(--text-muted)
+    }
+
+    .lang-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: .3rem
+    }
+
+    /* THEME SWITCH */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 26px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--border-color);
+      transition: .4s;
+      border-radius: 50px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 4px;
+      bottom: 4px;
+      background-color: var(--bg-feed);
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked+.slider {
+      background-color: var(--accent);
+    }
+
+    input:checked+.slider:before {
+      transform: translateX(24px);
+    }
+
+    /* UTILS */
+    .fi {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .6s ease-out
+    }
+
+    .fi.on {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* BENTO BOX LAYOUT UTILITIES */
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .bento-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .bento-card:hover {
+      background-color: var(--bg-surface-hover);
+      border-color: var(--text-secondary);
+    }
+
+    .bento-card-header {
+      font-size: 0.75rem;
+      font-family: 'JetBrains Mono', var(--mono);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media(max-width:768px) {
+      .feed-container {
+        width: 98%;
+        padding: 2rem 1rem 4rem 1rem; /* Removido o padding bottom excessivo */
+        margin: 1rem auto;
+        border-radius: 12px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-cards);
+        flex-direction: column;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        display: none
+      }
+
+      .nav-links.open {
+        display: flex
+      }
+
+      .nav-toggle {
+        display: block
+      }
+
+      .sobre-grid {
+        grid-template-columns: 1fr
+      }
+
+      .photo-ph {
+        max-width: 300px;
+        margin: 0 auto
+      }
+    }
+
+    /* CONTATO - Split Grid Layout (Bento Box) */
+    .contact-section {
+      width: 100%;
+      padding: 4rem 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: stretch;
+    }
+
+    /* Responsividade para mobile: empilha as colunas */
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info h2 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .contact-info p {
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      max-width: 90%;
+    }
+
+    /* Botões Utilitários */
+    .contact-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .btn-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-solid {
+      background-color: var(--text-primary);
+      color: var(--bg-base);
+      border: 1px solid var(--text-primary);
+    }
+
+    .btn-solid:hover {
+      opacity: 0.8;
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--bg-surface-hover);
+    }
+
+    /* Container do Calendário */
+    .contact-calendar-wrapper {
+      padding: 0 !important; /* Remove o padding para o iframe encostar nas bordas */
+      overflow: hidden; /* Esconde qualquer rolagem indesejada */
+      /* Força o fundo branco independente do tema */
+      background-color: #ffffff !important; 
+      min-height: 500px;
+    }
+
+    .contact-calendar-wrapper iframe {
+      /* Garante que o iframe pinte o fundo de branco e avisa o navegador para usar scrollbars claras */
+      background-color: #ffffff !important;
+      color-scheme: light; 
+    }
