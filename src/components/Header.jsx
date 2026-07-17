@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import './Header.css';
 import logoSvg from '../assets/logo.svg';
 
@@ -32,23 +33,24 @@ const Header = () => {
     <header className="header">
       {/* 1. Logo */}
       <div className="logo-container">
-        <a href="#hero">
+        <Link to="/#hero">
           <img 
             src={logoSvg} 
             alt="Logo do Portfólio" 
             className="logo-img" 
           />
-        </a>
+        </Link>
       </div>
 
       {/* 2. Navegação */}
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul className="nav-list">
-          <li><a href="#hero" onClick={() => setIsMenuOpen(false)}>Início</a></li>
-          <li><a href="#sobre" onClick={() => setIsMenuOpen(false)}>Sobre</a></li>
-          <li><a href="#habilidades" onClick={() => setIsMenuOpen(false)}>Habilidades</a></li>
-          <li><a href="#projetos" onClick={() => setIsMenuOpen(false)}>Projetos</a></li>
-          <li><a href="#trajetoria" onClick={() => setIsMenuOpen(false)}>Trajetória</a></li>
+          <li><Link to="/#hero" onClick={() => setIsMenuOpen(false)}>Início</Link></li>
+          <li><Link to="/#sobre" onClick={() => setIsMenuOpen(false)}>Sobre</Link></li>
+          <li><Link to="/#habilidades" onClick={() => setIsMenuOpen(false)}>Habilidades</Link></li>
+          <li><Link to="/#projetos" onClick={() => setIsMenuOpen(false)}>Projetos</Link></li>
+          <li><Link to="/#trajetoria" onClick={() => setIsMenuOpen(false)}>Trajetória</Link></li>
+          <li><Link to="/certificados" onClick={() => setIsMenuOpen(false)}>Certificações</Link></li>
         </ul>
       </nav>
       
@@ -59,7 +61,7 @@ const Header = () => {
           <span className="slider"></span>
         </label>
         
-        <a href="#contato" className="contact-btn">Contato</a>
+        <Link to="/#contato" className="contact-btn">Contato</Link>
         
         <button 
           className="mobile-menu-btn" 
