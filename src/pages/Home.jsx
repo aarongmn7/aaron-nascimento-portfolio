@@ -8,7 +8,7 @@ import Trajetoria from '../components/Trajetoria';
 import Contato from '../components/Contato';
 import Footer from '../components/Footer';
 
-function Home() {
+function Home({ theme, toggleTheme }) {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="feed-container">
         <Hero />
         <Sobre />

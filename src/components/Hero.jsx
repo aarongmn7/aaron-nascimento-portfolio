@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import '../styles/index.css';
 
 const LOGS_STREAM = [
@@ -21,6 +22,7 @@ const LOGS_STREAM = [
 ];
 
 export default function Hero() {
+  const { t } = useTranslation();
   // Evita o cold start: o terminal já inicia populado com os primeiros 8 logs
   const [visibleLogs, setVisibleLogs] = useState(LOGS_STREAM.slice(0, 8));
   const terminalBodyRef = useRef(null);
@@ -65,17 +67,16 @@ export default function Hero() {
           <h1
             className="hero-title"
             style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', lineHeight: '1.1', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}
-          >
-            Construtor de Produtos <br />& Engenheiro de Software.
-          </h1>
+            dangerouslySetInnerHTML={{ __html: t('hero.title') }}
+          />
 
           <p className="hero-desc">
-            Especialista no desenvolvimento de ecossistemas com Node.js, React e modelagem de bases de dados SQL. Traduzo regras de negócio complexas em sistemas escaláveis, combinando o rigor técnico exigido por Tech Leads à autonomia e visão comercial necessárias para estruturar e entregar aplicações completas de ponta a ponta.
+            {t('hero.description')}
           </p>
 
           <div className="hero-actions">
-            <a href="#projetos" className="btn-primary">Ver Soluções</a>
-            <a href="#contato" className="btn-secondary">Fale Comigo</a>
+            <a href="#projetos" className="btn-primary">{t('hero.btnSolutions')}</a>
+            <a href="#contato" className="btn-secondary">{t('hero.btnContact')}</a>
           </div>
 
           <div className="hero-metrics">

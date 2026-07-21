@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-function Certificados() {
+function Certificados({ theme, toggleTheme }) {
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -47,7 +47,7 @@ function Certificados() {
 
   return (
     <>
-      <Header />
+      <Header theme={theme} toggleTheme={toggleTheme} />
       <main style={{ padding: '8rem 2rem 4rem 2rem', maxWidth: '1200px', margin: '0 auto', minHeight: '80vh' }}>
         <Link to="/" style={{ 
           display: 'inline-block', 

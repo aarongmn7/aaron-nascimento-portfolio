@@ -36,11 +36,11 @@
 }
 
 /* Trava as ações na direita */
-.header .header-actions {
+.header .nav-controls {
   justify-self: end;
   display: flex;
-  align-items: center; /* Centraliza o toggle e o botão entre si */
-  gap: 1.5rem;
+  align-items: flex-start; /* Alinha o topo das labels THEME, LANG e a label invisível do contato */
+  gap: 2rem; /* Espaçamento fixo, amplo e elegante entre os blocos */
   margin: 0 !important;
   height: 100%;
 }
@@ -97,26 +97,118 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Botão de contato */
-.contact-btn {
-  background-color: var(--bg-surface);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  padding: 0.75rem 2rem !important; /* Deixa o botão mais encorpado */
-  font-size: 1rem !important;
-  margin: 0 !important; /* Mata qualquer margem que jogue ele pra baixo */
-  align-self: center;
-  border-radius: 8px; /* Combinando com o design de componentes modernos */
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
+/* Controles e Wrappers - Blueprint #31 */
+.control-wrapper {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  transition: all 0.2s ease;
 }
 
-.contact-btn:hover {
-  background-color: var(--text-primary);
-  color: var(--bg-surface);
+.control-label {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px; /* Distância idêntica da palavra até a sua pílula abaixo */
+  height: 12px; /* Garante que a label invisível tenha exatamente a mesma altura das outras */
+  line-height: 1;
+  display: block;
+}
+
+/* Estilo pílula segmentada para Idiomas */
+.lang-selector {
+  display: flex;
+  background: var(--bg-cards);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 2px;
+  position: relative;
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  transition: .3s;
+  z-index: 2;
+}
+
+.lang-btn.active {
+  color: var(--bg-feed);
+  background: var(--accent);
+  border-radius: 15px;
+}
+
+/* Ajuste do botão de contato fora da pílula */
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px; /* Força o botão a ter milimetricamente a mesma altura das pílulas do LANG e THEME */
+  padding: 0 1.2rem;
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.btn-contact:hover {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+/* O container da alavanca de tema */
+.theme-switch-container {
+  position: relative;
+  width: 60px; /* Um pouco mais largo para caber os dois ícones com respiro */
+  height: 28px;
+  background-color: var(--bg-cards);
+  border: 1px solid var(--border-color);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6px;
+  cursor: pointer;
+}
+
+/* Rótulos dos ícones dentro do switch */
+.theme-switch-container i {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  z-index: 1;
+  transition: 0.3s;
+}
+
+/* A bolinha deslizante (slider) */
+.theme-slider-ball {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: var(--accent); /* Neon verde ou azul elétrico */
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  z-index: 2;
+  pointer-events: none; /* Deixa o clique passar para o container */
+}
+
+/* Estado ativo (Dark Mode) - Move a bolinha para a direita */
+html[data-theme="dark"] .theme-slider-ball {
+  transform: translateX(32px);
 }
 
 .mobile-menu-btn {
