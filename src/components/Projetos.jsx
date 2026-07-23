@@ -56,7 +56,7 @@ export default function Projetos() {
               <div className="tech-stack-row">
                 <img src="/nodejs.png" alt="Node.js" className="tech-icon-mini" title="Node.js" />
                 <img src="/postgresql.png" alt="PostgreSQL" className="tech-icon-mini" title="PostgreSQL" />
-                <img src="/prisma.png" alt="Prisma ORM" className="tech-icon-mini" title="Prisma ORM" />
+                <img src="/prisma.svg" alt="Prisma ORM" className="tech-icon-mini" title="Prisma ORM" />
                 <img src="/docker.png" alt="Docker" className="tech-icon-mini" title="Docker" />
               </div>
               <a href="#" className="btn-link" target="_blank" rel="noreferrer">

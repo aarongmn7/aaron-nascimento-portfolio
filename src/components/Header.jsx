@@ -41,46 +41,39 @@ const Header = ({ theme, toggleTheme }) => {
       <div className="nav-controls">
         
         {/* Seletor de Idioma */}
-        <div className="control-wrapper">
-          <span className="control-label">Lang</span>
-          <div className="lang-selector">
-            <button 
-              className={`lang-btn ${i18n.language === 'pt' ? 'active' : ''}`} 
-              onClick={() => changeLanguage('pt')}
-            >
-              PT
-            </button>
-            <button 
-              className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`} 
-              onClick={() => changeLanguage('en')}
-            >
-              EN
-            </button>
-            <button 
-              className="lang-btn" 
-              onClick={() => console.log('[LANG] Suporte para idioma ES em breve...')}
-            >
-              ES
-            </button>
-          </div>
+        <div className="lang-selector">
+          <button 
+            className={`lang-btn ${i18n.language === 'pt' ? 'active' : ''}`} 
+            onClick={() => changeLanguage('pt')}
+          >
+            PT
+          </button>
+          <button 
+            className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`} 
+            onClick={() => changeLanguage('en')}
+          >
+            EN
+          </button>
+          <button 
+            className="lang-btn" 
+            onClick={() => console.log('[LANG] Suporte para idioma ES em breve...')}
+          >
+            ES
+          </button>
         </div>
 
         {/* Seletor de Tema */}
-        <div className="control-wrapper">
-          <span className="control-label">Theme</span>
-          <label className="theme-switch-container">
-            <input type="checkbox" style={{ display: 'none' }} checked={theme === 'dark'} onChange={toggleTheme} />
-            <i className="fas fa-sun"></i>
-            <i className="fas fa-moon"></i>
-            <div className="theme-slider-ball"></div>
-          </label>
-        </div>
+        <label className="theme-switch-container">
+          <input type="checkbox" style={{ display: 'none' }} checked={theme === 'dark'} onChange={toggleTheme} />
+          <i className="fas fa-sun"></i>
+          <i className="fas fa-moon"></i>
+          <div className="theme-slider-ball"></div>
+        </label>
         
-        {/* Wrapper do Botão de Contato para Sincronização de Altura */}
-        <div className="control-wrapper">
-          <span className="control-label" style={{ opacity: 0, visibility: 'hidden' }}>CONTACT</span>
-          <Link to="/#contato" className="btn-contact">Contato &nearr;</Link>
-        </div>
+        {/* Botão de Contato */}
+        <Link to="/#contato" className="btn-contact">
+          Contato <i className="fas fa-arrow-right" style={{ marginLeft: '6px' }}></i>
+        </Link>
         
         <button 
           className="mobile-menu-btn" 

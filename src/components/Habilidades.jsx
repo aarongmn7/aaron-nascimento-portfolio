@@ -44,7 +44,7 @@ export default function Habilidades() {
               <li><img src="/nodejs.png" alt="Node.js" className="tech-icon" /> Node.js</li>
               <li><img src="/express.png" alt="Express" className="tech-icon" /> Express</li>
               <li><img src="/postgresql.png" alt="PostgreSQL" className="tech-icon" /> PostgreSQL</li>
-              <li><img src="/prisma.png" alt="Prisma ORM" className="tech-icon" /> Prisma ORM</li>
+              <li><img src="/prisma.svg" alt="Prisma ORM" className="tech-icon" /> Prisma ORM</li>
             </ul>
           </div>
 
@@ -84,7 +84,7 @@ export default function Habilidades() {
               <li><img src="/figma.png" alt="Figma" className="tech-icon" /> Figma</li>
               <li><img src="/claude.png" alt="Claude Design" className="tech-icon" /> Claude Design</li>
               <li><img src="/stitch.png" alt="Stitch IA" className="tech-icon" /> Stitch IA</li>
-              <li><img src="/uiux.png" alt="UI/UX Prototyping" className="tech-icon" /> UI/UX Prototyping</li>
+              <li><img src="/uiux.svg" alt="UI/UX Prototyping" className="tech-icon" /> UI/UX Prototyping</li>
             </ul>
           </div>
 
