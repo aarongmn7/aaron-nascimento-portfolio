@@ -48,6 +48,14 @@
   --logo-bg: transparent;
 }
 
+/* Inverte ícones pretos no modo escuro para ficarem brancos */
+[data-theme="dark"] img[src*="prisma"],
+[data-theme="dark"] img[src*="vercel"],
+[data-theme="dark"] img[src*="express"],
+[data-theme="dark"] img[src*="uiux"] {
+  filter: invert(1) brightness(2);
+}
+
 * {
   margin: 0;
   padding: 0;

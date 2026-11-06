@@ -1,0 +1,75 @@
+# 📋 PENDÊNCIAS & ROADMAP — PORTFÓLIO PESSOAL (AARON DEV)
+
+Documento de controle de melhorias, acabamento técnico e publicação de projetos públicos para o portfólio pessoal.
+- **Domínio Próprio Oficial:** `https://aaron.dev.br/`
+- **Deploy Vercel:** `https://aaron-nascimento-portfolio.vercel.app/`
+
+---
+
+## 🌐 Configuração de Domínio Personalizado (`aaron.dev.br`)
+- [ ] **Apontamento de DNS no Provedor / Registro.br:**
+  - **Tipo CNAME:** `www` apontando para `cname.vercel-dns.com`
+  - **Tipo A (Apex `aaron.dev.br`):** apontando para `76.76.21.21` (IP oficial da Vercel)
+- [ ] **Vincular no Dashboard da Vercel:**
+  - Acessar o projeto `aaron-nascimento-portfolio` -> Settings -> Domains.
+  - Adicionar `aaron.dev.br` e `www.aaron.dev.br` (com redirect automático).
+  - Validar emissão do certificado SSL gratuito.
+
+---
+
+## ✅ Concluído na Última Revisão
+- [x] **Remoção de links quebrados e placeholders** em `src/components/Projetos.jsx`.
+- [x] **Internacionalização 100% funcional (PT / EN)** em todos os componentes (`src/i18n.js`, `Header`, `Hero`, `Sobre`, `Habilidades`, `Projetos`, `Trajetoria`, `Contato`, `Footer`, `Certificados`).
+- [x] **Sincronização da Trajetória (`Trajetoria.jsx`)** com o dossiê oficial (inclusão da Bolsa FOCCO/UNEMAT em IA & Dev, atualização da Ephex Tecnologia com QA + Infra MSP/Firewall e destaques acadêmicos UNEMAT).
+- [x] **Atualização das Certificações Reais (`Certificados.jsx`)** com as 8 credenciais verificadas e link direto para o LinkedIn.
+- [x] **Ajustes de Contraste no Dark Mode (`src/styles/index.css`)** para o botão `.btn-primary` e ícones escuros em superfícies OLED (`.dark-invert-always`).
+- [x] **Criação do Kit de Rebranding White-Label (`pasta coringa/KIT_REBRANDING_AARON_DEV.md`)** para converter sistemas da linha PJ em showcases públicos "Aaron Dev".
+
+---
+
+## 🛠️ Pendências Técnicas de Acabamento (Alta Prioridade)
+
+### 1. SEO & Open Graph no `index.html` (Preview para WhatsApp / LinkedIn / Discord)
+- [ ] Adicionar `<meta name="description">` com resumo técnico (Full Stack Node.js, React, TypeScript, SQL, IA & Infraestrutura).
+- [ ] Configurar tags Open Graph (`og:title`, `og:description`, `og:type`, `og:url`, `og:image`) e Twitter Cards para gerar card rico de preview ao compartilhar o link da Vercel.
+- [ ] Criar uma imagem de capa (`public/og-cover.png` em `1200x630px`) no estilo minimalista P&B do portfólio.
+
+### 2. Acesso Rápido a Redes no Card de Perfil (`src/components/Sobre.jsx`)
+- [ ] Adicionar botões/ícones diretos de **GitHub** (`github.com/aarongmn7`) e **LinkedIn** (`linkedin.com/in/aaron-nascimento-dev`) dentro do `.profile-card` na seção **Sobre**, permitindo acesso em 1 clique sem precisar rolar até o rodapé.
+- [ ] *(Opcional)* Adicionar botão de download rápido do **Currículo em PDF (1 página A4)**.
+
+### 3. Limpeza e Documentação do Repositório Raiz
+- [ ] Substituir o `README.md` padrão do template React + Vite por uma documentação autoral de engenharia detalhando a arquitetura do portfólio, o Design System Monochrome e o suporte bilíngue.
+- [ ] Remover o arquivo legado `index_old.html` (27 KB) da raiz após confirmar que nada dele é mais necessário.
+
+### 4. Suporte a Duplo Link nos Cards de Projeto (`Live Demo` + `Repositório`)
+- [ ] Atualizar `src/components/Projetos.jsx` e `src/i18n.js` para permitir dois links por projeto:
+  - **Botão 1:** `Live Demo ↗` (para clientes, parceiros de Empresa Júnior e recrutadores testarem a interface).
+  - **Botão 2:** `Ver Código ↗` (link direto para o repositório específico no GitHub `aarongmn7`).
+
+---
+
+## 🚀 Pendências de Migração de Projetos (Linha PJ ➔ GitHub Público "Aaron Dev")
+
+Para cada sistema abaixo, aplicar o prompt do arquivo [`pasta coringa/KIT_REBRANDING_AARON_DEV.md`](./pasta%20coringa/KIT_REBRANDING_AARON_DEV.md) antes de tornar o repositório público:
+
+### 1. Mini-ERP de Gestão de Ativos (`mini-erp-gestao-ativos`)
+- [ ] Aplicar sanitização White-Label (zero menção empresarial/CNPJ, assinatura `Aaron Nascimento | Engenharia de Software`).
+- [ ] Aplicar Design Tokens Monochrome (Light/Dark OLED) e remover cores legadas.
+- [ ] Gerar novo screenshot atualizado da tela principal e substituir `public/mini-erp.png`.
+- [ ] Publicar repositório no GitHub (`github.com/aarongmn7`) e atualizar a URL exata no card principal de `Projetos.jsx`.
+
+### 2. Plataforma Web de Service Desk, Chamados & Kanban
+- [ ] Aplicar rebranding visual "Aaron Dev" (paleta Zinc/OLED + toggle de tema).
+- [ ] Preparar seed de demonstração com chamados, filas de SLA e quadro Kanban populados.
+- [ ] Escrever `README.md` de engenharia destacando RBAC, modelagem PostgreSQL e arquitetura React + TypeScript + Node.js.
+- [ ] Publicar no GitHub e vincular o link direto no Card 01 de `Projetos.jsx`.
+
+### 3. SmartDocs — Pipeline de Extração Documental com IA
+- [ ] Higienizar scripts Python, prompts e exemplos de PDFs (usar apenas documentos fictícios de demonstração).
+- [ ] Documentar o fluxo `PDF -> LLM API -> Validação de Schema JSON` no `README.md`.
+- [ ] Publicar no GitHub e vincular o link direto no Card 02 de `Projetos.jsx`.
+
+### 4. B2B SLA Analytics & Otimizador de Rotas em Grafos
+- [ ] Organizar scripts e datasets de exemplo (anonimizados) com instruções claras de execução.
+- [ ] Publicar/atualizar repositório no GitHub e vincular o link direto no Card 03 de `Projetos.jsx`.

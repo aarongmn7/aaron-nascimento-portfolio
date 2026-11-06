@@ -19,7 +19,7 @@ const Header = ({ theme, toggleTheme }) => {
         <Link to="/#hero">
           <img 
             src={logoSvg} 
-            alt="Logo do Portfólio" 
+            alt="Logo Aaron Nascimento" 
             className="logo-img" 
           />
         </Link>
@@ -40,7 +40,7 @@ const Header = ({ theme, toggleTheme }) => {
       {/* 3. Controles da Navbar */}
       <div className="nav-controls">
         
-        {/* Seletor de Idioma */}
+        {/* Seletor de Idioma (PT / EN 100% Funcional) */}
         <div className="lang-selector">
           <button 
             className={`lang-btn ${i18n.language === 'pt' ? 'active' : ''}`} 
@@ -54,16 +54,10 @@ const Header = ({ theme, toggleTheme }) => {
           >
             EN
           </button>
-          <button 
-            className="lang-btn" 
-            onClick={() => console.log('[LANG] Suporte para idioma ES em breve...')}
-          >
-            ES
-          </button>
         </div>
 
         {/* Seletor de Tema */}
-        <label className="theme-switch-container">
+        <label className="theme-switch-container" title="Alternar tema Claro/Escuro">
           <input type="checkbox" style={{ display: 'none' }} checked={theme === 'dark'} onChange={toggleTheme} />
           <i className="fas fa-sun"></i>
           <i className="fas fa-moon"></i>
@@ -72,7 +66,7 @@ const Header = ({ theme, toggleTheme }) => {
         
         {/* Botão de Contato */}
         <Link to="/#contato" className="btn-contact">
-          Contato <i className="fas fa-arrow-right" style={{ marginLeft: '6px' }}></i>
+          {t('header.contact')} <i className="fas fa-arrow-right" style={{ marginLeft: '6px' }}></i>
         </Link>
         
         <button 

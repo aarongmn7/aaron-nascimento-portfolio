@@ -3,32 +3,30 @@ import { useTranslation } from 'react-i18next';
 import '../styles/index.css';
 
 const LOGS_STREAM = [
-  { text: "[INFO] Inicializando servidor backend...", type: "log-info" },
-  { text: "[INFO] Conectando ao banco de dados SQL... OK", type: "log-info" },
-  { text: "[INFO] Sincronizando cluster Redis...", type: "log-info" },
+  { text: "[INFO] Inicializando servidor backend Node.js...", type: "log-info" },
+  { text: "[INFO] Conectando ao banco PostgreSQL... OK", type: "log-info" },
+  { text: "[INFO] Validando schema Prisma ORM...", type: "log-info" },
   { text: "[DATA] Executando captura automatizada...", type: "log-warning" },
-  { text: "[DATA] Varrendo endpoints da API externa...", type: "log-warning" },
-  { text: "[DATA] 14.820 registros encontrados na fila.", type: "log-warning" },
-  { text: "[SUCCESS] Bulk insert concluído com sucesso.", type: "log-success" },
-  { text: "[IA] Orquestrando pipeline com LLM...", type: "log-ai" },
-  { text: "[IA] Processando análise de sentimento...", type: "log-ai" },
-  { text: "[SUCCESS] Triagem de dados finalizada.", type: "log-success" },
-  { text: "[SEC] Checando tokens de autenticação...", type: "log-info" },
+  { text: "[DATA] Varrendo endpoints da API REST...", type: "log-warning" },
+  { text: "[DATA] 14.820 registros validados na fila.", type: "log-warning" },
+  { text: "[SUCCESS] Transação SQL concluída com sucesso.", type: "log-success" },
+  { text: "[IA] Orquestrando pipeline de extração LLM...", type: "log-ai" },
+  { text: "[IA] Estruturando payload JSON validado...", type: "log-ai" },
+  { text: "[SUCCESS] Triagem de dados e SLA finalizada.", type: "log-success" },
+  { text: "[SEC] Checando políticas RBAC e Firewall...", type: "log-info" },
   { text: "[INFO] Disparando webhooks de integração...", type: "log-info" },
-  { text: "[SUCCESS] Resposta 200 OK dos gateways.", type: "log-success" },
-  { text: "[INFO] Otimizando container Docker...", type: "log-info" },
+  { text: "[SUCCESS] Resposta 200 OK dos serviços.", type: "log-success" },
+  { text: "[INFO] Verificando container Docker...", type: "log-info" },
   { text: "[SUCCESS] Operação concluída sem gargalos.", type: "log-success" },
-  { text: "[STATUS] Pipeline em execução. Aguardando...", type: "log-ai" }
+  { text: "[STATUS] Pipeline ativo. Monitorando...", type: "log-ai" }
 ];
 
 export default function Hero() {
   const { t } = useTranslation();
-  // Evita o cold start: o terminal já inicia populado com os primeiros 8 logs
   const [visibleLogs, setVisibleLogs] = useState(LOGS_STREAM.slice(0, 8));
   const terminalBodyRef = useRef(null);
 
   useEffect(() => {
-    // O próximo log a ser inserido será o de índice 8
     let currentIndex = 8;
 
     const interval = setInterval(() => {
@@ -36,7 +34,6 @@ export default function Hero() {
         const nextLog = LOGS_STREAM[currentIndex];
         currentIndex = (currentIndex + 1) % LOGS_STREAM.length;
 
-        // Limite aumentado para 18 para ocupar a altura vertical de 550px sem deixar buracos
         if (prev.length >= 18) {
           return [...prev.slice(1), nextLog];
         }
@@ -54,7 +51,7 @@ export default function Hero() {
   }, [visibleLogs]);
 
   return (
-    <section className="hero-section">
+    <section id="hero" className="hero-section">
       <div className="hero-wrapper">
         <div className="hero-content">
           <div
@@ -81,16 +78,16 @@ export default function Hero() {
 
           <div className="hero-metrics">
             <div className="stat-item">
-              <h3>5+ Projetos</h3>
-              <p>No meu GitHub</p>
+              <h3>{t('hero.metrics.m1Title')}</h3>
+              <p>{t('hero.metrics.m1Desc')}</p>
             </div>
             <div className="stat-item">
-              <h3>Full Stack</h3>
-              <p>Soluções Completas</p>
+              <h3>{t('hero.metrics.m2Title')}</h3>
+              <p>{t('hero.metrics.m2Desc')}</p>
             </div>
             <div className="stat-item">
-              <h3>100%</h3>
-              <p>Entrega e Dedicação</p>
+              <h3>{t('hero.metrics.m3Title')}</h3>
+              <p>{t('hero.metrics.m3Desc')}</p>
             </div>
           </div>
         </div>
@@ -101,7 +98,7 @@ export default function Hero() {
               <span className="dot red"></span>
               <span className="dot yellow"></span>
               <span className="dot green"></span>
-              <span className="terminal-title">automacao_de_processos</span>
+              <span className="terminal-title">{t('hero.terminalTitle')}</span>
             </div>
             <div className="terminal-body" ref={terminalBodyRef}>
               {visibleLogs.map((log, index) => (

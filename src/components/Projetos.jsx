@@ -1,19 +1,41 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { C } from '../config';
+
+const TECH_ICON_MAP = {
+  react: { src: '/react.png', alt: 'React' },
+  typescript: { src: '/typescript.png', alt: 'TypeScript' },
+  javascript: { src: '/javascript.png', alt: 'JavaScript' },
+  nodejs: { src: '/nodejs.png', alt: 'Node.js' },
+  postgresql: { src: '/postgresql.png', alt: 'PostgreSQL' },
+  prisma: { src: '/prisma.svg', alt: 'Prisma ORM' },
+  docker: { src: '/docker.png', alt: 'Docker' },
+  python: { src: '/python.png', alt: 'Python' },
+  claude: { src: '/claude.png', alt: 'LLM / Claude API' },
+  langchain: { src: '/langchain.png', alt: 'LangChain / Agents' },
+  git: { src: '/git.png', alt: 'Git' },
+  vite: { src: '/vite.png', alt: 'Vite' },
+  css: { src: '/css.png', alt: 'CSS3' }
+};
 
 export default function Projetos() {
+  const { t } = useTranslation();
+  const cards = t('projetos.cards', { returnObjects: true }) || [];
+  const ghProfileUrl = `https://github.com/${C.githubUser}`;
+
   return (
     <section id="projetos" className="projects-section">
 
       {/* CABEÇALHO DA SEÇÃO */}
       <div className="projects-header">
-        <span className="projects-badge">PRODUÇÃO & ENGENHARIA</span>
-        <h2 className="sec-title">Sistemas em Destaque</h2>
+        <span className="projects-badge">{t('projetos.badge')}</span>
+        <h2 className="sec-title">{t('projetos.title')}</h2>
         <p className="sec-subtitle">
-          Aplicações reais focadas em arquitetura escalável, consistência de dados e otimização de infraestrutura corporativa.
+          {t('projetos.subtitle')}
         </p>
       </div>
 
-      {/* O REI DA SEÇÃO: MINI-ERP (ESTRUTURA MOCKUP DE NAVEGADOR) */}
+      {/* DESTAQUE PRINCIPAL: MINI-ERP (MOCKUP DE NAVEGADOR) */}
       <div className="browser-mockup hero-project">
         <div className="browser-header">
           <div className="browser-dots">
@@ -38,86 +60,74 @@ export default function Projetos() {
           <div className="hero-content">
             <div className="project-status">
               <span className="status-indicator"></span>
-              EM PRODUÇÃO / MVP
+              {t('projetos.hero.status')}
             </div>
-            <h3 className="project-title">mini-erp-gestao-ativos</h3>
+            <h3 className="project-title">{t('projetos.hero.title')}</h3>
             <p className="project-desc">
-              Sistema modular desenvolvido para centralizar, monitorar e gerenciar inventários complexos de TI, mitigando gargalos operacionais e automatizando auditorias de hardware.
+              {t('projetos.hero.desc')}
             </p>
 
-            {/* MOMENTO RAIO-X: INFRA & ARQUITETURA */}
             <ul className="benefit-list">
-              <li>Persistência de dados ultra veloz e modelagem estrita com Prisma ORM e PostgreSQL.</li>
-              <li>Arquitetura modular no backend isolando regras de negócio complexas via Express.</li>
-              <li>Fluxo de deploy automatizado e preparado para conteinerização com Docker.</li>
+              <li>{t('projetos.hero.b1')}</li>
+              <li>{t('projetos.hero.b2')}</li>
+              <li>{t('projetos.hero.b3')}</li>
             </ul>
 
             <div className="project-footer">
               <div className="tech-stack-row">
                 <img src="/nodejs.png" alt="Node.js" className="tech-icon-mini" title="Node.js" />
                 <img src="/postgresql.png" alt="PostgreSQL" className="tech-icon-mini" title="PostgreSQL" />
-                <img src="/prisma.svg" alt="Prisma ORM" className="tech-icon-mini" title="Prisma ORM" />
+                <img src="/prisma.svg" alt="Prisma ORM" className="tech-icon-mini dark-invert-always" title="Prisma ORM" />
                 <img src="/docker.png" alt="Docker" className="tech-icon-mini" title="Docker" />
               </div>
-              <a href="#" className="btn-link" target="_blank" rel="noreferrer">
-                <i className="fab fa-github"></i> Acessar Repositório ↗
+              <a href={ghProfileUrl} className="btn-link" target="_blank" rel="noreferrer">
+                <i className="fab fa-github"></i> {t('projetos.repoBtn')}
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* QUADRADINHOS DE BAIXO: ENGENHARIA PURA */}
+      {/* GRID SECUNDÁRIO DE ENGENHARIA (2x2) */}
       <div className="secondary-grid">
-
-        {/* CARD 01: FRONT-END (PORTFÓLIO) */}
-        <div className="sub-project">
-          <div>
-            <div className="project-status sub-status">
-              <span className="status-indicator sub-indicator"></span>
-              FRONT-END ARCHITECTURE
+        {Array.isArray(cards) && cards.map((card, idx) => (
+          <div key={idx} className="sub-project">
+            <div>
+              <div className="project-status sub-status">
+                <span
+                  className="status-indicator sub-indicator"
+                  style={{
+                    backgroundColor: card.indicatorColor || '#94a3b8',
+                    boxShadow: `0 0 8px ${card.indicatorColor || '#94a3b8'}`
+                  }}
+                ></span>
+                {card.status}
+              </div>
+              <h4>{card.title}</h4>
+              <p className="project-desc">{card.desc}</p>
             </div>
-            <h4>Componentização & UI/UX (Este site)</h4>
-            <p className="project-desc">
-              Interface de alta performance desenvolvida com React e Vite. Foco em componentização modular, design responsivo fluido e implementação nativa de variáveis para transição de temas (Light/Dark Mode).
-            </p>
-          </div>
-          <div className="project-footer">
-            <div className="tech-stack-row">
-              <img src="/react.png" alt="React" className="tech-icon-mini" title="React" />
-              <img src="/javascript.png" alt="JavaScript" className="tech-icon-mini" title="JavaScript" />
-              <img src="/css.png" alt="CSS3" className="tech-icon-mini" title="CSS3" />
+            <div className="project-footer">
+              <div className="tech-stack-row">
+                {card.techs && card.techs.map((techKey) => {
+                  const icon = TECH_ICON_MAP[techKey];
+                  if (!icon) return null;
+                  return (
+                    <img
+                      key={techKey}
+                      src={icon.src}
+                      alt={icon.alt}
+                      title={icon.alt}
+                      className="tech-icon-mini"
+                    />
+                  );
+                })}
+              </div>
+              <a href={card.link || ghProfileUrl} className="btn-link" target="_blank" rel="noreferrer">
+                <i className="fab fa-github"></i> {t('projetos.codeBtn')}
+              </a>
             </div>
-            {/* COLOQUE O LINK DO SEU GITHUB AQUI */}
-            <a href="https://github.com/SEU-USUARIO/SEU-PORTFOLIO" className="btn-link" target="_blank" rel="noreferrer">
-              <i className="fab fa-github"></i> Ver Código ↗
-            </a>
           </div>
-        </div>
-
-        {/* CARD 03: AUTOMAÇÃO (TICKETS DE LICITAÇÃO) */}
-        <div className="sub-project">
-          <div>
-            <div className="project-status sub-status">
-              <span className="status-indicator sub-indicator" style={{ backgroundColor: '#eab308', boxShadow: '0 0 8px #eab308' }}></span>
-              DATA & AUTOMATION
-            </div>
-            <h4>B2B SLA Analytics Pipeline</h4>
-            <p className="project-desc">
-              Script de automação desenvolvido para extração, consolidação e auditoria de tickets de suporte técnico. O sistema processa grandes volumes de incidentes para garantir o cumprimento rigoroso de SLAs (Acordos de Nível de Serviço) com empresas do setor de licitações.
-            </p>
-          </div>
-          <div className="project-footer">
-            <div className="tech-stack-row">
-              <img src="/python.png" alt="Python" className="tech-icon-mini" title="Python" />
-            </div>
-            {/* NÃO ESQUEÇA DE COLOCAR O LINK DO SEU REPOSITÓRIO AQUI */}
-            <a href="LINK_DO_SEU_GITHUB_AQUI" className="btn-link" target="_blank" rel="noreferrer">
-              <i className="fab fa-github"></i> Ver Código ↗
-            </a>
-          </div>
-        </div>
-
+        ))}
       </div>
     </section>
   );

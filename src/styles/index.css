@@ -105,22 +105,31 @@ body {
 
 .btn-primary {
   background-color: #000000 !important;
-  /* Preto puro igual ao botão do cabeçalho */
+  /* Preto puro no modo claro */
   color: #ffffff !important;
   padding: 12px 24px;
   border-radius: 6px;
-  /* Ajuste o valor se o do cabeçalho for mais ou menos arredondado */
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   border: 1px solid #000000;
 }
 
 .btn-primary:hover {
   background-color: #1f2937 !important;
-  /* Um cinza bem escuro para o efeito de passar o mouse */
   border-color: #1f2937;
+}
+
+[data-theme="dark"] .btn-primary {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background-color: #d4d4d8 !important;
+  border-color: #d4d4d8 !important;
 }
 
 .btn-secondary {
@@ -133,6 +142,11 @@ body {
   font-weight: 600;
   text-decoration: none;
   background: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.btn-secondary:hover {
+  opacity: 0.75;
 }
 
 /* 4. Alinhamento das Métricas em Linha Horizontal */
@@ -140,7 +154,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 48px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-color, #e5e7eb);
   padding-top: 24px;
   width: 100%;
 }
@@ -993,7 +1007,8 @@ body {
 
 /* Suporte para inversão de cor nos ícones em light/dark mode (se aplicável) */
 .dark .dark-invert,
-[data-theme='dark'] .dark-invert {
+[data-theme='dark'] .dark-invert,
+.dark-invert-always {
   filter: invert(1) brightness(1.8) !important;
 }
 
