@@ -31,12 +31,12 @@ const resources = {
         terminalTitle: "automacao_de_processos"
       },
       sobre: {
-        subtitle: "Dev Full Stack, IA & Infraestrutura",
+        subtitle: "Desenvolvedor Full Stack | Node.js, React, TypeScript & PostgreSQL",
         status: "Disponível para projetos & vagas remotas",
         title: "Quem sou eu?",
-        p1: "Sou um desenvolvedor focado em unir engenharia de software com visão prática de negócios. Tenho sólido domínio na stack Node.js, React, TypeScript e PostgreSQL, aplicando arquitetura modular, validação de regras de negócio (QA) e bancos de dados relacionais para garantir código legível, seguro e pronto para escalar.",
-        p2: "Cursando Bacharelado em Ciência da Computação na UNEMAT (com nota máxima 10.0 em Algoritmos e Laboratório de Programação I e II), atuo também como Bolsista Articulador de Projetos em IA e Desenvolvimento de Software no Programa FOCCO, conduzindo ciclos de Pair Programming, Code Review e Engenharia de Prompts.",
-        p3: "Meu principal diferencial de produtividade é o desenvolvimento assistido por IA aliado à vivência real em suporte de infraestrutura multi-clientes (MSP), redes/firewall e garantia de qualidade em sistemas ERP — entregando soluções robustas de ponta a ponta."
+        p1: "Atuando na interseção entre a engenharia de software e a garantia de qualidade. O código mais limpo do mundo perde seu valor se a regra de negócio não funcionar. É com essa mentalidade que construo e avalio aplicações, aplicando minha base técnica no ecossistema JavaScript (Node.js, React e TypeScript) para desenvolver sistemas e projetos Fullstack do zero, sempre com foco em escalabilidade e performance.",
+        p2: "No meu dia a dia com Qualidade de Software (QA) e suporte, atuo diretamente no mapeamento de falhas, execução de testes e validação de regras de negócio em sistemas ERP complexos. Essa vivência me treinou para antecipar bugs antes que eles cheguem em produção e a ter um olhar extremamente crítico sobre a arquitetura da aplicação.",
+        p3: "Minha Stack Principal — Front-end & Linguagens: JavaScript, TypeScript, React | Back-end & Dados: Node.js, API REST, SQL (PostgreSQL) | Infra & Qualidade: Docker, Git/GitHub, Testes Funcionais, Mapeamento de Bugs e Redes/Firewall."
       },
       habilidades: {
         badge: "STACK & FERRAMENTAS",
@@ -103,23 +103,23 @@ const resources = {
         items: [
           {
             date: "Outubro de 2026 – Atual",
-            role: "Bolsista Articulador de Projetos em IA e Desenvolvimento de Software — UNEMAT (Programa FOCCO)",
-            desc: "Liderança do projeto interdisciplinar 'Do Texto ao Código com IA'. Planejamento e condução de encontros práticos aos sábados focados em desenvolvimento assistido por IA, Pair Programming, Code Review coletivo e engenharia de prompts."
+            role: "Bolsista Articulador de Projetos em IA e Desenvolvimento de Software (Programa FOCCO) — UNEMAT",
+            desc: "Atuação como Bolsista Articulador no Programa de Formação de Células Cooperativas e Solidárias (FOCCO) da UNEMAT, liderando o projeto interdisciplinar 'Do Texto ao Código com IA'. • Planejamento e condução de encontros práticos de desenvolvimento de software assistido por Inteligência Artificial, programação em pares (Pair Programming) e revisão de código coletiva (Code Review). • Integração entre estudantes de Ciência da Computação e Letras para engenharia de prompts, estruturação de documentação técnica e criação de soluções tecnológicas aplicadas ao ensino, pesquisa e extensão. • Acompanhamento de métricas de evolução técnica da equipe, mediação de conflitos, elaboração de relatórios de progresso e produção científica para o Seminário FOCCO-UNEMAT."
           },
           {
             date: "Maio de 2026 – Atual",
-            role: "Estagiário de TI (QA, Suporte Técnico & Infraestrutura) — Ephex Tecnologia",
-            desc: "Atuação dupla: (1) Qualidade de Software (QA) com testes funcionais manuais, validação de regras de negócio em ERP e documentação técnica de bugs; (2) Suporte de TI e infraestrutura multi-clientes (MSP), administração de Firewall, redes e padronização de ambientes."
+            role: "Estagiário — Ephex Tecnologia",
+            desc: "Atuação na área de Qualidade de Software (QA) e suporte interno, com foco em garantir a estabilidade e a usabilidade do sistema ERP da empresa. • Execução de testes funcionais manuais e validação de regras de negócio em módulos do sistema. • Identificação, mapeamento e documentação de bugs para reporte ao time de desenvolvimento. • Auxílio no suporte técnico interno, lidando com rotinas de TI e infraestrutura da operação."
           },
           {
             date: "Março de 2026 – Maio de 2026",
-            role: "Suporte Técnico Interno (N1) — Interfibras Telecomunicações",
-            desc: "Triagem, diagnóstico lógico e resolução de incidentes de conectividade (Wi-Fi e rede cabeada). Configuração de roteadores, análise de TCP/IP, DNS e DHCP via acesso remoto garantindo o cumprimento de SLA."
+            role: "Suporte Técnico Interno — Interfibras Telecomunicações",
+            desc: "Atuação como suporte técnico N1 em provedor de internet, realizando triagem, diagnóstico e resolução de incidentes relacionados à conectividade (Wi-Fi e rede cabeada). Responsável por identificar falhas em roteadores, interferências de sinal e problemas de configuração de rede, aplicando soluções rápidas e eficazes. Experiência com atendimento ao cliente, orientação técnica para usuários leigos e uso de ferramentas de acesso remoto para suporte. Abertura, registro e acompanhamento de chamados, além de escalonamento para níveis superiores quando necessário."
           },
           {
             date: "Abril de 2025 – Dezembro de 2025",
-            role: "Estagiário Administrativo — Prefeitura Municipal de Rondonópolis (DESOPEM)",
-            desc: "Desenvolvimento de planilhas automatizadas para controle operacional, captação, higienização e organização de dados públicos, além de atualização de sistemas internos e atendimento técnico."
+            role: "Estagiário — Prefeitura Municipal de Rondonópolis",
+            desc: "Desenvolvimento e manutenção de planilhas para controle administrativo, incluindo captação e organização de dados; lançamento e atualização de informações relevantes ao setor, garantindo precisão e agilidade nos processos internos; confecção, organização e análise de documentos administrativos e suporte ao cliente, oferecendo atendimento eficaz e solucionando dúvidas operacionais."
           },
           {
             date: "Julho de 2025 – Julho de 2029 (Cursando)",
@@ -227,12 +227,12 @@ const resources = {
         terminalTitle: "process_automation"
       },
       sobre: {
-        subtitle: "Full Stack Dev, AI & Infrastructure",
+        subtitle: "Full Stack Developer | Node.js, React, TypeScript & PostgreSQL",
         status: "Available for projects & remote roles",
         title: "Who am I?",
-        p1: "I am a software developer focused on bridging software engineering with practical business vision. I have strong command of the Node.js, React, TypeScript, and PostgreSQL stack, applying modular architecture, QA business rule validation, and relational modeling to ensure maintainable, scalable code.",
-        p2: "Currently pursuing a B.Sc. in Computer Science at UNEMAT (scoring a perfect 10.0 in Algorithms and Programming Lab I & II), I also serve as an AI & Software Development Project Fellow in the FOCCO Program, leading Pair Programming, Code Review, and Prompt Engineering sessions.",
-        p3: "My core productivity edge is AI-assisted engineering combined with hands-on experience in multi-client IT infrastructure support (MSP), firewall/networking, and ERP quality assurance — delivering reliable solutions from end to end."
+        p1: "Operating at the intersection of software engineering and quality assurance. The cleanest code in the world loses its value if the business rule doesn't work. With this mindset, I build and evaluate applications, applying my technical foundation in the JavaScript ecosystem (Node.js, React, and TypeScript) to develop Fullstack systems from scratch with a focus on scalability and performance.",
+        p2: "In my daily work with Software Quality Assurance (QA) and support, I directly handle failure mapping, test execution, and business rule validation in complex ERP systems. This experience trained me to anticipate bugs before they hit production and maintain a highly critical eye on application architecture.",
+        p3: "Core Stack — Front-end & Languages: JavaScript, TypeScript, React | Back-end & Data: Node.js, REST APIs, SQL (PostgreSQL) | Infra & QA: Docker, Git/GitHub, Functional Testing, Bug Mapping & Networking/Firewall."
       },
       habilidades: {
         badge: "STACK & TOOLS",
@@ -299,23 +299,23 @@ const resources = {
         items: [
           {
             date: "October 2026 – Present",
-            role: "AI & Software Development Project Fellow — UNEMAT (FOCCO Program)",
-            desc: "Leading the interdisciplinary project 'From Text to Code with AI'. Planning and conducting Saturday hands-on workshops focused on AI-assisted software development, Pair Programming, collective Code Review, and prompt engineering."
+            role: "AI & Software Development Project Fellow (FOCCO Program) — UNEMAT",
+            desc: "Serving as Project Fellow in the FOCCO Program at UNEMAT, leading the interdisciplinary project 'From Text to Code with AI'. • Planning and conducting hands-on workshops in AI-assisted software development, Pair Programming, and collective Code Review. • Integrating Computer Science and Literature students for prompt engineering, technical documentation structuring, and building technological solutions for teaching, research, and extension. • Tracking technical evolution metrics, conflict mediation, progress reporting, and scientific production for the FOCCO-UNEMAT Seminar."
           },
           {
             date: "May 2026 – Present",
-            role: "IT Intern (QA, Technical Support & Infrastructure) — Ephex Tecnologia",
-            desc: "Dual role: (1) Software Quality Assurance (QA) performing manual functional testing, ERP business rule validation, and bug documentation; (2) Multi-client IT infrastructure support (MSP), Firewall administration, networking, and workstation standardization."
+            role: "Intern — Ephex Tecnologia",
+            desc: "Working in Software Quality Assurance (QA) and internal support, focused on ensuring the stability and usability of the company's ERP system. • Execution of manual functional tests and validation of business rules across system modules. • Identification, mapping, and documentation of bugs for reporting to the development team. • Assistance in internal technical support, handling IT routines and operational infrastructure."
           },
           {
             date: "March 2026 – May 2026",
-            role: "Internal Technical Support (Tier 1) — Interfibras Telecomunicações",
-            desc: "Triage, logical diagnostics, and resolution of connectivity incidents (Wi-Fi and wired networks). Router configuration, TCP/IP, DNS, and DHCP troubleshooting via remote access within strict SLA targets."
+            role: "Internal Technical Support — Interfibras Telecomunicações",
+            desc: "Tier 1 technical support at an ISP, performing triage, diagnostics, and resolution of connectivity incidents (Wi-Fi and wired networks). Responsible for identifying router failures, signal interference, and network configuration issues, applying fast and effective solutions. Experienced in customer service, technical guidance for non-technical users, remote support tools, ticket management, and SLA escalation."
           },
           {
             date: "April 2025 – December 2025",
-            role: "Administrative Intern — Municipality of Rondonópolis (DESOPEM)",
-            desc: "Developed automated spreadsheets for operational control, data collection, cleaning, and organization, alongside internal system updates and public technical assistance."
+            role: "Intern — Municipality of Rondonópolis",
+            desc: "Development and maintenance of spreadsheets for administrative control, including data collection and organization; entry and updating of sector records ensuring accuracy and agility in internal processes; preparation, organization, and analysis of administrative documents and customer support, providing effective assistance and resolving operational questions."
           },
           {
             date: "July 2025 – July 2029 (In Progress)",
