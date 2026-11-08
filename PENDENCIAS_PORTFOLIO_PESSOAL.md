@@ -30,13 +30,12 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 ## 🛠️ Pendências Técnicas de Acabamento (Alta Prioridade)
 
 ### 1. SEO & Open Graph no `index.html` (Preview para WhatsApp / LinkedIn / Discord)
-- [ ] Adicionar `<meta name="description">` com resumo técnico (Full Stack Node.js, React, TypeScript, SQL, IA & Infraestrutura).
-- [ ] Configurar tags Open Graph (`og:title`, `og:description`, `og:type`, `og:url`, `og:image`) e Twitter Cards para gerar card rico de preview ao compartilhar o link da Vercel.
-- [ ] Criar uma imagem de capa (`public/og-cover.png` em `1200x630px`) no estilo minimalista P&B do portfólio.
+- [x] Configurado `<meta name="description">` com resumo técnico (Full Stack Node.js, React, TypeScript, SQL, IA & QA).
+- [x] Configuradas tags Open Graph (`og:title`, `og:description`, `og:type`, `og:url`, `og:image`) e Twitter/Discord Cards para gerar card rico de preview no compartilhamento.
 
 ### 2. Acesso Rápido a Redes no Card de Perfil (`src/components/Sobre.jsx`)
-- [ ] Adicionar botões/ícones diretos de **GitHub** (`github.com/aarongmn7`) e **LinkedIn** (`linkedin.com/in/aaron-nascimento-dev`) dentro do `.profile-card` na seção **Sobre**, permitindo acesso em 1 clique sem precisar rolar até o rodapé.
-- [ ] *(Opcional)* Adicionar botão de download rápido do **Currículo em PDF (1 página A4)**.
+- [x] Adicionados botões diretos de **GitHub** (`github.com/aarongmn7`) e **LinkedIn** (`linkedin.com/in/aaron-nascimento-dev`) dentro do `.profile-card` na seção **Sobre**, permitindo acesso em 1 clique sem precisar rolar até o rodapé.
+- [ ] *(Opcional)* Download de currículo mantido fora para evitar versões desatualizadas frente à evolução contínua da carreira.
 
 ### 3. Limpeza e Documentação do Repositório Raiz
 - [ ] Substituir o `README.md` padrão do template React + Vite por uma documentação autoral de engenharia detalhando a arquitetura do portfólio, o Design System Monochrome e o suporte bilíngue.

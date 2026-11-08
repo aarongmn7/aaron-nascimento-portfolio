@@ -25,6 +25,28 @@ export default function Sobre() {
           <div className="profile-status">
             <span className="status-dot"></span> {t('sobre.status')}
           </div>
+
+          {/* AÇÕES RÁPIDAS (GITHUB & LINKEDIN) */}
+          <div className="profile-social-links">
+            <a
+              href="https://github.com/aarongmn7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="profile-social-btn"
+              title="GitHub"
+            >
+              <i className="fab fa-github"></i> GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aaron-nascimento-dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="profile-social-btn"
+              title="LinkedIn"
+            >
+              <i className="fab fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
         </div>
 
         {/* CONTEÚDO (Direita) */}
