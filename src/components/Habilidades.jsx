@@ -1,6 +1,38 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import '../styles/index.css';
+import './Habilidades.css';
+
+// ESTEIRA 1: CORE DEV & ENGENHARIA DE SOFTWARE
+const TRACK_1_ITEMS = [
+  { name: 'React 19', icon: '/react.png', tag: 'Front-End' },
+  { name: 'Node.js', icon: '/nodejs.png', tag: 'Back-End' },
+  { name: 'TypeScript', icon: '/typescript.png', tag: 'Language' },
+  { name: 'PostgreSQL', icon: '/postgresql.png', tag: 'Database' },
+  { name: 'Next.js', icon: '/nextjs.png', tag: 'Full Stack' },
+  { name: 'Python', icon: '/python.png', tag: 'Language' },
+  { name: 'Prisma ORM', icon: '/prisma.svg', tag: 'ORM', invert: true },
+  { name: 'Express.js', icon: '/express.png', tag: 'REST API' },
+  { name: 'Tailwind CSS', icon: '/tailwind.png', tag: 'Styling' },
+  { name: 'GitHub Actions', icon: '/githubactions.svg', tag: 'CI/CD' },
+  { name: 'JavaScript ES6+', icon: '/javascript.png', tag: 'Core' },
+  { name: 'Vite', icon: '/vite.png', tag: 'Tooling' }
+];
+
+// ESTEIRA 2: IA, INFRAESTRUTURA, QA & REDES
+const TRACK_2_ITEMS = [
+  { name: 'Claude Code', icon: '/claude.png', tag: 'Agentic AI' },
+  { name: 'Cursor IDE', icon: '/cursor.png', tag: 'AI Editor' },
+  { name: 'Orca ADE', icon: '/orca.png', tag: 'orca.dev' },
+  { name: 'Google Antigravity', icon: '/antigravity.png', tag: 'AI Agents' },
+  { name: 'Docker', icon: '/docker.png', tag: 'Containers' },
+  { name: 'Linux & Terminal', icon: '/linux.svg', tag: 'Infra' },
+  { name: 'Microsoft Azure', icon: '/azure.svg', tag: 'AI-900' },
+  { name: 'Git & GitHub', icon: '/git.png', tag: 'Version Control' },
+  { name: 'LLM APIs & Prompts', icon: '/langchain.png', tag: 'Engineering' },
+  { name: 'Firewall & Redes', iconFont: 'fas fa-shield-alt', tag: 'Segurança' },
+  { name: 'QA Testing & Bugs', iconFont: 'fas fa-vial', tag: 'Qualidade' },
+  { name: 'Figma Prototyping', icon: '/figma.png', tag: 'UI/UX' }
+];
 
 export default function Habilidades() {
   const { t } = useTranslation();
@@ -14,88 +46,111 @@ export default function Habilidades() {
           <span className="skills-badge">{t('habilidades.badge')}</span>
           <h2>{t('habilidades.title')}</h2>
           <p>{t('habilidades.subtitle')}</p>
+          <div className="skills-status-pill">
+            <span className="skills-pulse-dot"></span>
+            <span>{t('habilidades.statusPulse')}</span>
+          </div>
         </div>
 
-        {/* GRADE DE COLUNAS */}
-        <div className="skills-grid-premium">
+        {/* CONJUNTO DE ESTEIRAS INFINITAS AUTÔNOMAS */}
+        <div className="marquee-stream-wrapper">
 
-          {/* COLUNA 01 - FRONT-END */}
-          <div className="skills-column">
-            <div className="column-num">01</div>
-            <h3>{t('habilidades.col1Title')}</h3>
-            <ul>
-              <li>
-                <img src="/javascript.png" alt="JavaScript" className="tech-icon" />
-                <img src="/typescript.png" alt="TypeScript" className="tech-icon" style={{ marginLeft: '-8px', position: 'relative', zIndex: 2 }} />
-                <span style={{ marginLeft: '4px' }}>JavaScript & TypeScript</span>
-              </li>
-              <li>
-                <img src="/react.png" alt="React" className="tech-icon" />
-                <img src="/nextjs.png" alt="Next.js" className="tech-icon" style={{ marginLeft: '-8px', position: 'relative', zIndex: 2 }} />
-                <span style={{ marginLeft: '4px' }}>React.js & Next.js</span>
-              </li>
-              <li><img src="/tailwind.png" alt="Tailwind CSS" className="tech-icon" /> <span>Tailwind CSS & CSS3</span></li>
-              <li><img src="/vite.png" alt="Vite" className="tech-icon" /> <span>Vite & HTML5</span></li>
-            </ul>
+          {/* ESTEIRA 1 (DIREITA PARA ESQUERDA) */}
+          <div className="marquee-track-label">
+            <span>{t('habilidades.track1Label')}</span>
+            <span className="track-line"></span>
+          </div>
+          <div className="marquee-row marquee-left">
+            <div className="marquee-inner">
+              {/* Cópia 1 */}
+              {TRACK_1_ITEMS.map((item, idx) => (
+                <div key={`t1-a-${idx}`} className="tech-capsule">
+                  <div className="capsule-icon-wrap">
+                    {item.icon ? (
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        className={item.invert ? 'dark-invert-always' : ''}
+                      />
+                    ) : (
+                      <i className={item.iconFont} style={{ color: '#10b981', fontSize: '1rem' }}></i>
+                    )}
+                  </div>
+                  <span className="capsule-name">{item.name}</span>
+                  <span className="capsule-tag">{item.tag}</span>
+                </div>
+              ))}
+              {/* Cópia 2 (Loop contínuo imperceptível) */}
+              {TRACK_1_ITEMS.map((item, idx) => (
+                <div key={`t1-b-${idx}`} className="tech-capsule" aria-hidden="true">
+                  <div className="capsule-icon-wrap">
+                    {item.icon ? (
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        className={item.invert ? 'dark-invert-always' : ''}
+                      />
+                    ) : (
+                      <i className={item.iconFont} style={{ color: '#10b981', fontSize: '1rem' }}></i>
+                    )}
+                  </div>
+                  <span className="capsule-name">{item.name}</span>
+                  <span className="capsule-tag">{item.tag}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* COLUNA 02 - BACK-END & DADOS */}
-          <div className="skills-column">
-            <div className="column-num">02</div>
-            <h3>{t('habilidades.col2Title')}</h3>
-            <ul>
-              <li><img src="/nodejs.png" alt="Node.js" className="tech-icon" /> Node.js & REST APIs</li>
-              <li><img src="/express.png" alt="Express" className="tech-icon" /> Express</li>
-              <li><img src="/postgresql.png" alt="PostgreSQL" className="tech-icon" /> PostgreSQL & SQL</li>
-              <li><img src="/prisma.svg" alt="Prisma ORM" className="tech-icon" /> Prisma ORM</li>
-            </ul>
+          {/* ESTEIRA 2 (ESQUERDA PARA DIREITA) */}
+          <div className="marquee-track-label" style={{ marginTop: '16px' }}>
+            <span>{t('habilidades.track2Label')}</span>
+            <span className="track-line"></span>
           </div>
-
-          {/* COLUNA 03 - INFRA, QA & DEPLOY */}
-          <div className="skills-column">
-            <div className="column-num">03</div>
-            <h3>{t('habilidades.col3Title')}</h3>
-            <ul>
-              <li><img src="/docker.png" alt="Docker" className="tech-icon" /> Docker & Containers</li>
-              <li><img src="/git.png" alt="Git" className="tech-icon" /> Git, GitHub & QA Testing</li>
-              <li><img src="/aws.png" alt="Redes & Cloud" className="tech-icon" /> Firewall, Redes & Azure</li>
-              <li><img src="/vercel.png" alt="Vercel" className="tech-icon" /> Deploy & Linux</li>
-            </ul>
-          </div>
-
-          {/* COLUNA 04 - IA & AUTOMAÇÃO */}
-          <div className="skills-column">
-            <div className="column-num">04</div>
-            <h3>{t('habilidades.col4Title')}</h3>
-            <ul>
-              <li><img src="/claude.png" alt="Claude Code" className="tech-icon" /> Claude Code / Agentic</li>
-              <li>
-                <img src="/cursor.png" alt="Cursor" className="tech-icon" />
-                <img src="/antigravity.png" alt="Antigravity" className="tech-icon" style={{ marginLeft: '-8px', position: 'relative', zIndex: 2 }} />
-                <span style={{ marginLeft: '4px' }}>Cursor & Antigravity IDE</span>
-              </li>
-              <li><img src="/python.png" alt="Python" className="tech-icon" /> Python Automation</li>
-              <li><img src="/langchain.png" alt="LLM APIs" className="tech-icon" /> Prompt Eng. & LLM APIs</li>
-            </ul>
-          </div>
-
-          {/* COLUNA 05 - DESIGN & PRODUTO */}
-          <div className="skills-column">
-            <div className="column-num">05</div>
-            <h3>{t('habilidades.col5Title')}</h3>
-            <ul>
-              <li><img src="/figma.png" alt="Figma" className="tech-icon" /> Figma</li>
-              <li><img src="/claude.png" alt="Claude Design" className="tech-icon" /> Design Systems</li>
-              <li><img src="/stitch.png" alt="Stitch IA" className="tech-icon" /> Stitch IA</li>
-              <li><img src="/uiux.svg" alt="UI/UX Prototyping" className="tech-icon" /> UI/UX Prototyping</li>
-            </ul>
+          <div className="marquee-row marquee-right">
+            <div className="marquee-inner">
+              {/* Cópia 1 */}
+              {TRACK_2_ITEMS.map((item, idx) => (
+                <div key={`t2-a-${idx}`} className="tech-capsule">
+                  <div className="capsule-icon-wrap">
+                    {item.icon ? (
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        className={item.invert ? 'dark-invert-always' : ''}
+                      />
+                    ) : (
+                      <i className={item.iconFont} style={{ color: '#38bdf8', fontSize: '1rem' }}></i>
+                    )}
+                  </div>
+                  <span className="capsule-name">{item.name}</span>
+                  <span className="capsule-tag">{item.tag}</span>
+                </div>
+              ))}
+              {/* Cópia 2 (Loop contínuo imperceptível) */}
+              {TRACK_2_ITEMS.map((item, idx) => (
+                <div key={`t2-b-${idx}`} className="tech-capsule" aria-hidden="true">
+                  <div className="capsule-icon-wrap">
+                    {item.icon ? (
+                      <img
+                        src={item.icon}
+                        alt={item.name}
+                        className={item.invert ? 'dark-invert-always' : ''}
+                      />
+                    ) : (
+                      <i className={item.iconFont} style={{ color: '#38bdf8', fontSize: '1rem' }}></i>
+                    )}
+                  </div>
+                  <span className="capsule-name">{item.name}</span>
+                  <span className="capsule-tag">{item.tag}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
         </div>
 
         {/* NOTA DE RODAPÉ */}
-        <div className="skills-footer">
-          <span className="footer-line"></span>
+        <div className="skills-footer-note">
           <p>{t('habilidades.footer')}</p>
         </div>
 

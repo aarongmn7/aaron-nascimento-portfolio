@@ -17,6 +17,12 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 
 ---
 
+- [x] **Nova Seção de Habilidades com Esteira Infinita Autônoma (Dual Infinite Marquee)**:
+  - Substituída a listagem estática por duas esteiras horizontais contínuas que se movem sozinhas em direções opostas:
+    - **Fita 01 (Core Dev & Engenharia):** React 19, Node.js, TypeScript, PostgreSQL, Next.js, Python, Prisma ORM, Express.js, Tailwind CSS, GitHub Actions, JavaScript ES6+ e Vite.
+    - **Fita 02 (IA, Infra, QA & Redes):** Claude Code, Cursor IDE, **Orca ADE (`orca.dev`)**, Google Antigravity, Docker, Linux & Terminal, Microsoft Azure (AI-900), Git & GitHub, LLM APIs & Prompts, Firewall & Redes, QA Testing e Figma.
+  - Efeito suave de desvanecimento (*fade-out mask*) nas extremidades laterais e desaceleração/pausa suave ao passar o mouse (*pause on hover*).
+  - Removido definitivamente o `Stitch IA` e corrigidas as divergências de ícones (Azure com vetor oficial da Microsoft, Actions e Linux).
 - [x] **Estabilidade das Setas e Botões de Ação do Story**:
   - Eliminado o efeito de inversão brusca/foco persistente nas setas de navegação (removida a sombra branca e inversão de cores no clique).
   - Alinhamento simétrico e ancorado das setas laterais (`story-nav-prev` e `story-nav-next`) garantindo visibilidade em ambos os lados e sem cortes.

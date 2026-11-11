@@ -39,15 +39,13 @@ const resources = {
         p3: "Minha Stack Principal — Front-end & Linguagens: JavaScript, TypeScript, React | Back-end & Dados: Node.js, API REST, SQL (PostgreSQL) | Infra & Qualidade: Docker, Git/GitHub, Testes Funcionais, Mapeamento de Bugs e Redes/Firewall."
       },
       habilidades: {
-        badge: "STACK & FERRAMENTAS",
+        badge: "STACK & ENGENHARIA",
         title: "O que eu uso para construir.",
-        subtitle: "Ferramentas e tecnologias que utilizo no dia a dia para entregar projetos ágeis, robustos e prontos para produção.",
-        col1Title: "FRONT-END",
-        col2Title: "BACK-END & DADOS",
-        col3Title: "INFRA, QA & DEPLOY",
-        col4Title: "IA & AUTOMAÇÃO",
-        col5Title: "DESIGN & PRODUTO",
-        footer: "Aberto a novas ferramentas e arquiteturas conforme a necessidade estratégica de cada projeto."
+        subtitle: "Ferramentas e tecnologias que utilizo no dia a dia para entregar software escalável, performático e em produção.",
+        statusPulse: "ESTEIRA CONTÍNUA // LIVE",
+        track1Label: "CORE DEV & ENGENHARIA DE SOFTWARE",
+        track2Label: "IA, INFRAESTRUTURA, QA & REDES",
+        footer: "Aberto a novas linguagens, frameworks e ferramentas conforme a necessidade estratégica de cada projeto."
       },
       projetos: {
         badge: "PRODUÇÃO & ENGENHARIA",
@@ -236,15 +234,13 @@ const resources = {
         p3: "Core Stack — Front-end & Languages: JavaScript, TypeScript, React | Back-end & Data: Node.js, REST APIs, SQL (PostgreSQL) | Infra & QA: Docker, Git/GitHub, Functional Testing, Bug Mapping & Networking/Firewall."
       },
       habilidades: {
-        badge: "STACK & TOOLS",
+        badge: "STACK & ENGINEERING",
         title: "What I use to build.",
-        subtitle: "Technologies and tools I use daily to deliver agile, robust, production-ready software.",
-        col1Title: "FRONT-END",
-        col2Title: "BACK-END & DATA",
-        col3Title: "INFRA, QA & DEPLOY",
-        col4Title: "AI & AUTOMATION",
-        col5Title: "DESIGN & PRODUCT",
-        footer: "Open to adopting new tools and architectures according to your project's strategic needs."
+        subtitle: "Technologies and tools I use daily to engineer scalable, high-performance, production-ready software.",
+        statusPulse: "CONTINUOUS PIPELINE // LIVE",
+        track1Label: "CORE DEV & SOFTWARE ENGINEERING",
+        track2Label: "AI, INFRASTRUCTURE, QA & NETWORKING",
+        footer: "Open to adopting new languages, frameworks, and tools tailored to strategic project requirements."
       },
       projetos: {
         badge: "PRODUCTION & ENGINEERING",

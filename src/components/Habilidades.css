@@ -1,0 +1,275 @@
+/* ==========================================================================
+   ESTEIRA INFINITA AUTÔNOMA DE HABILIDADES (DUAL INFINITE MARQUEE)
+   ========================================================================== */
+
+.skills-section {
+  width: 100%;
+  padding: 100px 0 110px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.skills-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 50px auto;
+}
+
+.skills-badge {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  color: #a1a1aa;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.skills-header h2 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+
+[data-theme="light"] .skills-header h2 {
+  color: #09090b;
+}
+
+.skills-header p {
+  color: var(--text-muted, #a1a1aa);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0 auto 16px auto;
+}
+
+/* STATUS PILL (ESTEIRA CONTÍNUA) */
+.skills-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(24, 24, 27, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: #d4d4d8;
+  font-family: var(--font-mono, monospace);
+  margin-top: 6px;
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .skills-status-pill {
+  background: rgba(244, 244, 245, 0.9);
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #3f3f46;
+}
+
+.skills-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulseConveyor 2s infinite ease-in-out;
+}
+
+@keyframes pulseConveyor {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* ==========================================================================
+   CONTEINERES DAS FITAS MARQUEE
+   ========================================================================== */
+
+.marquee-stream-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 20px 0 50px 0;
+  position: relative;
+}
+
+.marquee-track-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: #71717a;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 12px;
+}
+
+.track-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="light"] .track-line {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ESTEIRA HORIZONTAL */
+.marquee-row {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 6px 0;
+  /* Máscaras de desvanecimento suave nas pontas */
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.marquee-inner {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  will-change: transform;
+}
+
+/* ANIMAÇÃO ESTEIRA 1 (DIREITA PARA ESQUERDA) */
+.marquee-left .marquee-inner {
+  animation: scrollLeft 36s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ANIMAÇÃO ESTEIRA 2 (ESQUERDA PARA DIREITA) */
+.marquee-right .marquee-inner {
+  animation: scrollRight 38s linear infinite;
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* PAUSA SUAVE AO PASSAR O MOUSE */
+.marquee-row:hover .marquee-inner {
+  animation-play-state: paused;
+}
+
+/* ==========================================================================
+   CÁPSULAS / PÍLULAS DE TECNOLOGIA
+   ========================================================================== */
+
+.tech-capsule {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #141417;
+  border: 1px solid #27272a;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #fafafa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  user-select: none;
+  cursor: default;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease,
+              background 0.25s ease,
+              box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] .tech-capsule {
+  background: #ffffff;
+  border-color: #e4e4e7;
+  color: #09090b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tech-capsule:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: #1f1f24;
+  border-color: #52525b;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55),
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .tech-capsule:hover {
+  background: #f4f4f5;
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.capsule-icon-wrap {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.capsule-icon-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.capsule-name {
+  font-size: 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.capsule-tag {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  color: #71717a;
+  background: rgba(39, 39, 42, 0.6);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-transform: uppercase;
+}
+
+[data-theme="light"] .capsule-tag {
+  color: #71717a;
+  background: #f4f4f5;
+  border-color: #e4e4e7;
+}
+
+/* ==========================================================================
+   RODAPÉ DA SEÇÃO DE HABILIDADES
+   ========================================================================== */
+
+.skills-footer-note {
+  text-align: center;
+  margin-top: 10px;
+  position: relative;
+}
+
+.skills-footer-note p {
+  font-size: 0.88rem;
+  color: #71717a;
+  font-style: normal;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .skills-footer-note p {
+  color: #71717a;
+}
