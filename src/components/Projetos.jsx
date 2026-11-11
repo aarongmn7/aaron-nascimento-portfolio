@@ -264,39 +264,40 @@ export default function Projetos() {
                   {/* BOTÕES DE AÇÃO NO RODAPÉ DO STORY */}
                   <div className="story-actions-footer">
                     {story.demoLink ? (
-                      <a
-                        href={story.demoLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="story-btn-primary"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <i className="fas fa-external-link-alt"></i>
-                        <span>{t('projetos.liveDemoBtn')}</span>
-                      </a>
+                      <>
+                        <a
+                          href={story.demoLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="story-btn-primary"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <i className="fas fa-external-link-alt"></i>
+                          <span>{t('projetos.liveDemoBtn')}</span>
+                        </a>
+                        <a
+                          href={story.codeLink || ghProfileUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="story-btn-secondary"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <i className="fab fa-github"></i>
+                          <span>{t('projetos.repoBtn')}</span>
+                        </a>
+                      </>
                     ) : (
                       <a
                         href={story.codeLink || ghProfileUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="story-btn-primary"
+                        className="story-btn-primary story-btn-single"
                         onClick={(e) => e.stopPropagation()}
                       >
                         <i className="fab fa-github"></i>
                         <span>{t('projetos.repoBtn')}</span>
                       </a>
                     )}
-
-                    <a
-                      href={story.codeLink || ghProfileUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="story-btn-secondary"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      <i className="fab fa-github"></i>
-                      <span>{t('projetos.repoBtn')}</span>
-                    </a>
                   </div>
                 </div>
               );

@@ -17,7 +17,11 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 
 ---
 
-## ✅ Concluído na Última Revisão
+- [x] **Estabilidade das Setas e Botões de Ação do Story**:
+  - Eliminado o efeito de inversão brusca/foco persistente nas setas de navegação (removida a sombra branca e inversão de cores no clique).
+  - Alinhamento simétrico e ancorado das setas laterais (`story-nav-prev` e `story-nav-next`) garantindo visibilidade em ambos os lados e sem cortes.
+  - Correção dos botões de ação: projetos sem `Live Demo` (como Mini-ERP e Service Desk) agora exibem **um único botão** (`story-btn-single`) de largura total para "Ver Código no GitHub ↗".
+  - Cor do botão 100% invertida em relação ao tema: **Branco no Dark Mode** (com texto/ícone escuro) e **Preto no Light Mode** (com texto/ícone branco).
 - [x] **Avatar Oficial do GitHub Integrado no Topo dos Stories**:
   - Foto de perfil oficial do GitHub de Aaron (`https://github.com/aarongmn7.png` salva localmente em `public/aaron-github.png`) exibida no header de cada story com anel estilizado e selo de verificado.
 - [x] **Enxugamento Cirúrgico do Portfólio (Apenas Projetos Reais)**:
