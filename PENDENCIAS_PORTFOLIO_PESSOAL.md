@@ -18,17 +18,25 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 ---
 
 ## ✅ Concluído na Última Revisão
+- [x] **Avatar Oficial do GitHub Integrado no Topo dos Stories**:
+  - Foto de perfil oficial do GitHub de Aaron (`https://github.com/aarongmn7.png` salva localmente em `public/aaron-github.png`) exibida no header de cada story com anel estilizado e selo de verificado.
+- [x] **Enxugamento Cirúrgico do Portfólio (Apenas Projetos Reais)**:
+  - Cortados definitivamente `SmartDocs` e `B2B SLA Analytics` (removidos do código e das traduções).
+  - Retirado o projeto do próprio Portfólio da listagem dos stories para receber dinâmica futura dedicada.
+  - Vitrine focada nos 3 sistemas reais: **Radar de Vagas Remotas Tech**, **mini-erp-gestao-ativos** e **Service Desk, Chamados & Kanban**.
+- [x] **Layout com Print Real em Destaque Absoluto por Projeto**:
+  - Cada story agora exibe a captura real de tela da aplicação (`story-print-frame`) com barra de navegador simulada, bordas arredondadas e efeito sutil de zoom.
+  - Screenshots integrados:
+    - Story 01: `public/radar-vagas.png` (com badge de atualização diária às 09:00 mantido e destacado).
+    - Story 02: `public/mini-erp.png` (painel de ativos de TI).
+    - Story 03: `public/service-desk.png` (quadro Kanban de triagem com SLA).
 - [x] **Redesign Completo da Seção de Projetos em "Stories de Instagram + 3D Card Deck"**:
   - Implementada a arquitetura inspirada no desenho autoral: cartas em formato vertical de smartphone/story empilhadas com profundidade 3D (`perspective: 1200px`, deslocamentos em perspectiva e opacidades decrescentes).
   - Botão circular de avançar com seta à direita `(->)` exatamente conforme o rascunho, além de botão à esquerda `(<-)`.
-  - Barrinhas de progresso segmentadas no topo (estilo Instagram Stories) clicáveis para pular diretamente para qualquer projeto.
+  - Barrinhas de progresso segmentadas no topo (estilo Instagram Stories) clicáveis para pular diretamente para qualquer projeto (3 segmentos).
   - Interação por toque/gestos: tocar na metade esquerda volta o story, tocar na metade direita avança.
   - Suporte completo a navegação por teclado (`ArrowLeft` / `ArrowRight`) e swipe horizontal em dispositivos mobile.
   - Pílulas de seleção rápida de projetos no rodapé do deck.
-- [x] **Inclusão do Projeto Estrela: Radar de Vagas Remotas Tech (`radar-web`)**:
-  - Posicionado como Story #1 em destaque, com mockup visual da manchete, índice de match (`98% SCORE`), fontes rastreadas (LinkedIn Guest, Himalayas, Jobicy, Remotive) e destaque Zero-Dependency.
-- [x] **Suporte a Duplo Link nos Stories (`Live Demo ↗` + `Ver Código ↗`)**:
-  - Botões de ação rápida no rodapé de cada story com links diretos e isolamento de eventos de clique.
 - [x] **Remoção de links quebrados e placeholders** em `src/components/Projetos.jsx`.
 - [x] **Internacionalização 100% funcional (PT / EN)** em todos os componentes (`src/i18n.js`, `Header`, `Hero`, `Sobre`, `Habilidades`, `Projetos`, `Trajetoria`, `Contato`, `Footer`, `Certificados`).
 - [x] **Sincronização da Trajetória (`Trajetoria.jsx`)** com o dossiê oficial (inclusão da Bolsa FOCCO/UNEMAT em IA & Dev, atualização da Ephex Tecnologia com QA + Infra MSP/Firewall e destaques acadêmicos UNEMAT).

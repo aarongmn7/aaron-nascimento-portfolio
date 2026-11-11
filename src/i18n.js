@@ -57,114 +57,44 @@ const resources = {
         storyHint: "Toque nas laterais ou use as setas para navegar pelos projetos",
         liveDemoBtn: "Acessar Live Demo ↗",
         repoBtn: "Ver Código no GitHub ↗",
-        detailsBtn: "Acessar Projeto ↗",
         stories: [
           {
             id: "radar-vagas",
-            type: "radar",
             badge: "JORNAL TECH // ZERO-DEP",
             status: "DIÁRIO 09:00 BRT",
             indicatorColor: "#10b981",
             title: "Radar de Vagas Remotas Tech",
-            tagline: "Boletim diário automatizado de vagas remotas com coleta multi-fonte e scoring algorítmico.",
-            desc: "Jornal diário 100% Zero-Dependency em Vanilla JS e Node.js puro. Varre a API pública de convidados do LinkedIn Guest (risco zero de ban), Himalayas, Jobicy e Remotive, filtrando oportunidades por compatibilidade técnica e curadoria editorial.",
-            bullets: [
-              "100% Zero-Dependency: construído com APIs nativas de Node.js puro e Vanilla JS.",
-              "Varredura multi-rede com algoritmo de scoring de compatibilidade e curadoria editorial.",
-              "Automação diária via GitHub Actions e interface responsiva Bento Grid OLED."
-            ],
+            tagline: "Boletim diário automatizado de oportunidades 100% remotas com coleta multi-fonte e scoring algorítmico.",
+            printSrc: "/radar-vagas.png",
+            printAlt: "Print da interface do Radar de Vagas Remotas Tech",
             techs: ["nodejs", "javascript", "git"],
             demoLink: "https://aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           },
           {
             id: "mini-erp",
-            type: "minierp",
             badge: "EM PRODUÇÃO // FULL STACK",
             status: "ESTÁVEL // ATIVOS",
             indicatorColor: "#34d399",
             title: "mini-erp-gestao-ativos",
-            tagline: "Centralização e auditoria de inventários de TI e hardware corporativo.",
-            desc: "Sistema modular fullstack desenvolvido do zero para centralizar, monitorar e gerenciar inventários de TI e auditorias de hardware, mitigando gargalos operacionais.",
-            bullets: [
-              "Persistência relacional estrita e alta performance com PostgreSQL e Prisma ORM.",
-              "Arquitetura modular em Node.js e Express com isolamento de regras de negócio e APIs RESTful.",
-              "Ambiente conteinerizado com Docker e pronto para implantação contínua."
-            ],
+            tagline: "Centralização, monitoramento e auditoria de inventários de TI e hardware corporativo.",
+            printSrc: "/mini-erp.png",
+            printAlt: "Print do painel administrativo do Mini-ERP Gestão de Ativos",
             techs: ["nodejs", "postgresql", "prisma", "docker"],
             demoLink: "",
             codeLink: "https://github.com/aarongmn7"
           },
           {
             id: "service-desk",
-            type: "servicedesk",
             badge: "FULL STACK & RBAC",
             status: "PRODUÇÃO // SLA TRACKER",
             indicatorColor: "#38bdf8",
             title: "Service Desk, Chamados & Kanban",
-            tagline: "Triagem técnica com monitoramento de SLA e Kanban operacional.",
-            desc: "Plataforma web fullstack construída do zero com controle de permissões por perfil (RBAC), abertura e triagem de chamados técnicos com monitoramento de metas de SLA e quadro Kanban operacional em tempo real.",
-            bullets: [
-              "Controle de acesso granular baseado em perfis (Admin, Suporte N1/N2 e Solicitante).",
-              "Acompanhamento ativo de tempo de atendimento com prevenção de estouro de SLA.",
-              "Interface reativa construída com React, TypeScript e persistência PostgreSQL."
-            ],
+            tagline: "Plataforma web de triagem técnica com controle granular de perfis (RBAC), SLA e Kanban operacional.",
+            printSrc: "/service-desk.png",
+            printAlt: "Print do quadro Kanban e gestão de chamados com SLA",
             techs: ["react", "typescript", "nodejs", "postgresql"],
             demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "smartdocs",
-            type: "smartdocs",
-            badge: "AI & DOCUMENT PIPELINE",
-            status: "LLM ENGINE // AUTOMATION",
-            indicatorColor: "#a855f7",
-            title: "SmartDocs — Extração com IA",
-            tagline: "Leitura inteligente de documentos PDF e extração estruturada de dados.",
-            desc: "Pipeline automatizado em Python integrado a APIs de Modelos de Linguagem (LLMs) para ingestão inteligente de documentos PDF e extração estruturada de dados diretamente para payloads JSON validados.",
-            bullets: [
-              "Ingestão assíncrona em Python com leitura de PDFs complexos e relatórios.",
-              "Engenharia de prompts com structured output validado estritamente por schemas.",
-              "Eliminação de esforço manual de transcrição e auditoria de relatórios."
-            ],
-            techs: ["python", "claude", "langchain"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "sla-analytics",
-            type: "graphs",
-            badge: "DATA & GRAPH ALGORITHMS",
-            status: "ALGORITMOS // TEORIA DOS GRAFOS",
-            indicatorColor: "#eab308",
-            title: "B2B SLA Analytics & Otimizador em Grafos",
-            tagline: "Auditoria massiva de tickets combinada à otimização de rotas logísticas.",
-            desc: "Automação em Python para consolidação e auditoria de tickets de suporte técnico (cumprimento rigoroso de SLAs) combinada a algoritmos de otimização de rotas baseados em Teoria dos Grafos (TSP).",
-            bullets: [
-              "Mineração e consolidação analítica de chamados com auditoria rigorosa de SLA.",
-              "Roteirização baseada em Teoria dos Grafos para otimização de deslocamento técnico.",
-              "Automação completa em Python com geração de relatórios de conformidade operacional."
-            ],
-            techs: ["python", "git"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "design-system",
-            type: "designsystem",
-            badge: "FRONT-END ARCHITECTURE",
-            status: "REACT 19 // DESIGN TOKENS",
-            indicatorColor: "#94a3b8",
-            title: "Design System & Portfólio (Este Site)",
-            tagline: "Interface minimalista de alta performance em React 19 + Vite com suporte bilíngue.",
-            desc: "Interface de alta performance em React 19 e Vite. Arquitetura componentizada, internacionalização nativa (PT/EN), Design Tokens minimalistas P&B e suporte fluido a Light/Dark Mode.",
-            bullets: [
-              "Design System autoral com tokens monocromáticos e alto contraste visual.",
-              "Suporte nativo a internacionalização bilíngue (i18next) em toda a aplicação.",
-              "Performance ultraotimizada com Vite 8 e bundle minificado."
-            ],
-            techs: ["react", "javascript", "vite", "css"],
-            demoLink: "https://aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           }
         ]
@@ -324,114 +254,44 @@ const resources = {
         storyHint: "Tap sides or use arrow keys to navigate through projects",
         liveDemoBtn: "Live Demo ↗",
         repoBtn: "View on GitHub ↗",
-        detailsBtn: "Explore Project ↗",
         stories: [
           {
             id: "radar-vagas",
-            type: "radar",
             badge: "TECH JOURNAL // ZERO-DEP",
             status: "DAILY 09:00 BRT",
             indicatorColor: "#10b981",
             title: "Tech Remote Jobs Radar",
-            tagline: "Automated daily bulletin of 100% remote jobs with multi-source harvesting and algorithmic scoring.",
-            desc: "100% Zero-Dependency daily job gazette built with Vanilla JS and pure Node.js. Scrapes the public LinkedIn Guest API (zero ban risk), Himalayas, Jobicy, and Remotive, filtering opportunities by technical match and automated editorial curation.",
-            bullets: [
-              "100% Zero-Dependency: engineered purely with Node.js native APIs and Vanilla JS.",
-              "Multi-network scraping with compatibility scoring algorithm and editorial curation.",
-              "Automated daily CI/CD via GitHub Actions and responsive Bento Grid OLED layout."
-            ],
+            tagline: "Automated daily gazette of 100% remote jobs with multi-source harvesting and algorithmic scoring.",
+            printSrc: "/radar-vagas.png",
+            printAlt: "Screenshot of the Tech Remote Jobs Radar interface",
             techs: ["nodejs", "javascript", "git"],
             demoLink: "https://aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           },
           {
             id: "mini-erp",
-            type: "minierp",
             badge: "IN PRODUCTION // FULL STACK",
             status: "STABLE // ASSET OPS",
             indicatorColor: "#34d399",
             title: "mini-erp-asset-management",
-            tagline: "IT asset inventory centralization and hardware auditing.",
-            desc: "Modular fullstack system built from scratch to centralize, monitor, and manage complex IT inventories and hardware audits, eliminating operational bottlenecks.",
-            bullets: [
-              "Strict relational persistence and high performance with PostgreSQL and Prisma ORM.",
-              "Modular Node.js and Express backend isolating complex business rules via RESTful APIs.",
-              "Containerized environment with Docker ready for automated continuous deployment."
-            ],
+            tagline: "Centralization, monitoring, and auditing of IT assets and corporate hardware.",
+            printSrc: "/mini-erp.png",
+            printAlt: "Screenshot of the Mini-ERP Asset Management dashboard",
             techs: ["nodejs", "postgresql", "prisma", "docker"],
             demoLink: "",
             codeLink: "https://github.com/aarongmn7"
           },
           {
             id: "service-desk",
-            type: "servicedesk",
             badge: "FULL STACK & RBAC",
             status: "PRODUCTION // SLA TRACKER",
             indicatorColor: "#38bdf8",
             title: "Service Desk, Ticketing & Kanban Platform",
-            tagline: "Technical triage with SLA tracking and operational Kanban.",
-            desc: "Fullstack web platform built from scratch featuring Role-Based Access Control (RBAC), technical ticket triage with SLA tracking, and a real-time operational Kanban board.",
-            bullets: [
-              "Granular role-based access control (Admin, N1/N2 Support Agents, and Requesters).",
-              "Real-time SLA resolution countdown and automated threshold breach alerts.",
-              "Reactive interface built with React, TypeScript, and relational persistence."
-            ],
+            tagline: "Technical ticketing platform with granular Role-Based Access Control (RBAC), SLA tracking, and Kanban.",
+            printSrc: "/service-desk.png",
+            printAlt: "Screenshot of the Service Desk Kanban board and SLA tracker",
             techs: ["react", "typescript", "nodejs", "postgresql"],
             demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "smartdocs",
-            type: "smartdocs",
-            badge: "AI & DOCUMENT PIPELINE",
-            status: "LLM ENGINE // AUTOMATION",
-            indicatorColor: "#a855f7",
-            title: "SmartDocs — AI Document Extraction",
-            tagline: "Intelligent PDF document ingestion and structured data extraction.",
-            desc: "Automated Python pipeline integrated with LLM APIs for intelligent PDF parsing and structured data extraction directly into validated JSON payloads.",
-            bullets: [
-              "Asynchronous Python pipeline for batch processing of complex PDFs and technical reports.",
-              "Advanced prompt engineering ensuring guaranteed JSON schema output with minimal hallucinations.",
-              "Elimination of manual transcription effort and data entry validation bottlenecks."
-            ],
-            techs: ["python", "claude", "langchain"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "sla-analytics",
-            type: "graphs",
-            badge: "DATA & GRAPH ALGORITHMS",
-            status: "ALGORITHMS // GRAPH THEORY",
-            indicatorColor: "#eab308",
-            title: "B2B SLA Analytics & Graph Route Optimizer",
-            tagline: "Massive support ticket auditing combined with logistical route optimization.",
-            desc: "Python automation for consolidating and auditing technical support tickets (strict SLA compliance) combined with combinatorial route optimization based on Graph Theory (TSP).",
-            bullets: [
-              "Ticket log mining and analytics with strict SLA compliance verification.",
-              "Graph Theory-based routing heuristics to minimize field technician travel time.",
-              "Automated Python reporting pipeline with operational performance dashboards."
-            ],
-            techs: ["python", "git"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
-          },
-          {
-            id: "design-system",
-            type: "designsystem",
-            badge: "FRONT-END ARCHITECTURE",
-            status: "REACT 19 // DESIGN TOKENS",
-            indicatorColor: "#94a3b8",
-            title: "Design System & Portfolio (This Site)",
-            tagline: "High-performance minimalist interface in React 19 + Vite with bilingual support.",
-            desc: "High-performance interface built with React 19 and Vite. Modular component architecture, native bilingual support (PT/EN), monochrome Design Tokens, and seamless Light/Dark Mode.",
-            bullets: [
-              "Proprietary Design System featuring high-contrast monochrome tokens.",
-              "Native bilingual internationalization (i18next) across the entire application.",
-              "Maximum performance with Vite 8 and minified production bundles."
-            ],
-            techs: ["react", "javascript", "vite", "css"],
-            demoLink: "https://aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           }
         ]

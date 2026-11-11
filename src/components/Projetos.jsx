@@ -11,14 +11,7 @@ const TECH_ICON_MAP = {
   postgresql: { src: '/postgresql.png', alt: 'PostgreSQL' },
   prisma: { src: '/prisma.svg', alt: 'Prisma ORM' },
   docker: { src: '/docker.png', alt: 'Docker' },
-  python: { src: '/python.png', alt: 'Python' },
-  claude: { src: '/claude.png', alt: 'LLM / Claude API' },
-  langchain: { src: '/langchain.png', alt: 'LangChain / Agents' },
-  git: { src: '/git.png', alt: 'Git' },
-  vite: { src: '/vite.png', alt: 'Vite' },
-  css: { src: '/css.png', alt: 'CSS3' },
-  express: { src: '/express.png', alt: 'Express' },
-  tailwind: { src: '/tailwind.png', alt: 'Tailwind CSS' }
+  git: { src: '/git.png', alt: 'Git' }
 };
 
 export default function Projetos() {
@@ -27,6 +20,7 @@ export default function Projetos() {
   const [activeIdx, setActiveIdx] = useState(0);
   const touchStartX = useRef(null);
   const ghProfileUrl = `https://github.com/${C.githubUser}`;
+  const avatarUrl = '/aaron-github.png';
 
   const totalStories = Array.isArray(stories) ? stories.length : 0;
 
@@ -47,7 +41,6 @@ export default function Projetos() {
   // NAVEGAÇÃO VIA TECLADO (Setas Direita e Esquerda)
   useEffect(() => {
     const handleKeyDown = (e) => {
-      // Ignora se o usuário estiver digitando em um input ou textarea
       if (['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
       if (e.key === 'ArrowRight') nextStory();
       if (e.key === 'ArrowLeft') prevStory();
@@ -56,7 +49,7 @@ export default function Projetos() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [totalStories]);
 
-  // GESTOS TOUCH (Swipe mobile)
+  // GESTOS TOUCH (Swipe em dispositivos mobile)
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
   };
@@ -68,166 +61,12 @@ export default function Projetos() {
 
     if (Math.abs(diffX) > 45) {
       if (diffX > 0) {
-        nextStory(); // Swipe esquerda -> avança
+        nextStory();
       } else {
-        prevStory(); // Swipe direita -> volta
+        prevStory();
       }
     }
     touchStartX.current = null;
-  };
-
-  // RENDERIZADOR DOS MOCKUPS VISUAIS DENTRO DO STORY
-  const renderVisualMockup = (story) => {
-    switch (story.type) {
-      case 'radar':
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-radar">
-              <div className="radar-top-row">
-                <div className="radar-brand">
-                  <img src="/radar-logo.svg" alt="Radar Logo" style={{ width: 18, height: 18 }} />
-                  <span>AARON.DEV // JORNAL_VAGAS</span>
-                </div>
-                <span className="radar-streak">🔥 1d SEQUÊNCIA</span>
-              </div>
-
-              <div className="radar-job-card">
-                <div className="radar-job-title">
-                  <span>Desenvolvedor Full Stack Júnior</span>
-                  <span className="radar-score-pill">98% MATCH</span>
-                </div>
-                <div className="radar-job-sub">
-                  <span>100% Remoto // Node.js + React + SQL</span>
-                </div>
-              </div>
-
-              <div className="radar-source-tags">
-                <span className="source-tag">LinkedIn Guest (Zero Ban)</span>
-                <span className="source-tag">Himalayas</span>
-                <span className="source-tag">Jobicy</span>
-                <span className="source-tag">Remotive</span>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'minierp':
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-minierp">
-              <div className="minierp-browser-bar">
-                <div className="minierp-dots">
-                  <span className="minierp-dot" style={{ background: '#ef4444' }}></span>
-                  <span className="minierp-dot" style={{ background: '#f59e0b' }}></span>
-                  <span className="minierp-dot" style={{ background: '#10b981' }}></span>
-                </div>
-                <span className="minierp-url">localhost:3000/erp</span>
-              </div>
-              <div className="minierp-image-wrap">
-                <img
-                  src="/mini-erp.png"
-                  alt="Mini-ERP Gestão de Ativos"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'servicedesk':
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-kanban">
-              <div className="kanban-col">
-                <span className="kanban-col-title">Triagem (SLA 15m)</span>
-                <div className="kanban-mini-card">
-                  <span>Falha de rota no gateway</span>
-                  <span className="sla-tag">⚡ Crítico</span>
-                </div>
-              </div>
-              <div className="kanban-col">
-                <span className="kanban-col-title">Em Atendimento</span>
-                <div className="kanban-mini-card">
-                  <span>Refatorar RBAC Admin</span>
-                  <span className="sla-tag">⏳ 1h restante</span>
-                </div>
-              </div>
-              <div className="kanban-col">
-                <span className="kanban-col-title">Resolvido</span>
-                <div className="kanban-mini-card">
-                  <span>Deploy PostgreSQL OK</span>
-                  <span className="sla-tag" style={{ color: '#10b981' }}>✓ 100% SLA</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'smartdocs':
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-pipeline">
-              <div className="pipeline-node">
-                <i className="fas fa-file-pdf" style={{ color: '#ef4444', marginBottom: 4, display: 'block' }}></i>
-                <span>PDF Ingest</span>
-              </div>
-              <span className="pipeline-arrow">➔</span>
-              <div className="pipeline-node active-node">
-                <i className="fas fa-brain" style={{ color: '#a855f7', marginBottom: 4, display: 'block' }}></i>
-                <span>LLM Engine</span>
-              </div>
-              <span className="pipeline-arrow">➔</span>
-              <div className="pipeline-node">
-                <i className="fas fa-code" style={{ color: '#10b981', marginBottom: 4, display: 'block' }}></i>
-                <span>JSON Validado</span>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'graphs':
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-graphs">
-              <div className="graph-nodes-art">
-                <div className="graph-node-dot" style={{ top: 15, left: 10 }}></div>
-                <div className="graph-node-dot" style={{ top: 60, left: 35 }}></div>
-                <div className="graph-node-dot" style={{ top: 20, right: 15 }}></div>
-                <div className="graph-node-dot" style={{ bottom: 10, right: 30 }}></div>
-                <div className="graph-line" style={{ top: 22, left: 18, width: 70, transform: 'rotate(15deg)' }}></div>
-                <div className="graph-line" style={{ top: 40, left: 30, width: 60, transform: 'rotate(-40deg)' }}></div>
-                <div className="graph-line" style={{ top: 55, left: 45, width: 50, transform: 'rotate(35deg)' }}></div>
-              </div>
-              <div className="graph-stats">
-                <div className="graph-stat-val">99.8%</div>
-                <div className="graph-stat-lbl">Cumprimento de SLA</div>
-                <div className="graph-stat-val" style={{ fontSize: '1rem', marginTop: 6, color: '#38bdf8' }}>
-                  TSP Otimizado
-                </div>
-                <div className="graph-stat-lbl">Rotas de Campo</div>
-              </div>
-            </div>
-          </div>
-        );
-
-      case 'designsystem':
-      default:
-        return (
-          <div className="story-visual-canvas">
-            <div className="mockup-designsystem">
-              <div className="ds-tokens-row">
-                <div className="ds-swatch" style={{ background: '#09090b', borderColor: '#3f3f46' }}></div>
-                <div className="ds-swatch" style={{ background: '#27272a' }}></div>
-                <div className="ds-swatch" style={{ background: '#71717a' }}></div>
-                <div className="ds-swatch" style={{ background: '#ffffff' }}></div>
-              </div>
-              <div className="ds-info">
-                <span>Design Tokens Monochrome • React 19 • i18n PT/EN</span>
-              </div>
-            </div>
-          </div>
-        );
-    }
   };
 
   return (
@@ -249,13 +88,13 @@ export default function Projetos() {
         <button
           className="story-nav-btn story-nav-prev"
           onClick={prevStory}
-          aria-label="Story anterior"
+          aria-label="Projeto anterior"
           title="Projeto anterior"
         >
           <i className="fas fa-chevron-left"></i>
         </button>
 
-        {/* CONTAINER DO DECK 3D EMPILHADO (Estilo Stories / Desenho do Paint) */}
+        {/* CONTAINER DO DECK 3D EMPILHADO (Stories de Instagram) */}
         <div
           className="stories-deck-container"
           onTouchStart={handleTouchStart}
@@ -263,16 +102,13 @@ export default function Projetos() {
         >
           {Array.isArray(stories) &&
             stories.map((story, idx) => {
-              // Determina a posição de profundidade relativa ao card ativo
               let stackClass = 'stack-hidden-next';
               if (idx === activeIdx) {
-                stackClass = 'stack-0'; // Ativo na frente
+                stackClass = 'stack-0';
               } else if (idx === (activeIdx + 1) % totalStories) {
-                stackClass = 'stack-1'; // Primeiro atrás
+                stackClass = 'stack-1';
               } else if (idx === (activeIdx + 2) % totalStories) {
-                stackClass = 'stack-2'; // Segundo atrás
-              } else if (idx === (activeIdx + 3) % totalStories) {
-                stackClass = 'stack-3'; // Terceiro atrás
+                stackClass = 'stack-2';
               } else if (
                 idx === (activeIdx - 1 + totalStories) % totalStories &&
                 totalStories > 2
@@ -308,20 +144,26 @@ export default function Projetos() {
                     })}
                   </div>
 
-                  {/* HEADER DO STORY (Avatar, Autor, Status e Contador) */}
+                  {/* HEADER DO STORY COM FOTO REAL DO GITHUB DE AARON */}
                   <div className="story-top-header">
                     <div className="story-author-info">
                       <div className="story-avatar-ring">
                         <img
-                          src="/favicon.svg"
-                          alt="Aaron Nascimento"
+                          src={avatarUrl}
+                          onError={(e) => {
+                            e.currentTarget.src = `https://github.com/${C.githubUser}.png`;
+                          }}
+                          alt={C.nome}
                           className="story-avatar-img"
                         />
                       </div>
                       <div className="story-meta">
                         <span className="story-author-name">
                           {C.nome}
-                          <i className="fas fa-check-circle story-verified-badge" title="Perfil Verificado"></i>
+                          <i
+                            className="fas fa-check-circle story-verified-badge"
+                            title="Desenvolvedor Verificado"
+                          ></i>
                         </span>
                         <span className="story-status-line">
                           <span
@@ -331,7 +173,7 @@ export default function Projetos() {
                               boxShadow: `0 0 8px ${story.indicatorColor || '#10b981'}`
                             }}
                           ></span>
-                          {story.status}
+                          <strong>{story.status}</strong>
                         </span>
                       </div>
                     </div>
@@ -356,9 +198,9 @@ export default function Projetos() {
                     </>
                   )}
 
-                  {/* CORPO DO STORY */}
+                  {/* CORPO DO STORY COM O PRINT EM DESTAQUE */}
                   <div className="story-body">
-                    {/* BADGE E TÍTULO DO PROJETO */}
+                    {/* BADGE E TÍTULO */}
                     <div className="story-project-badge-row">
                       <span
                         className="story-project-badge"
@@ -371,20 +213,32 @@ export default function Projetos() {
                     <h3 className="story-project-title">{story.title}</h3>
                     <p className="story-project-tagline">{story.tagline}</p>
 
-                    {/* MOCKUP VISUAL EXCLUSIVO */}
-                    {renderVisualMockup(story)}
+                    {/* PRINT REAL DA TELA DO PROJETO */}
+                    <div className="story-print-frame">
+                      <div className="print-browser-bar">
+                        <div className="print-dots">
+                          <span className="pdot dot-red"></span>
+                          <span className="pdot dot-yellow"></span>
+                          <span className="pdot dot-green"></span>
+                        </div>
+                        <span className="print-url-pill">
+                          {story.id === 'radar-vagas'
+                            ? 'aaron.dev.br/radar'
+                            : story.id === 'mini-erp'
+                            ? 'localhost:3000/erp'
+                            : 'servicedesk.local/kanban'}
+                        </span>
+                      </div>
 
-                    {/* BULLETS DE ENGENHARIA */}
-                    {Array.isArray(story.bullets) && (
-                      <ul className="story-bullets">
-                        {story.bullets.map((bullet, bIdx) => (
-                          <li key={bIdx}>
-                            <span className="bullet-check">✓</span>
-                            <span>{bullet}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+                      <div className="print-image-wrapper">
+                        <img
+                          src={story.printSrc}
+                          alt={story.printAlt || story.title}
+                          className="story-print-img"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
 
                     {/* STACK DE TECNOLOGIAS */}
                     <div className="story-techs-row">
@@ -453,7 +307,7 @@ export default function Projetos() {
         <button
           className="story-nav-btn story-nav-next"
           onClick={nextStory}
-          aria-label="Próximo story"
+          aria-label="Próximo projeto"
           title="Próximo projeto"
         >
           <i className="fas fa-chevron-right"></i>
@@ -471,8 +325,8 @@ export default function Projetos() {
             >
               <span
                 style={{
-                  width: 7,
-                  height: 7,
+                  width: 8,
+                  height: 8,
                   borderRadius: '50%',
                   display: 'inline-block',
                   backgroundColor: story.indicatorColor || '#10b981'
