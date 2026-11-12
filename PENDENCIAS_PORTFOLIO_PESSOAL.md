@@ -34,15 +34,15 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
   - Cortados definitivamente `SmartDocs` e `B2B SLA Analytics` (removidos do código e das traduções).
   - Retirado o projeto do próprio Portfólio da listagem dos stories para receber dinâmica futura dedicada.
   - Vitrine com 4 projetos de destaque: **Radar de Vagas Remotas Tech**, **Neon Protocol: Cyber Survivor**, **mini-erp-gestao-ativos** e **Service Desk, Chamados & Kanban**.
-- [x] **Card Exclusivo do Jogo "Neon Protocol: Cyber Survivor" Lançado**:
+- [x] **Card Exclusivo do Jogo "Cyber Survivor" Lançado**:
   - Integrado ao carrossel de stories 3D com captura de tela em 1280x720 (`public/cyber-survivor.png`).
-  - Suporte a Live Demo (`https://survivor.aaron.dev.br/`) e código fonte.
+  - Suporte a Live Demo (`https://cybersurvivor.aaron.dev.br/`) e código fonte.
   - Badges e status com temática synthwave: `ROGUE-LITE // CANVAS & GODOT`, status `ONLINE // 60 FPS` com indicador ciano `#00f0ff`.
 - [x] **Layout com Print Real em Destaque Absoluto por Projeto**:
   - Cada story agora exibe a captura real de tela da aplicação (`story-print-frame`) com barra de navegador simulada, bordas arredondadas e efeito sutil de zoom.
   - Screenshots integrados:
     - Story 01: `public/radar-vagas.png` (com badge de atualização diária às 09:00 mantido e destacado).
-    - Story 02: `public/cyber-survivor.png` (interface e HUD do jogo Neon Protocol).
+    - Story 02: `public/cyber-survivor.png` (interface e HUD do jogo Cyber Survivor).
     - Story 03: `public/mini-erp.png` (painel de ativos de TI).
     - Story 04: `public/service-desk.png` (quadro Kanban de triagem com SLA).
 - [x] **Redesign Completo da Seção de Projetos em "Stories de Instagram + 3D Card Deck"**:

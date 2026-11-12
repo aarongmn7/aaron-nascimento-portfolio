@@ -228,7 +228,7 @@ export default function Projetos() {
                             story.id === 'radar-vagas'
                               ? 'aaron.dev.br/radar'
                               : story.id === 'cyber-survivor'
-                              ? 'survivor.aaron.dev.br'
+                              ? 'cybersurvivor.aaron.dev.br'
                               : story.id === 'mini-erp'
                               ? 'localhost:3000/erp'
                               : 'servicedesk.local/kanban'
