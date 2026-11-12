@@ -11,7 +11,9 @@ const TECH_ICON_MAP = {
   postgresql: { src: '/postgresql.png', alt: 'PostgreSQL' },
   prisma: { src: '/prisma.svg', alt: 'Prisma ORM' },
   docker: { src: '/docker.png', alt: 'Docker' },
-  git: { src: '/git.png', alt: 'Git' }
+  git: { src: '/git.png', alt: 'Git' },
+  html5: { src: '/html5.png', alt: 'HTML5 Canvas' },
+  vercel: { src: '/vercel.png', alt: 'Vercel' }
 };
 
 export default function Projetos() {
@@ -222,11 +224,15 @@ export default function Projetos() {
                           <span className="pdot dot-green"></span>
                         </div>
                         <span className="print-url-pill">
-                          {story.id === 'radar-vagas'
-                            ? 'aaron.dev.br/radar'
-                            : story.id === 'mini-erp'
-                            ? 'localhost:3000/erp'
-                            : 'servicedesk.local/kanban'}
+                          {story.urlPill || (
+                            story.id === 'radar-vagas'
+                              ? 'aaron.dev.br/radar'
+                              : story.id === 'cyber-survivor'
+                              ? 'survivor.aaron.dev.br'
+                              : story.id === 'mini-erp'
+                              ? 'localhost:3000/erp'
+                              : 'servicedesk.local/kanban'
+                          )}
                         </span>
                       </div>
 

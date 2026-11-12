@@ -65,8 +65,23 @@ const resources = {
             tagline: "Boletim diário automatizado de oportunidades 100% remotas com coleta multi-fonte e scoring algorítmico.",
             printSrc: "/radar-vagas.png",
             printAlt: "Print da interface do Radar de Vagas Remotas Tech",
+            urlPill: "aaron.dev.br/radar",
             techs: ["nodejs", "javascript", "git"],
             demoLink: "https://aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7"
+          },
+          {
+            id: "cyber-survivor",
+            badge: "ROGUE-LITE // CANVAS & GODOT",
+            status: "ONLINE // 60 FPS",
+            indicatorColor: "#00f0ff",
+            title: "Neon Protocol: Cyber Survivor",
+            tagline: "Jogo roguelike de sobrevivência espacial dark synthwave com render loop procedural a 60 FPS e arquitetura dual-engine (Vanilla JS & Godot 4.4).",
+            printSrc: "/cyber-survivor.png",
+            printAlt: "Print da interface de gameplay do Neon Protocol: Cyber Survivor",
+            urlPill: "survivor.aaron.dev.br",
+            techs: ["javascript", "html5", "git"],
+            demoLink: "https://survivor.aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           },
           {
@@ -260,8 +275,23 @@ const resources = {
             tagline: "Automated daily gazette of 100% remote jobs with multi-source harvesting and algorithmic scoring.",
             printSrc: "/radar-vagas.png",
             printAlt: "Screenshot of the Tech Remote Jobs Radar interface",
+            urlPill: "aaron.dev.br/radar",
             techs: ["nodejs", "javascript", "git"],
             demoLink: "https://aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7"
+          },
+          {
+            id: "cyber-survivor",
+            badge: "ROGUE-LITE // CANVAS & GODOT",
+            status: "LIVE // 60 FPS",
+            indicatorColor: "#00f0ff",
+            title: "Neon Protocol: Cyber Survivor",
+            tagline: "Dark synthwave space roguelike survival game featuring 60 FPS procedural canvas render loop and dual-engine architecture (Vanilla JS & Godot 4.4).",
+            printSrc: "/cyber-survivor.png",
+            printAlt: "Screenshot of the Neon Protocol: Cyber Survivor gameplay interface",
+            urlPill: "survivor.aaron.dev.br",
+            techs: ["javascript", "html5", "git"],
+            demoLink: "https://survivor.aaron.dev.br/",
             codeLink: "https://github.com/aarongmn7"
           },
           {
