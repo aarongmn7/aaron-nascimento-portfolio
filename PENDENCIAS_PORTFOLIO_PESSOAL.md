@@ -76,9 +76,12 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 - [ ] Remover o arquivo legado `index_old.html` (27 KB) da raiz após confirmar que nada dele é mais necessário.
 
 ### 4. Suporte a Duplo Link nos Cards de Projeto (`Live Demo` + `Repositório`)
-- [ ] Atualizar `src/components/Projetos.jsx` e `src/i18n.js` para permitir dois links por projeto:
+- [x] Atualizar `src/components/Projetos.jsx` e `src/i18n.js` para permitir dois links por projeto:
   - **Botão 1:** `Live Demo ↗` (para clientes, parceiros de Empresa Júnior e recrutadores testarem a interface).
   - **Botão 2:** `Ver Código ↗` (link direto para o repositório específico no GitHub `aarongmn7`).
+
+### 5. Fase 2 Experimental — Portfólio Swarm Edition (Enxame de Mouses & Efeitos Táteis)
+- [ ] Executar o prompt documentado em [`PROMPT_FASE2_SWARM_MOUSES.md`](./PROMPT_FASE2_SWARM_MOUSES.md) para criar o clone `aaron-nascimento-portfolio-swarm` com os cursores autônomos (sem texto embaixo), seleção estilo Figma, Tour guiado, botões magnéticos, mira azul no hover e Tilt 3D.
 
 ---
 
