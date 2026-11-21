@@ -28,7 +28,25 @@ const resources = {
           m3Title: "QA & Infra",
           m3Desc: "Testes, Docker & Redes"
         },
-        terminalTitle: "automacao_de_processos"
+        terminalTitle: "automacao_de_processos",
+        logs: [
+          { text: "[INFO] Inicializando servidor backend Node.js...", type: "log-info" },
+          { text: "[INFO] Conectando ao banco PostgreSQL... OK", type: "log-info" },
+          { text: "[INFO] Validando schema Prisma ORM...", type: "log-info" },
+          { text: "[DATA] Executando captura automatizada...", type: "log-warning" },
+          { text: "[DATA] Varrendo endpoints da API REST...", type: "log-warning" },
+          { text: "[DATA] 14.820 registros validados na fila.", type: "log-warning" },
+          { text: "[SUCCESS] Transação SQL concluída com sucesso.", type: "log-success" },
+          { text: "[IA] Orquestrando pipeline de extração LLM...", type: "log-ai" },
+          { text: "[IA] Estruturando payload JSON validado...", type: "log-ai" },
+          { text: "[SUCCESS] Triagem de dados e SLA finalizada.", type: "log-success" },
+          { text: "[SEC] Checando políticas RBAC e Firewall...", type: "log-info" },
+          { text: "[INFO] Disparando webhooks de integração...", type: "log-info" },
+          { text: "[SUCCESS] Resposta 200 OK dos serviços.", type: "log-success" },
+          { text: "[INFO] Verificando container Docker...", type: "log-info" },
+          { text: "[SUCCESS] Operação concluída sem gargalos.", type: "log-success" },
+          { text: "[STATUS] Pipeline ativo. Monitorando...", type: "log-ai" }
+        ]
       },
       sobre: {
         subtitle: "Desenvolvedor Full Stack | Node.js, React, TypeScript & PostgreSQL",
@@ -65,10 +83,10 @@ const resources = {
             tagline: "Boletim diário automatizado de oportunidades 100% remotas com coleta multi-fonte e scoring algorítmico.",
             printSrc: "/radar-vagas.png",
             printAlt: "Print da interface do Radar de Vagas Remotas Tech",
-            urlPill: "aaron.dev.br/radar",
+            urlPill: "radar.aaron.dev.br",
             techs: ["nodejs", "javascript", "git"],
-            demoLink: "https://aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7"
+            demoLink: "https://radar.aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7/radarvagas"
           },
           {
             id: "cyber-survivor",
@@ -89,13 +107,14 @@ const resources = {
             badge: "EM PRODUÇÃO // FULL STACK",
             status: "ESTÁVEL // ATIVOS",
             indicatorColor: "#34d399",
-            title: "mini-erp-gestao-ativos",
+            title: "Mini-ERP: Gestão de Ativos de TI",
             tagline: "Centralização, monitoramento e auditoria de inventários de TI e hardware corporativo.",
             printSrc: "/mini-erp.png",
             printAlt: "Print do painel administrativo do Mini-ERP Gestão de Ativos",
+            urlPill: "erp.aaron.dev.br",
             techs: ["nodejs", "postgresql", "prisma", "docker"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
+            demoLink: "https://erp.aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7/mini-erp-gestao-ativos"
           },
           {
             id: "service-desk",
@@ -106,6 +125,7 @@ const resources = {
             tagline: "Plataforma web de triagem técnica com controle granular de perfis (RBAC), SLA e Kanban operacional.",
             printSrc: "/service-desk.png",
             printAlt: "Print do quadro Kanban e gestão de chamados com SLA",
+            urlPill: "github.com/aarongmn7",
             techs: ["react", "typescript", "nodejs", "postgresql"],
             demoLink: "",
             codeLink: "https://github.com/aarongmn7"
@@ -123,7 +143,7 @@ const resources = {
           {
             date: "Maio de 2026 – Atual",
             role: "Estagiário — Ephex Tecnologia",
-            desc: "Atuação na área de Qualidade de Software (QA) e suporte interno, com foco em garantir a estabilidade e a usabilidade do sistema ERP da empresa. • Execução de testes funcionais manuais e validação de regras de negócio em módulos do sistema. • Identificação, mapeamento e documentação de bugs para reporte ao time de desenvolvimento. • Auxílio no suporte técnico interno, lidando com rotinas de TI e infraestrutura da operação."
+            desc: "Atuação híbrida em Qualidade de Software (QA) para sistema ERP e Suporte de TI & Infraestrutura Multi-Clientes (MSP). • Execução de testes funcionais manuais, validação de regras de negócio e identificação, mapeamento e documentação de bugs para o time de desenvolvimento. • Administração de Firewall, redes corporativas, suporte técnico N1/N2 e manutenção/padronização de ambientes de TI em múltiplos clientes."
           },
           {
             date: "Março de 2026 – Maio de 2026",
@@ -197,7 +217,7 @@ const resources = {
             id: 7,
             titulo: "Programação Orientada a Objetos (POO)",
             instituicao: "Fundamentos de Engenharia de Software",
-            categoria: " Ciência da Computação"
+            categoria: "Ciência da Computação"
           },
           {
             id: 8,
@@ -238,7 +258,25 @@ const resources = {
           m3Title: "QA & Infra",
           m3Desc: "Testing, Docker & Networks"
         },
-        terminalTitle: "process_automation"
+        terminalTitle: "process_automation",
+        logs: [
+          { text: "[INFO] Initializing Node.js backend server...", type: "log-info" },
+          { text: "[INFO] Connecting to PostgreSQL database... OK", type: "log-info" },
+          { text: "[INFO] Validating Prisma ORM schema...", type: "log-info" },
+          { text: "[DATA] Running automated data capture...", type: "log-warning" },
+          { text: "[DATA] Scanning REST API endpoints...", type: "log-warning" },
+          { text: "[DATA] 14,820 records validated in queue.", type: "log-warning" },
+          { text: "[SUCCESS] SQL transaction completed successfully.", type: "log-success" },
+          { text: "[AI] Orchestrating LLM extraction pipeline...", type: "log-ai" },
+          { text: "[AI] Structuring validated JSON payload...", type: "log-ai" },
+          { text: "[SUCCESS] Data triage and SLA completed.", type: "log-success" },
+          { text: "[SEC] Checking RBAC policies and Firewall...", type: "log-info" },
+          { text: "[INFO] Dispatching integration webhooks...", type: "log-info" },
+          { text: "[SUCCESS] 200 OK response from services.", type: "log-success" },
+          { text: "[INFO] Checking Docker container health...", type: "log-info" },
+          { text: "[SUCCESS] Operation completed with zero bottlenecks.", type: "log-success" },
+          { text: "[STATUS] Pipeline active. Monitoring...", type: "log-ai" }
+        ]
       },
       sobre: {
         subtitle: "Full Stack Developer | Node.js, React, TypeScript & PostgreSQL",
@@ -275,10 +313,10 @@ const resources = {
             tagline: "Automated daily gazette of 100% remote jobs with multi-source harvesting and algorithmic scoring.",
             printSrc: "/radar-vagas.png",
             printAlt: "Screenshot of the Tech Remote Jobs Radar interface",
-            urlPill: "aaron.dev.br/radar",
+            urlPill: "radar.aaron.dev.br",
             techs: ["nodejs", "javascript", "git"],
-            demoLink: "https://aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7"
+            demoLink: "https://radar.aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7/radarvagas"
           },
           {
             id: "cyber-survivor",
@@ -299,13 +337,14 @@ const resources = {
             badge: "IN PRODUCTION // FULL STACK",
             status: "STABLE // ASSET OPS",
             indicatorColor: "#34d399",
-            title: "mini-erp-asset-management",
+            title: "Mini-ERP: IT Asset Management",
             tagline: "Centralization, monitoring, and auditing of IT assets and corporate hardware.",
             printSrc: "/mini-erp.png",
             printAlt: "Screenshot of the Mini-ERP Asset Management dashboard",
+            urlPill: "erp.aaron.dev.br",
             techs: ["nodejs", "postgresql", "prisma", "docker"],
-            demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
+            demoLink: "https://erp.aaron.dev.br/",
+            codeLink: "https://github.com/aarongmn7/mini-erp-gestao-ativos"
           },
           {
             id: "service-desk",
@@ -316,6 +355,7 @@ const resources = {
             tagline: "Technical ticketing platform with granular Role-Based Access Control (RBAC), SLA tracking, and Kanban.",
             printSrc: "/service-desk.png",
             printAlt: "Screenshot of the Service Desk Kanban board and SLA tracker",
+            urlPill: "github.com/aarongmn7",
             techs: ["react", "typescript", "nodejs", "postgresql"],
             demoLink: "",
             codeLink: "https://github.com/aarongmn7"
@@ -333,7 +373,7 @@ const resources = {
           {
             date: "May 2026 – Present",
             role: "Intern — Ephex Tecnologia",
-            desc: "Working in Software Quality Assurance (QA) and internal support, focused on ensuring the stability and usability of the company's ERP system. • Execution of manual functional tests and validation of business rules across system modules. • Identification, mapping, and documentation of bugs for reporting to the development team. • Assistance in internal technical support, handling IT routines and operational infrastructure."
+            desc: "Hybrid role in Software Quality Assurance (QA) for an ERP system and IT Support & Multi-Client Infrastructure (MSP). • Execution of manual functional tests, business rule validation, and bug identification, mapping, and documentation for the development team. • Firewall administration, corporate networking, N1/N2 technical support, and IT environment maintenance/standardization across multiple clients."
           },
           {
             date: "March 2026 – May 2026",

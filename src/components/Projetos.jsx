@@ -20,6 +20,7 @@ export default function Projetos() {
   const { t } = useTranslation();
   const stories = t('projetos.stories', { returnObjects: true }) || [];
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   const touchStartX = useRef(null);
   const ghProfileUrl = `https://github.com/${C.githubUser}`;
   const avatarUrl = '/aaron-github.png';
@@ -39,6 +40,15 @@ export default function Projetos() {
       setActiveIdx(idx);
     }
   };
+
+  // AUTO-PLAY ESTILO INSTAGRAM STORIES (5500ms)
+  useEffect(() => {
+    if (isPaused || totalStories <= 1) return;
+    const timer = setInterval(() => {
+      setActiveIdx((prev) => (prev + 1) % totalStories);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isPaused, totalStories, activeIdx]);
 
   // NAVEGAÇÃO VIA TECLADO (Setas Direita e Esquerda)
   useEffect(() => {
@@ -99,6 +109,8 @@ export default function Projetos() {
         {/* CONTAINER DO DECK 3D EMPILHADO (Stories de Instagram) */}
         <div
           className="stories-deck-container"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >

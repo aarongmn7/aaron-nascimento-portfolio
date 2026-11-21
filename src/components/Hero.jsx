@@ -2,37 +2,23 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../styles/index.css';
 
-const LOGS_STREAM = [
-  { text: "[INFO] Inicializando servidor backend Node.js...", type: "log-info" },
-  { text: "[INFO] Conectando ao banco PostgreSQL... OK", type: "log-info" },
-  { text: "[INFO] Validando schema Prisma ORM...", type: "log-info" },
-  { text: "[DATA] Executando captura automatizada...", type: "log-warning" },
-  { text: "[DATA] Varrendo endpoints da API REST...", type: "log-warning" },
-  { text: "[DATA] 14.820 registros validados na fila.", type: "log-warning" },
-  { text: "[SUCCESS] Transação SQL concluída com sucesso.", type: "log-success" },
-  { text: "[IA] Orquestrando pipeline de extração LLM...", type: "log-ai" },
-  { text: "[IA] Estruturando payload JSON validado...", type: "log-ai" },
-  { text: "[SUCCESS] Triagem de dados e SLA finalizada.", type: "log-success" },
-  { text: "[SEC] Checando políticas RBAC e Firewall...", type: "log-info" },
-  { text: "[INFO] Disparando webhooks de integração...", type: "log-info" },
-  { text: "[SUCCESS] Resposta 200 OK dos serviços.", type: "log-success" },
-  { text: "[INFO] Verificando container Docker...", type: "log-info" },
-  { text: "[SUCCESS] Operação concluída sem gargalos.", type: "log-success" },
-  { text: "[STATUS] Pipeline ativo. Monitorando...", type: "log-ai" }
-];
-
 export default function Hero() {
-  const { t } = useTranslation();
-  const [visibleLogs, setVisibleLogs] = useState(LOGS_STREAM.slice(0, 8));
+  const { t, i18n } = useTranslation();
+  const logsStream = t('hero.logs', { returnObjects: true });
+  const logs = Array.isArray(logsStream) ? logsStream : [];
+  const [visibleLogs, setVisibleLogs] = useState(() => logs.slice(0, 8));
   const terminalBodyRef = useRef(null);
 
   useEffect(() => {
-    let currentIndex = 8;
+    setVisibleLogs(logs.slice(0, 8));
+    if (logs.length === 0) return;
+
+    let currentIndex = Math.min(8, logs.length);
 
     const interval = setInterval(() => {
       setVisibleLogs((prev) => {
-        const nextLog = LOGS_STREAM[currentIndex];
-        currentIndex = (currentIndex + 1) % LOGS_STREAM.length;
+        const nextLog = logs[currentIndex % logs.length];
+        currentIndex = (currentIndex + 1) % logs.length;
 
         if (prev.length >= 18) {
           return [...prev.slice(1), nextLog];
@@ -42,7 +28,7 @@ export default function Hero() {
     }, 1100);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (terminalBodyRef.current) {

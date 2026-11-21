@@ -24,8 +24,8 @@
   --text-muted: var(--text-secondary);
   --accent: var(--accent-primary);
   
-  --mono: 'Courier New', monospace;
-  --sans: 'Geist', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --r: 10px;
 }
 

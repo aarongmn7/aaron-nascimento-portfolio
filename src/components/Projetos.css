@@ -230,13 +230,40 @@
 }
 
 .progress-segment.active {
-  background: #ffffff;
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 [data-theme="light"] .progress-segment.active {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.progress-segment.active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  border-radius: 999px;
+  transform-origin: left;
+  animation: storyFill 5.5s linear forwards;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .progress-segment.active::after {
   background: #09090b;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.stories-deck-container:hover .progress-segment.active::after {
+  animation-play-state: paused;
+}
+
+@keyframes storyFill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* ==========================================================================
@@ -711,11 +738,11 @@
 
 /* POSICIONAMENTO SIMÉTRICO E SEGURO AO LADO DO DECK */
 .story-nav-prev {
-  left: calc(50% - 290px);
+  left: calc(50% - 305px);
 }
 
 .story-nav-next {
-  right: calc(50% - 320px);
+  right: calc(50% - 305px);
 }
 
 @media (max-width: 900px) {

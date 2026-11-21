@@ -22,7 +22,7 @@ const TRACK_1_ITEMS = [
 const TRACK_2_ITEMS = [
   { name: 'Claude Code', icon: '/claude.png', tag: 'Agentic AI' },
   { name: 'Cursor IDE', icon: '/cursor.png', tag: 'AI Editor' },
-  { name: 'Orca ADE', icon: '/orca.png', tag: 'orca.dev' },
+  { name: 'Orca', icon: '/orca.png', tag: 'AI Orchestrator' },
   { name: 'Google Antigravity', icon: '/antigravity.png', tag: 'AI Agents' },
   { name: 'Docker', icon: '/docker.png', tag: 'Containers' },
   { name: 'Linux & Terminal', icon: '/linux.svg', tag: 'Infra' },
