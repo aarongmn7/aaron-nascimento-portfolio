@@ -7,10 +7,10 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 ---
 
 ## 🌐 Configuração de Domínio Personalizado (`aaron.dev.br`)
-- [ ] **Apontamento de DNS no Provedor / Registro.br:**
+- [x] **Apontamento de DNS no Provedor / Registro.br:**
   - **Tipo CNAME:** `www` apontando para `cname.vercel-dns.com`
   - **Tipo A (Apex `aaron.dev.br`):** apontando para `76.76.21.21` (IP oficial da Vercel)
-- [ ] **Vincular no Dashboard da Vercel:**
+- [x] **Vincular no Dashboard da Vercel:**
   - Acessar o projeto `aaron-nascimento-portfolio` -> Settings -> Domains.
   - Adicionar `aaron.dev.br` e `www.aaron.dev.br` (com redirect automático).
   - Validar emissão do certificado SSL gratuito.
@@ -72,8 +72,8 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 - [ ] *(Opcional)* Download de currículo mantido fora para evitar versões desatualizadas frente à evolução contínua da carreira.
 
 ### 3. Limpeza e Documentação do Repositório Raiz
-- [ ] Substituir o `README.md` padrão do template React + Vite por uma documentação autoral de engenharia detalhando a arquitetura do portfólio, o Design System Monochrome e o suporte bilíngue.
-- [ ] Remover o arquivo legado `index_old.html` (27 KB) da raiz após confirmar que nada dele é mais necessário.
+- [x] Substituir o `README.md` padrão do template React + Vite por uma documentação autoral de engenharia detalhando a arquitetura do portfólio, o Design System Monochrome e o suporte bilíngue.
+- [x] Remover o arquivo legado `index_old.html` (27 KB) da raiz após confirmar que nada dele é mais necessário. *(Já ausente no repositório.)*
 
 ### 4. Suporte a Duplo Link nos Cards de Projeto (`Live Demo` + `Repositório`)
 - [x] Atualizar `src/components/Projetos.jsx` e `src/i18n.js` para permitir dois links por projeto:
@@ -85,27 +85,40 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 
 ---
 
-## 🚀 Pendências de Migração de Projetos (Linha PJ ➔ GitHub Público "Aaron Dev")
+## 🚀 Plano de Execução — Atualização da Vitrine & GitHub (Tarde/Noite)
 
-Para cada sistema abaixo, aplicar o prompt do arquivo [`pasta coringa/KIT_REBRANDING_AARON_DEV.md`](./pasta%20coringa/KIT_REBRANDING_AARON_DEV.md) antes de tornar o repositório público:
+> **Regra de Curadoria:** Manter **4 a 6 projetos** nos Stories principais (amplitude de stack sem repetição) e mover o `Cyber Survivor` para um link discreto de lazer (*Side Quest*).
 
-### 1. Mini-ERP de Gestão de Ativos (`mini-erp-gestao-ativos`)
-- [ ] Aplicar sanitização White-Label (zero menção empresarial/CNPJ, assinatura `Aaron Nascimento | Engenharia de Software`).
-- [ ] Aplicar Design Tokens Monochrome (Light/Dark OLED) e remover cores legadas.
-- [ ] Gerar novo screenshot atualizado da tela principal e substituir `public/mini-erp.png`.
-- [ ] Publicar repositório no GitHub (`github.com/aarongmn7`) e atualizar a URL exata no card principal de `Projetos.jsx`.
+### Ordem do que deve ser feito
 
-### 2. Plataforma Web de Service Desk, Chamados & Kanban
-- [ ] Aplicar rebranding visual "Aaron Dev" (paleta Zinc/OLED + toggle de tema).
-- [ ] Preparar seed de demonstração com chamados, filas de SLA e quadro Kanban populados.
-- [ ] Escrever `README.md` de engenharia destacando RBAC, modelagem PostgreSQL e arquitetura React + TypeScript + Node.js.
-- [ ] Publicar no GitHub e vincular o link direto no Card 01 de `Projetos.jsx`.
+#### Passo 1 — Fechar o Recorte dos Stories
+- [ ] **Manter:** `radar-web` (já publicado e com print em `public/radar-vagas.png`).
+- [ ] **Mover para "Side Quest" (fora dos Stories):** `cyber survivor` ➔ link discreto no `Footer.jsx` ou `Sobre.jsx` (`cybersurvivor.aaron.dev.br`).
+- [ ] **Remover dos Stories atuais:** `mini-erp-gestao-ativos` e `Service Desk / Kanban` (`task-hub`).
+- [ ] **Selecionar 3 a 5 novos destaques já prontos:**
+  1. `payledger-api` *(Python / FastAPI / PostgreSQL)* — Backend & Fintech.
+  2. `axon-workflow-engine` *(React 19 / Node / PostgreSQL)* — IA & Canvas DAG 60fps.
+  3. `agendaflow-saas` *(Laravel 13 / Livewire 4 / PHP 8.4)* — SaaS Multi-Tenant.
+  4. `nexus-erp-bridge` **ou** `trade-tax-engine` *(React 19 / Express / PG)* — escolher 1 para evitar repetição de stack.
+  5. `field-telemetry-pwa` *(React / Express / PWA Offline-First)* — Mobile-First & Resiliência.
+  6. *(Opcional)* `gym-tech-lead` *(Node.js Zero-Dependency)* — Motor de regras determinísticas.
+- [ ] **Deixar apenas no GitHub (fora dos Stories):** `omni-flow-triage`, `task-hub`, `vigor-tracker`, `switch-oled-sd-auditor`.
+- [ ] **Fora do portfólio:** `todo-list-avancada` (simples demais), `ortho-rehab-b2b` (sem código), `aaron-mascot-3d` (usar apenas como logo/easter-egg se desejar).
 
-### 3. SmartDocs — Pipeline de Extração Documental com IA
-- [ ] Higienizar scripts Python, prompts e exemplos de PDFs (usar apenas documentos fictícios de demonstração).
-- [ ] Documentar o fluxo `PDF -> LLM API -> Validação de Schema JSON` no `README.md`.
-- [ ] Publicar no GitHub e vincular o link direto no Card 02 de `Projetos.jsx`.
+#### Passo 2 — Higienizar e Publicar Repositórios no GitHub (`@aarongmn7`)
+- [ ] Verificar em cada projeto escolhido: `README.md` claro, `.env.example`, `.gitignore` (sem `node_modules/`, `vendor/`, `.venv/`, `.env`) e isolamento pessoal (zero vínculo societário/PJ).
+- [ ] Criar os repositórios públicos no GitHub e fazer push.
+- [ ] Atualizar os **6 Pinned Repositories** do perfil `@aarongmn7` para bater com os destaques do portfólio.
 
-### 4. B2B SLA Analytics & Otimizador de Rotas em Grafos
-- [ ] Organizar scripts e datasets de exemplo (anonimizados) com instruções claras de execução.
-- [ ] Publicar/atualizar repositório no GitHub e vincular o link direto no Card 03 de `Projetos.jsx`.
+#### Passo 3 — Gerar Prints Reais (`public/`)
+- [ ] Rodar cada projeto escolhido e capturar screenshot limpo da tela principal para `public/<projeto>.png` (ex.: `payledger.png`, `axon.png`, `agendaflow.png`, `fieldsync.png`).
+
+#### Passo 4 — Atualizar o Código do Portfólio
+- [ ] Atualizar `projetos.stories` em [`src/i18n.js`](src/i18n.js) (versões **PT-BR** e **EN**) com títulos, descrições, badges de stack, `image`, `repoUrl` e `demoUrl` (quando aplicável).
+- [ ] Garantir que `TECH_ICON_MAP` em [`src/components/Projetos.jsx`](src/components/Projetos.jsx) tenha ícones para as novas stacks (ex.: Python, Laravel/PHP), ou ajustar as tags exibidas.
+- [ ] Adicionar o link discreto de *Side Quest* do `Cyber Survivor` no `Footer.jsx` ou `Sobre.jsx`.
+
+#### Passo 5 — Validação & Deploy (`aaron.dev.br`)
+- [ ] Rodar `npm run lint` e `npm run build` sem erros.
+- [ ] Conferir em `npm run preview` (Light/Dark Mode + PT/EN + navegação dos Stories).
+- [ ] Fazer commit/push para disparar o deploy na Vercel e validar em `https://aaron.dev.br/`.
