@@ -7,6 +7,7 @@ import Projetos from '../components/Projetos';
 import Trajetoria from '../components/Trajetoria';
 import Contato from '../components/Contato';
 import Footer from '../components/Footer';
+import SwarmLayer from '../components/SwarmLayer';
 
 function Home({ theme, toggleTheme }) {
   useEffect(() => {
@@ -40,6 +41,7 @@ function Home({ theme, toggleTheme }) {
         <Contato />
         <Footer />
       </main>
+      <SwarmLayer />
     </>
   );
 }

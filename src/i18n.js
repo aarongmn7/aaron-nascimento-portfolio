@@ -258,6 +258,19 @@ const resources = {
       footer: {
         rights: "TODOS OS DIREITOS RESERVADOS.",
         sideQuest: "Side Quest: Cyber Survivor"
+      },
+      swarm: {
+        cursors: "cursores",
+        scanning: "Escaneando arquitetura…",
+        building: "Montando",
+        ready: "pronto",
+        active: "Cursores ativos",
+        paused: "Pausado",
+        tour: "Tour",
+        stop: "Parar",
+        pauseTitle: "Pausar/Ocultar cursores",
+        resumeTitle: "Retomar cursores",
+        replayTitle: "Reconstruir coreografia"
       }
     }
   },
@@ -517,6 +530,19 @@ const resources = {
       footer: {
         rights: "ALL RIGHTS RESERVED.",
         sideQuest: "Side Quest: Cyber Survivor"
+      },
+      swarm: {
+        cursors: "cursors",
+        scanning: "Scanning architecture…",
+        building: "Building",
+        ready: "ready",
+        active: "Active cursors",
+        paused: "Paused",
+        tour: "Tour",
+        stop: "Stop",
+        pauseTitle: "Pause/Hide cursors",
+        resumeTitle: "Resume cursors",
+        replayTitle: "Replay choreography"
       }
     }
   }

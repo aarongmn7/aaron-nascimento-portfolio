@@ -1,72 +1,57 @@
-# Aaron Nascimento — Portfólio Pessoal (`aaron.dev.br`)
+# Aaron Nascimento — Portfólio Pessoal (`Swarm Edition`)
 
-Portfólio pessoal de engenharia de software desenvolvido com **React 19**, **Vite 8** e **i18next**, com foco em performance, acessibilidade, suporte bilíngue (**PT-BR / EN**) e **Design System Monochrome (Light / Dark OLED)**.
+Versão experimental interativa do portfólio pessoal de engenharia de software (**React 19 + Vite 8 + i18next**), integrando a engine **`SwarmLayer`** (cursores autônomos de montagem progressiva em 2 fases e efeitos táteis estilo Figma) sobre o **Design System Monochrome (Light / Dark OLED)**.
 
-- **Produção:** [https://aaron.dev.br/](https://aaron.dev.br/)
-- **Mirror Vercel:** [https://aaron-nascimento-portfolio.vercel.app/](https://aaron-nascimento-portfolio.vercel.app/)
+- **Repositório Base Oficial:** `../aaron-nascimento-portfolio-main` (`https://aaron.dev.br/`)
+- **Diretório Experimental (Clone Isolado):** `aaron-nascimento-portfolio-swarm`
 - **GitHub:** [@aarongmn7](https://github.com/aarongmn7) · **LinkedIn:** [aaron-nascimento-dev](https://www.linkedin.com/in/aaron-nascimento-dev)
 
 ---
 
-## Destaques Técnicos & Arquitetura
+## 🖱️ Arquitetura da Engine `SwarmLayer` (`src/components/SwarmLayer.jsx`)
 
-- **Vitrine de Projetos em Stories 3D (`src/components/Projetos.jsx`):**
-  - Deck interativo em perspectiva 3D (`perspective: 1200px`) com auto-play, barra de progresso clicável, navegação por teclado (`ArrowLeft` / `ArrowRight`), gestos *touch* (swipe) e suporte a duplo link (`Live Demo` + `Repositório`).
-  - **6 Stories de Engenharia Curados:**
-    1. **Radar de Vagas Remotas Tech** (`radar.aaron.dev.br`) — *Node.js, JavaScript Zero-Dep, Git*
-    2. **PayLedger: Payment & Digital Wallet API** — *Python 3.12, FastAPI, SQLAlchemy 2.0 Async, PostgreSQL 16, Docker*
-    3. **Axon Workflow Engine: Visual AI & DAG** — *React 19, Node.js, Kahn DAG Engine, Canvas SVG 60fps, Dual-Mode DB*
-    4. **AgendaFlow: Multi-Tenant Booking SaaS** — *Laravel 13, Livewire 4, PHP 8.4, Global Scope Isolation, Atomic Lock*
-    5. **FieldSync: Offline-First Field Telemetry PWA** — *React 19, Node.js, Web Crypto SHA-256, Canvas 2D POD, Outbox Sync*
-    6. **Nexus Bridge: Conciliação ERP & DLQ** — *React 19, Node.js, Server-Sent Events (SSE), Dead-Letter Queue, PostgreSQL*
-  - **Side Quest no Rodapé (`src/components/Footer.jsx`):** Link dedicado para o jogo autoral **Cyber Survivor** (`cybersurvivor.aaron.dev.br`).
-- **Esteira Dupla de Habilidades (`src/components/Habilidades.jsx`):**
-  - *Dual Infinite Marquee* em direções opostas com *fade-out* lateral e pausa suave no *hover*.
-- **Internacionalização Completa (`src/i18n.js`):**
-  - Alternância instantânea entre **Português (PT-BR)** e **Inglês (EN)** cobrindo Hero, Sobre, Habilidades, Projetos, Trajetória, Certificados e Contato.
-- **Design System Monochrome & SEO:**
-  - Tokens CSS nativos para Light Mode e Dark Mode OLED (`src/styles/index.css`) e metadados Open Graph / Twitter Cards configurados em `index.html`.
+1. **Cursores Monochrome Adaptativos por Tema (Zero Texto Embaixo):**
+   - 12 ponteiros SVG no desktop (6 no mobile) operando a **`2×` de velocidade permanente** e sem barra inferior (`swarm-bar` removida para visual 100% limpo).
+   - **Contraste Automático:**
+     - **Light Mode:** Cursores pretos (`#09090b`) com contorno branco (`#ffffff`).
+     - **Dark Mode:** Cursores brancos (`#ffffff`) com contorno preto (`#09090b`).
+   - Camada `#swarm-layer` com `pointer-events: none; z-index: 80;` para nunca bloquear cliques reais do visitante.
 
----
+2. **Construção Real do Site em 2 Fases (33 Blocos Mapeados):**
+   - **Estado Inicial Oculto (`.bw`):** Todos os 33 blocos das 6 seções (`Hero`, `Sobre`, `Habilidades`, `Projetos`, `Trajetória`, `Contato`) iniciam invisíveis preservando o layout.
+   - **Fase 1 — Marcação Figma (`selectDrag` + `.selbox` + `.skel`):** Os cursores voam até o espaço vazio, arrastam caixas azuis (`#3ea2ff`) com 4 handles quadrados brancos e pílula `Largura × Altura` em tempo real, deixando um *skeleton* tracejado reservando o bloco.
+   - **Fase 2 — Deposição, Digitação & Encaixe Físico (`applyBlock`):**
+     - **Digitação Real (`typeIn`):** Títulos são digitados caractere por caractere pelo cursor.
+     - **Revelação & Nudge (`photoIn` + `nudgeIn`):** Cards principais entram com `clip-path`, são empurrados fisicamente para o alinhamento final e piscam uma *Smart Guide* rosa (`#ff3e9a`).
+     - **Clonagem com Badge `+` (`dupIn`):** Métricas do Hero e itens da Trajetória são clonados a partir do primeiro card com arraste de clone fantasma (`.swarm-ghost`).
 
-## Stack
+3. **Dança Ociosa nas Laterais (`startConga`) & Auto-Demo nos Stories:**
+   - **Centro 100% Livre:** Quando terminam de montar uma seção, os cursores se dividem em duas trilhas harmônicas independentes nas margens **esquerda (~3%–14%)** e **direita (~86%–97%)** da tela, sem cruzar o centro de leitura.
+   - **Auto-Demo (`9s`):** Se o visitante não estiver com o mouse sobre o deck de Stories, um cursor livre voa até a seta `.story-nav-next` e avança o story automaticamente.
 
-- **Frontend:** React 19, React Router DOM 7, i18next / react-i18next
-- **Build & Tooling:** Vite 8, Oxlint
-- **Hospedagem:** Vercel (`aaron.dev.br`)
-
----
-
-## Estrutura do Projeto
-
-```text
-├── public/                 # Assets estáticos, ícones de stack e prints dos projetos
-├── src/
-│   ├── components/         # Header, Hero, Sobre, Habilidades, Projetos, Trajetoria, Contato, Footer
-│   ├── pages/              # Home e Certificados
-│   ├── styles/             # global.css e tokens do Design System (index.css)
-│   ├── config.js           # Dados de perfil e links oficiais
-│   ├── i18n.js             # Traduções PT-BR / EN e catálogo de stories
-│   └── main.jsx            # Entrypoint React
-├── index.html              # Meta tags SEO / Open Graph
-└── vite.config.js          # Configuração de build Vite
-```
+4. **Efeitos Táteis Extras (Desktop `pointer: fine`):**
+   - **Mira Azul no Hover (`.hsel`):** Moldura estilo editor com 4 handles nos cantos ao passar o mouse real em botões e links.
+   - **Botões Magnéticos (`.mag`):** Atração suave em direção ao ponteiro do usuário.
+   - **Tilt 3D (`.swarm-tilt-card`):** Inclinação física em perspectiva no Terminal do Hero e no Card de Perfil.
+   - **Barra de Progresso de Leitura (`.scroll-prog`):** Fita superior de `2.5px` sincronizada com o scroll.
 
 ---
 
-## Como Executar Localmente
+## 📱 Vitrine de 6 Stories de Engenharia (`src/i18n.js`)
+
+1. **Radar de Vagas Remotas Tech** (`/radar-vagas.png`) — *Node.js, JS Zero-Dep, Git*
+2. **PayLedger: Payment & Digital Wallet API** (`/payledger.png`) — *Python 3.12, FastAPI, SQLAlchemy 2.0 Async, PostgreSQL 16*
+3. **Axon Workflow Engine: Visual AI & DAG** (`/axon.png`) — *React 19, Node.js, Kahn DAG 60fps, Dual-Mode DB*
+4. **AgendaFlow: Multi-Tenant Booking SaaS** (`/agendaflow.png`) — *Laravel 13, Livewire 4, PHP 8.4, Atomic Lock*
+5. **FieldSync: Offline-First Field Telemetry PWA** (`/fieldsync.png`) — *React 19, Node.js, Web Crypto SHA-256, Canvas 2D POD*
+6. **Nexus Bridge: Conciliação ERP & DLQ** (`/nexus.png`) — *React 19, Node.js, SSE Stream, Dead-Letter Queue*
+- **Side Quest no Rodapé:** **Cyber Survivor** (`https://cybersurvivor.aaron.dev.br/`).
+
+---
+
+## ▶️ Como Executar Localmente
 
 ```bash
-# Instalar dependências
 npm install
-
-# Rodar em desenvolvimento
-npm run dev
-
-# Verificar lint
-npm run lint
-
-# Build de produção e preview
-npm run build
-npm run preview
+npm run dev -- --port 5173
 ```
