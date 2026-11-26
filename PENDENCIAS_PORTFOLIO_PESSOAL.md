@@ -81,7 +81,12 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
   - **Botão 2:** `Ver Código ↗` (link direto para o repositório específico no GitHub `aarongmn7`).
 
 ### 5. Fase 2 Experimental — Portfólio Swarm Edition (Enxame de Mouses & Efeitos Táteis)
-- [ ] Executar o prompt documentado em [`PROMPT_FASE2_SWARM_MOUSES.md`](./PROMPT_FASE2_SWARM_MOUSES.md) para criar o clone `aaron-nascimento-portfolio-swarm` com os cursores autônomos (sem texto embaixo), seleção estilo Figma, Tour guiado, botões magnéticos, mira azul no hover e Tilt 3D.
+- [x] Executar o prompt documentado em [`PROMPT_FASE2_SWARM_MOUSES.md`](./PROMPT_FASE2_SWARM_MOUSES.md) para criar o clone `aaron-nascimento-portfolio-swarm` com:
+  - Cursores autônomos monochrome adaptativos ao tema (pretos no Light Mode / brancos no Dark Mode, zero texto embaixo).
+  - Construção real em 2 fases dos 33 blocos da página (`.bw` oculto inicial ➔ `.selbox` Figma + `.skel` ➔ digitação `typeIn`, revelação `photoIn`, clonagem `dupIn` com `+` e encaixe `nudgeIn` com *Smart Guides* rosa).
+  - Velocidade fixada permanentemente em `2×` e barra inferior removida.
+  - Dança ociosa (`startConga`) dividida nas margens laterais esquerda e direita, mantendo o centro livre.
+  - Efeitos táteis desktop: Mira azul no hover (`.hsel`), botões magnéticos (`.mag`), Tilt 3D e barra de progresso no topo.
 
 ---
 
@@ -92,33 +97,32 @@ Documento de controle de melhorias, acabamento técnico e publicação de projet
 ### Ordem do que deve ser feito
 
 #### Passo 1 — Fechar o Recorte dos Stories
-- [ ] **Manter:** `radar-web` (já publicado e com print em `public/radar-vagas.png`).
-- [ ] **Mover para "Side Quest" (fora dos Stories):** `cyber survivor` ➔ link discreto no `Footer.jsx` ou `Sobre.jsx` (`cybersurvivor.aaron.dev.br`).
-- [ ] **Remover dos Stories atuais:** `mini-erp-gestao-ativos` e `Service Desk / Kanban` (`task-hub`).
-- [ ] **Selecionar 3 a 5 novos destaques já prontos:**
+- [x] **Manter:** `radar-web` (já publicado e com print em `public/radar-vagas.png`).
+- [x] **Mover para "Side Quest" (fora dos Stories):** `cyber survivor` ➔ link discreto no `Footer.jsx` (`cybersurvivor.aaron.dev.br`).
+- [x] **Remover dos Stories atuais:** `mini-erp-gestao-ativos` e `Service Desk / Kanban` (`task-hub`).
+- [x] **Selecionar 3 a 5 novos destaques já prontos (6 Stories fechados):**
   1. `payledger-api` *(Python / FastAPI / PostgreSQL)* — Backend & Fintech.
   2. `axon-workflow-engine` *(React 19 / Node / PostgreSQL)* — IA & Canvas DAG 60fps.
   3. `agendaflow-saas` *(Laravel 13 / Livewire 4 / PHP 8.4)* — SaaS Multi-Tenant.
-  4. `nexus-erp-bridge` **ou** `trade-tax-engine` *(React 19 / Express / PG)* — escolher 1 para evitar repetição de stack.
+  4. `nexus-erp-bridge` *(React 19 / Express / PG / SSE / DLQ)* — Integração & Conciliação ERP.
   5. `field-telemetry-pwa` *(React / Express / PWA Offline-First)* — Mobile-First & Resiliência.
-  6. *(Opcional)* `gym-tech-lead` *(Node.js Zero-Dependency)* — Motor de regras determinísticas.
-- [ ] **Deixar apenas no GitHub (fora dos Stories):** `omni-flow-triage`, `task-hub`, `vigor-tracker`, `switch-oled-sd-auditor`.
-- [ ] **Fora do portfólio:** `todo-list-avancada` (simples demais), `ortho-rehab-b2b` (sem código), `aaron-mascot-3d` (usar apenas como logo/easter-egg se desejar).
+- [x] **Deixar apenas no GitHub (fora dos Stories):** `omni-flow-triage`, `task-hub`, `vigor-tracker`, `switch-oled-sd-auditor`, `trade-tax-engine`, `gym-tech-lead`.
+- [x] **Fora do portfólio:** `todo-list-avancada` (simples demais), `ortho-rehab-b2b` (sem código), `aaron-mascot-3d` (usar apenas como logo/easter-egg se desejar).
 
 #### Passo 2 — Higienizar e Publicar Repositórios no GitHub (`@aarongmn7`)
-- [ ] Verificar em cada projeto escolhido: `README.md` claro, `.env.example`, `.gitignore` (sem `node_modules/`, `vendor/`, `.venv/`, `.env`) e isolamento pessoal (zero vínculo societário/PJ).
+- [x] Verificar em cada projeto escolhido: `README.md` claro, `.env.example`, `.gitignore` (sem `node_modules/`, `vendor/`, `.venv/`, `.env`) e isolamento pessoal (zero vínculo societário/PJ).
 - [ ] Criar os repositórios públicos no GitHub e fazer push.
 - [ ] Atualizar os **6 Pinned Repositories** do perfil `@aarongmn7` para bater com os destaques do portfólio.
 
 #### Passo 3 — Gerar Prints Reais (`public/`)
-- [ ] Rodar cada projeto escolhido e capturar screenshot limpo da tela principal para `public/<projeto>.png` (ex.: `payledger.png`, `axon.png`, `agendaflow.png`, `fieldsync.png`).
+- [x] Capturar screenshots limpos em 1280x720 para `public/<projeto>.png` (`payledger.png`, `axon.png`, `agendaflow.png`, `fieldsync.png`, `nexus.png`).
 
 #### Passo 4 — Atualizar o Código do Portfólio
-- [ ] Atualizar `projetos.stories` em [`src/i18n.js`](src/i18n.js) (versões **PT-BR** e **EN**) com títulos, descrições, badges de stack, `image`, `repoUrl` e `demoUrl` (quando aplicável).
-- [ ] Garantir que `TECH_ICON_MAP` em [`src/components/Projetos.jsx`](src/components/Projetos.jsx) tenha ícones para as novas stacks (ex.: Python, Laravel/PHP), ou ajustar as tags exibidas.
-- [ ] Adicionar o link discreto de *Side Quest* do `Cyber Survivor` no `Footer.jsx` ou `Sobre.jsx`.
+- [x] Atualizar `projetos.stories` em [`src/i18n.js`](src/i18n.js) (versões **PT-BR** e **EN**) com títulos, descrições, badges de stack, `image`, `repoUrl` e `demoUrl` (quando aplicável).
+- [x] Garantir que `TECH_ICON_MAP` em [`src/components/Projetos.jsx`](src/components/Projetos.jsx) tenha ícones para as novas stacks (`python`, `tailwind`, `express`, `vite`, `githubactions`).
+- [x] Adicionar o link discreto de *Side Quest* do `Cyber Survivor` no `Footer.jsx`.
 
 #### Passo 5 — Validação & Deploy (`aaron.dev.br`)
-- [ ] Rodar `npm run lint` e `npm run build` sem erros.
-- [ ] Conferir em `npm run preview` (Light/Dark Mode + PT/EN + navegação dos Stories).
-- [ ] Fazer commit/push para disparar o deploy na Vercel e validar em `https://aaron.dev.br/`.
+- [x] Rodar `npm run build` sem erros (validado tanto em `aaron-nascimento-portfolio-main` quanto em `aaron-nascimento-portfolio-swarm`).
+- [x] Conferir no servidor local (`http://localhost:5173/` — Light/Dark Mode + PT/EN + navegação dos 6 Stories + coreografia Swarm).
+- [ ] Criar repositórios públicos no GitHub (`@aarongmn7`), atualizar os 6 Pinned Repos e fazer commit/push do portfólio para disparar o deploy na Vercel (`https://aaron.dev.br/`).

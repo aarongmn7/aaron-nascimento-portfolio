@@ -15,6 +15,15 @@ export default function Footer() {
         <Link to="/#trajetoria">{t('header.nav.trajectory')}</Link>
         <Link to="/certificados">{t('header.nav.certifications')}</Link>
         <Link to="/#contato">{t('header.contact')}</Link>
+        <a
+          href="https://cybersurvivor.aaron.dev.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Side Quest: Cyber Survivor (Roguelike 60 FPS)"
+          style={{ opacity: 0.75 }}
+        >
+          🎮 {t('footer.sideQuest')} ↗
+        </a>
       </div>
       <div className="footer-copy">
         © {new Date().getFullYear()} AARON NASCIMENTO. {t('footer.rights')}

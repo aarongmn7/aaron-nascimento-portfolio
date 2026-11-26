@@ -5,9 +5,14 @@ Documento técnico e prompt pronto para o **Hydrogen** (ou outro modelo executor
 ---
 
 ## 🎯 Visão de Produto (Foco no Cliente / Recrutador Leigo)
+- **Status:** ✅ **IMPLEMENTADO & VALIDADO (25/11/2026)** em [`../aaron-nascimento-portfolio-swarm`](../aaron-nascimento-portfolio-swarm).
 - **Filosofia:** Sites feitos para clientes precisam parecer **vivos, táteis e com acabamento de produto caro**, onde elementos se movem e demonstram interatividade sozinhos sem exigir esforço do visitante.
-- **Regra Visual Principal dos Mouses:** Ao contrário da referência original (que exibia crachás com nomes como `Layout`, `API`, `CSS` pendurados em cada cursor), nesta implementação **os cursores devem ser 100% limpos (APENAS a setinha do mouse colorida com borda branca e sombra**, mais o badge circular discreto de `+` durante clonagens).
-- **Isolamento de Segurança:** Todo o experimento deve rodar em uma pasta clonada (`aaron-nascimento-portfolio-swarm`), preservando o repositório oficial `aaron-nascimento-portfolio-main` intacto até aprovação visual.
+- **Regras Visuais Finais Aprovadas pelo Aaron (25/11/2026):**
+  1. **Cursores 100% Limpos & Monochrome por Tema:** Sem etiquetas de texto (`<span class="nm">`) embaixo. No **Light Mode** todos os mouses são **pretos (`#09090b`) com borda branca**; no **Dark Mode** todos os mouses são **brancos (`#ffffff`) com borda preta**.
+  2. **Construção Real em 2 Fases (`.bw` ➔ `.selbox`/`.skel` ➔ `applyBlock`):** Os 33 blocos começam ocultos (`.bw`), os mouses desenham a seleção Figma no espaço vazio e depois depositam/digitam/clonam cada bloco com *nudge* físico e *Smart Guides* rosa (`#ff3e9a`).
+  3. **Velocidade `2×` Permanente & Sem Barra Inferior:** A dock `.swarm-bar` foi removida e a velocidade ficou cravada em `2×`.
+  4. **Dança Ociosa nas Laterais (`startConga` Dual-Side):** Quando ociosos, os mouses dançam em duas trilhas harmônicas variadas nas margens esquerda e direita da tela, deixando o centro de leitura 100% livre.
+- **Isolamento de Segurança:** Todo o experimento roda na pasta clonada (`aaron-nascimento-portfolio-swarm`), preservando o repositório oficial `aaron-nascimento-portfolio-main` intacto.
 
 ---
 

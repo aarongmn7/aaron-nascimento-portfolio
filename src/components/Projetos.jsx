@@ -4,16 +4,21 @@ import { C } from '../config';
 import './Projetos.css';
 
 const TECH_ICON_MAP = {
-  react: { src: '/react.png', alt: 'React' },
+  react: { src: '/react.png', alt: 'React 19' },
   typescript: { src: '/typescript.png', alt: 'TypeScript' },
   javascript: { src: '/javascript.png', alt: 'JavaScript' },
   nodejs: { src: '/nodejs.png', alt: 'Node.js' },
+  python: { src: '/python.png', alt: 'Python' },
   postgresql: { src: '/postgresql.png', alt: 'PostgreSQL' },
   prisma: { src: '/prisma.svg', alt: 'Prisma ORM' },
   docker: { src: '/docker.png', alt: 'Docker' },
   git: { src: '/git.png', alt: 'Git' },
   html5: { src: '/html5.png', alt: 'HTML5 Canvas' },
-  vercel: { src: '/vercel.png', alt: 'Vercel' }
+  vercel: { src: '/vercel.png', alt: 'Vercel' },
+  tailwind: { src: '/tailwind.png', alt: 'Tailwind CSS' },
+  express: { src: '/express.png', alt: 'Express.js' },
+  vite: { src: '/vite.png', alt: 'Vite' },
+  githubactions: { src: '/githubactions.svg', alt: 'GitHub Actions' }
 };
 
 export default function Projetos() {

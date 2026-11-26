@@ -89,46 +89,74 @@ const resources = {
             codeLink: "https://github.com/aarongmn7/radarvagas"
           },
           {
-            id: "cyber-survivor",
-            badge: "ROGUE-LITE // CANVAS & GODOT",
-            status: "ONLINE // 60 FPS",
-            indicatorColor: "#00f0ff",
-            title: "Cyber Survivor",
-            tagline: "Jogo roguelike de sobrevivência espacial dark synthwave com render loop procedural a 60 FPS e arquitetura dual-engine (Vanilla JS & Godot 4.4).",
-            printSrc: "/cyber-survivor.png",
-            printAlt: "Print da interface de gameplay do Cyber Survivor",
-            urlPill: "cybersurvivor.aaron.dev.br",
-            techs: ["javascript", "html5", "git"],
-            demoLink: "https://cybersurvivor.aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7/Cyber-survivor"
-          },
-          {
-            id: "mini-erp",
-            badge: "EM PRODUÇÃO // FULL STACK",
-            status: "ESTÁVEL // ATIVOS",
+            id: "payledger-api",
+            badge: "FINTECH BACKEND // PYTHON & FASTAPI",
+            status: "ATOMIC LEDGER // ACID",
             indicatorColor: "#34d399",
-            title: "Mini-ERP: Gestão de Ativos de TI",
-            tagline: "Centralização, monitoramento e auditoria de inventários de TI e hardware corporativo.",
-            printSrc: "/mini-erp.png",
-            printAlt: "Print do painel administrativo do Mini-ERP Gestão de Ativos",
-            urlPill: "erp.aaron.dev.br",
-            techs: ["nodejs", "postgresql", "prisma", "docker"],
-            demoLink: "https://erp.aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7/mini-erp-gestao-ativos"
+            title: "PayLedger: Payment & Digital Wallet API",
+            tagline: "API transacional de carteira digital com ledger imutável append-only em centavos, prevenção de deadlocks (SELECT FOR UPDATE), idempotência real e webhooks HMAC-SHA256.",
+            printSrc: "/payledger.png",
+            printAlt: "Print da arquitetura e trace transacional do PayLedger API",
+            urlPill: "github.com/aarongmn7/payledger-api",
+            techs: ["python", "postgresql", "docker", "git"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/payledger-api"
           },
           {
-            id: "service-desk",
-            badge: "FULL STACK & RBAC",
-            status: "PRODUÇÃO // SLA TRACKER",
-            indicatorColor: "#38bdf8",
-            title: "Service Desk, Chamados & Kanban",
-            tagline: "Plataforma web de triagem técnica com controle granular de perfis (RBAC), SLA e Kanban operacional.",
-            printSrc: "/service-desk.png",
-            printAlt: "Print do quadro Kanban e gestão de chamados com SLA",
-            urlPill: "github.com/aarongmn7",
-            techs: ["react", "typescript", "nodejs", "postgresql"],
+            id: "axon-workflow-engine",
+            badge: "AI ORCHESTRATOR // KAHN DAG 60FPS",
+            status: "ZERO CANVAS LIBS",
+            indicatorColor: "#a855f7",
+            title: "Axon Workflow Engine: Visual AI & DAG",
+            tagline: "Orquestrador visual de agentes autônomos de IA e grafos direcionados acíclicos (DAG) com ordenação topológica de Kahn, canvas vetorial 60 FPS puro e banco Dual-Mode.",
+            printSrc: "/axon.png",
+            printAlt: "Print do canvas espacial DAG e console de execução do Axon Workflow Engine",
+            urlPill: "github.com/aarongmn7/axon-workflow-engine",
+            techs: ["react", "nodejs", "postgresql", "tailwind"],
             demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
+            codeLink: "https://github.com/aarongmn7/axon-workflow-engine"
+          },
+          {
+            id: "agendaflow-saas",
+            badge: "MULTI-TENANT SAAS // LARAVEL & LIVEWIRE",
+            status: "ATOMIC BOOKING LOCK",
+            indicatorColor: "#38bdf8",
+            title: "AgendaFlow: Multi-Tenant Booking SaaS",
+            tagline: "Plataforma SaaS multi-tenant com isolamento automático por Global Scope (BelongsToTenant), gestão de quotas por plano e reservas atômicas contra double-booking.",
+            printSrc: "/agendaflow.png",
+            printAlt: "Print do painel multi-tenant e reservas atômicas do AgendaFlow SaaS",
+            urlPill: "github.com/aarongmn7/agendaflow-saas",
+            techs: ["tailwind", "vite", "git"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/agendaflow-saas"
+          },
+          {
+            id: "field-telemetry-pwa",
+            badge: "OFFLINE-FIRST PWA // WEB CRYPTO SHA-256",
+            status: "CANVAS 2D POD // SYNC",
+            indicatorColor: "#f59e0b",
+            title: "FieldSync: Offline-First Field Telemetry PWA",
+            tagline: "PWA para operações críticas em zonas sem sinal com fila Outbox resiliente, canhoto digital antifraude georreferenciado em Canvas 2D, assinatura touch e hash SHA-256.",
+            printSrc: "/fieldsync.png",
+            printAlt: "Print do chassi mobile PWA e central de telemetria do FieldSync",
+            urlPill: "github.com/aarongmn7/field-telemetry-pwa",
+            techs: ["react", "nodejs", "postgresql", "html5"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/field-telemetry-pwa"
+          },
+          {
+            id: "nexus-erp-bridge",
+            badge: "ENTERPRISE INTEGRATION // SSE & DLQ",
+            status: "TOLERÂNCIA FISCAL R$ 0,01",
+            indicatorColor: "#ef4444",
+            title: "Nexus Bridge: Conciliação ERP & DLQ",
+            tagline: "Malha de integração e conciliação financeira para ERPs (TOTVS, SAP, Sankhya, Omie) com retenção preventiva de anomalias fiscais em Dead-Letter Queue e telemetria via SSE.",
+            printSrc: "/nexus.png",
+            printAlt: "Print da malha de conciliação financeira e mesa de resolução DLQ do Nexus Bridge",
+            urlPill: "github.com/aarongmn7/nexus-erp-bridge",
+            techs: ["react", "nodejs", "postgresql", "vite"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/nexus-erp-bridge"
           }
         ]
       },
@@ -228,7 +256,8 @@ const resources = {
         ]
       },
       footer: {
-        rights: "TODOS OS DIREITOS RESERVADOS."
+        rights: "TODOS OS DIREITOS RESERVADOS.",
+        sideQuest: "Side Quest: Cyber Survivor"
       }
     }
   },
@@ -319,46 +348,74 @@ const resources = {
             codeLink: "https://github.com/aarongmn7/radarvagas"
           },
           {
-            id: "cyber-survivor",
-            badge: "ROGUE-LITE // CANVAS & GODOT",
-            status: "LIVE // 60 FPS",
-            indicatorColor: "#00f0ff",
-            title: "Cyber Survivor",
-            tagline: "Dark synthwave space roguelike survival game featuring 60 FPS procedural canvas render loop and dual-engine architecture (Vanilla JS & Godot 4.4).",
-            printSrc: "/cyber-survivor.png",
-            printAlt: "Screenshot of the Cyber Survivor gameplay interface",
-            urlPill: "cybersurvivor.aaron.dev.br",
-            techs: ["javascript", "html5", "git"],
-            demoLink: "https://cybersurvivor.aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7/Cyber-survivor"
-          },
-          {
-            id: "mini-erp",
-            badge: "IN PRODUCTION // FULL STACK",
-            status: "STABLE // ASSET OPS",
+            id: "payledger-api",
+            badge: "FINTECH BACKEND // PYTHON & FASTAPI",
+            status: "ATOMIC LEDGER // ACID",
             indicatorColor: "#34d399",
-            title: "Mini-ERP: IT Asset Management",
-            tagline: "Centralization, monitoring, and auditing of IT assets and corporate hardware.",
-            printSrc: "/mini-erp.png",
-            printAlt: "Screenshot of the Mini-ERP Asset Management dashboard",
-            urlPill: "erp.aaron.dev.br",
-            techs: ["nodejs", "postgresql", "prisma", "docker"],
-            demoLink: "https://erp.aaron.dev.br/",
-            codeLink: "https://github.com/aarongmn7/mini-erp-gestao-ativos"
+            title: "PayLedger: Payment & Digital Wallet API",
+            tagline: "Transactional digital wallet API featuring append-only immutable ledger in integer cents, deadlock prevention (SELECT FOR UPDATE), strict idempotency, and HMAC-SHA256 webhooks.",
+            printSrc: "/payledger.png",
+            printAlt: "Screenshot of PayLedger API architecture and live transactional trace",
+            urlPill: "github.com/aarongmn7/payledger-api",
+            techs: ["python", "postgresql", "docker", "git"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/payledger-api"
           },
           {
-            id: "service-desk",
-            badge: "FULL STACK & RBAC",
-            status: "PRODUCTION // SLA TRACKER",
-            indicatorColor: "#38bdf8",
-            title: "Service Desk, Ticketing & Kanban Platform",
-            tagline: "Technical ticketing platform with granular Role-Based Access Control (RBAC), SLA tracking, and Kanban.",
-            printSrc: "/service-desk.png",
-            printAlt: "Screenshot of the Service Desk Kanban board and SLA tracker",
-            urlPill: "github.com/aarongmn7",
-            techs: ["react", "typescript", "nodejs", "postgresql"],
+            id: "axon-workflow-engine",
+            badge: "AI ORCHESTRATOR // KAHN DAG 60FPS",
+            status: "ZERO CANVAS LIBS",
+            indicatorColor: "#a855f7",
+            title: "Axon Workflow Engine: Visual AI & DAG",
+            tagline: "Visual orchestrator for autonomous AI agents and Directed Acyclic Graphs (DAG) with Kahn's topological sorting, native 60 FPS vector canvas, and Dual-Mode database.",
+            printSrc: "/axon.png",
+            printAlt: "Screenshot of Axon Workflow Engine spatial DAG canvas and execution console",
+            urlPill: "github.com/aarongmn7/axon-workflow-engine",
+            techs: ["react", "nodejs", "postgresql", "tailwind"],
             demoLink: "",
-            codeLink: "https://github.com/aarongmn7"
+            codeLink: "https://github.com/aarongmn7/axon-workflow-engine"
+          },
+          {
+            id: "agendaflow-saas",
+            badge: "MULTI-TENANT SAAS // LARAVEL & LIVEWIRE",
+            status: "ATOMIC BOOKING LOCK",
+            indicatorColor: "#38bdf8",
+            title: "AgendaFlow: Multi-Tenant Booking SaaS",
+            tagline: "Multi-tenant SaaS platform with automatic Global Scope data isolation (BelongsToTenant), subscription plan quota enforcement, and atomic lockForUpdate booking engine.",
+            printSrc: "/agendaflow.png",
+            printAlt: "Screenshot of AgendaFlow SaaS multi-tenant dashboard and atomic bookings",
+            urlPill: "github.com/aarongmn7/agendaflow-saas",
+            techs: ["tailwind", "vite", "git"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/agendaflow-saas"
+          },
+          {
+            id: "field-telemetry-pwa",
+            badge: "OFFLINE-FIRST PWA // WEB CRYPTO SHA-256",
+            status: "CANVAS 2D POD // SYNC",
+            indicatorColor: "#f59e0b",
+            title: "FieldSync: Offline-First Field Telemetry PWA",
+            tagline: "Offline-First mobile PWA for critical field operations with resilient Outbox queue, anti-fraud geo-stamped Proof of Delivery in Canvas 2D, touch signature, and SHA-256 hashing.",
+            printSrc: "/fieldsync.png",
+            printAlt: "Screenshot of FieldSync mobile PWA chassis and telemetry hub",
+            urlPill: "github.com/aarongmn7/field-telemetry-pwa",
+            techs: ["react", "nodejs", "postgresql", "html5"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/field-telemetry-pwa"
+          },
+          {
+            id: "nexus-erp-bridge",
+            badge: "ENTERPRISE INTEGRATION // SSE & DLQ",
+            status: "ZERO-TOLERANCE AUDIT",
+            indicatorColor: "#ef4444",
+            title: "Nexus Bridge: ERP Reconciliation & DLQ",
+            tagline: "Enterprise ERP integration and financial reconciliation mesh (TOTVS, SAP, Sankhya, Omie) with preventive Dead-Letter Queue anomaly retention and real-time SSE telemetry.",
+            printSrc: "/nexus.png",
+            printAlt: "Screenshot of Nexus Bridge financial reconciliation mesh and DLQ resolution drawer",
+            urlPill: "github.com/aarongmn7/nexus-erp-bridge",
+            techs: ["react", "nodejs", "postgresql", "vite"],
+            demoLink: "",
+            codeLink: "https://github.com/aarongmn7/nexus-erp-bridge"
           }
         ]
       },
@@ -458,7 +515,8 @@ const resources = {
         ]
       },
       footer: {
-        rights: "ALL RIGHTS RESERVED."
+        rights: "ALL RIGHTS RESERVED.",
+        sideQuest: "Side Quest: Cyber Survivor"
       }
     }
   }
